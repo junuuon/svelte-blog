@@ -27,7 +27,7 @@ export const load: PageLoad = async ({ params }) => {
   const postModule = posts[postPath];
 
   if (!postModule) {
-    throw error(404, `프로젝트 "${slug}"를 찾을 수 없습니다.`);
+    error(404, { message: `프로젝트 "${slug}"를 찾을 수 없습니다.` });
   }
 
   const PostComponent = postModule.default;

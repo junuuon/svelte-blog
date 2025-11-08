@@ -88,13 +88,7 @@
           </Row>
         {:else}
           {#each experience.project as singleProject (singleProject.title)}
-            <Project {...singleProject} other>
-              <ul>
-                {#each singleProject.detail as line, detailIndex (detailIndex)}
-                  <li>{line}</li>
-                {/each}
-              </ul>
-            </Project>
+            <Project {...singleProject} other />
           {/each}
         {/if}
       {/each}
@@ -137,12 +131,21 @@
   }
 
   .skills-wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    word-break: break-word;
+  }
 
-    @media (max-width: 960px) {
-      flex-direction: column;
+  @media (max-width: 960px) {
+    .skills-wrapper {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .skills-wrapper {
+      grid-template-columns: 1fr;
     }
   }
 </style>

@@ -11,8 +11,8 @@
 
 <span>
   <time datetime={dateFrom}>{timeFormatter(dateFrom)}</time>
+  {' ~ '}
   {#if dateTo}
-    {' ~ '}
     <time datetime={dateTo}>{timeFormatter(dateTo)}</time>
   {/if}
 </span>

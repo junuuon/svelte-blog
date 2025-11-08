@@ -63,7 +63,9 @@
     <Period {dateFrom} {dateTo} />
   </header>
 
-  <h5>Description</h5>
+  {#if !other}
+    <h5>Description</h5>
+  {/if}
   <p>
     {description}
     {#if detailLink}
@@ -71,14 +73,14 @@
     {/if}
   </p>
 
-  <h5>What did I Do</h5>
-  <div>
-    {#if children}
+  {#if children}
+    <h5>What did I Do</h5>
+    <div>
       {@render children()}
-    {/if}
-  </div>
+    </div>
+  {/if}
 
-  {#if skill}
+  {#if skill && !other}
     <h5>Tech Stack</h5>
     {skill}
   {/if}
@@ -91,7 +93,7 @@
 
   .block.other {
     border-bottom: 1px solid var(--color-bg-divider);
-    padding: 3rem 0;
+    padding: 1rem 0;
   }
 
   .header {

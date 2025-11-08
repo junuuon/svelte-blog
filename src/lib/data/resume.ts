@@ -93,7 +93,7 @@ const workExperiences: WorkExperienceProps[] = [
     role: 'SW 개발병',
     additional: {
       label: '추천서 보기',
-      link: 'https://drive.google.com/file/d/16fqD52QfKeZN4-QQokJx-mFzAiulpEZu/view?usp=sharing',
+      link: '/certificates/recommendation-letter-ko.pdf',
     },
   },
 ];
@@ -166,15 +166,15 @@ const otherExperiences: OtherExperienceProps[] = [
 const certificates: CertificateProps[] = [
   {
     label: 'AWS training and certification',
-    link: 'https://drive.google.com/file/d/1LzNVPiGx2hFrqHJdnqedG1TrOatShHK-/view?usp=sharing',
+    link: '/certificates/aws-training.pdf',
   },
   {
     label: 'TOPCIT',
-    link: 'https://drive.google.com/file/d/1Pl_UzJ8mkrCNYbl3HPsu9gbzctfQlPK1/view?usp=sharing',
+    link: '/certificates/topcit.pdf',
   },
   {
     label: '리눅스 마스터 2급',
-    link: 'https://drive.google.com/file/d/1vzBdsUZke4CE7rVAzCgNvlEOEmpQWgm7/view?usp=sharing',
+    link: '/certificates/linux-master-2.pdf',
   },
 ];
 

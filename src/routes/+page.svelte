@@ -77,7 +77,7 @@
           >
             {#snippet children()}
               {#each experience.project as singleProject (singleProject.title)}
-                <Project {...singleProject} other>
+                <Project {...singleProject}>
                   <ul>
                     {#each singleProject.detail as line, detailIndex (detailIndex)}
                       <li>{line}</li>

@@ -4,6 +4,7 @@
   import favicon from '$lib/assets/favicon.svg';
   import { onMount } from 'svelte';
   import { browser } from '$app/environment';
+  import Footer from '$lib/components/Footer.svelte';
 
   let { children } = $props();
 
@@ -73,4 +74,33 @@
   <link rel="icon" href={favicon} />
 </svelte:head>
 
-{@render children()}
+<div class="wrapper">
+  <div class="content-wrapper">
+    <main class="content">
+      {@render children()}
+    </main>
+  </div>
+  <Footer />
+</div>
+
+<style>
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    background-color: var(--color-basic-bg);
+  }
+
+  .content-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+  }
+
+  main.content {
+    width: 800px;
+    max-width: 100%;
+    padding: 2rem;
+  }
+</style>

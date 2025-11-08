@@ -58,8 +58,8 @@ const workExperiences: WorkExperienceProps[] = [
     role: 'Frontend Developer',
   },
   {
-    companyName: '국방부',
-    dateFrom: '2020-05',
+    companyName: '대한민국 국방부',
+    dateFrom: '2019-05',
     dateTo: '2020-12',
     project: [
       {
@@ -180,10 +180,10 @@ const certificates: CertificateProps[] = [
 
 const skills: SkillProps[] = [
   {
-    title: 'Frontend',
+    title: 'Front-end',
     list: ['React', 'Next.js', 'JavaScript', 'TypeScript', 'HTML5', 'CSS3'],
   },
-  { title: 'Backend', list: ['Firebase', 'GCP', 'AWS', 'GraphQL', 'Java', 'Python'] },
+  { title: 'Back-end', list: ['Firebase', 'GCP', 'AWS', 'GraphQL', 'Java', 'Python'] },
   { title: 'Application', list: ['React Native', 'Expo'] },
   { title: 'etc', list: ['Ubuntu', 'Git/Github/Gitlab', 'Confluence', 'JIRA', 'Figma'] },
 ];

@@ -1,11 +1,11 @@
 <footer class="wrapper">
   <a
-    href="https://github.com/Julrum"
+    href="https://github.com/junuuon"
     target="_blank"
     rel="noopener noreferrer"
     aria-label="Go to Github link"
   >
-    <p class="link-text">@julrum</p>
+    <p class="link-text">@junuuon</p>
   </a>
 </footer>
 

@@ -1,0 +1,22 @@
+<script lang="ts">
+  interface Props {
+    title: string;
+    list: string[];
+  }
+  const { title, list }: Props = $props();
+</script>
+
+<div class="wrapper">
+  <h3>{title}</h3>
+  <ul>
+    {#each list as item, index (index)}
+      <li>{item}</li>
+    {/each}
+  </ul>
+</div>
+
+<style>
+  .wrapper {
+    margin: 10px;
+  }
+</style>

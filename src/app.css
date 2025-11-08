@@ -1,0 +1,192 @@
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 45 920;
+	font-style: normal;
+	font-display: swap;
+	src: url('/fonts/PretendardVariable.woff2') format('woff2-variations');
+}
+
+
+:root {
+  --font-size-header1: 2.125rem;
+  --font-size-header2: 1.25rem;
+  --font-size-body: 1rem;
+
+  --font-family-code: 'D2Coding';
+  --font-family-code-ligature: 'D2Coding ligature';
+  --font-family-text: 'Pretendard';
+
+  --color-bold: #000000;
+  --color-inline-code: #212529;
+  --color-main: #333333;
+  --color-placeholder: #999999;
+  --color-quoted: #4d555f;
+  --color-sub: #666666;
+  --color-background: #fafafa;
+  --color-basic-bg: #ffffff;
+  --color-code-bg: #f5f7f9;
+  --color-disabled-bg: #f5f5f5;
+  --color-inline-bg: #dbdfe3;
+  --color-scroll-thumb: #7d7d7d;
+  --color-scroll-track: #fafafa;
+  --color-shadow: rgba(0, 0, 0, 0.16);
+  --color-table-bg: #f6f8fa;
+  --color-transparent: rgba(255, 255, 255, 0);
+  --color-bg-divider: #d0d7de;
+  --color-bg-subdivider: #ebeef1;
+  --color-quoted-border: #cad1d9;
+  --color-scroll-border: #e8e8e8;
+  --color-selection: #feccd4;
+  --color-table-border: #d1d7dd;
+  --color-primary: #f34c55;
+}
+
+html.dark {
+  --color-bold: #c9d1d9;
+  --color-inline-code: #bcc4cc;
+  --color-main: #c9d1d9;
+  --color-placeholder: #c2c3c4;
+  --color-quoted: #8b939d;
+  --color-sub: #7d858e;
+  --color-background: #161b22;
+  --color-basic-bg: #0d1116;
+  --color-code-bg: #161b22;
+  --color-disabled-bg: #21262d;
+  --color-inline-bg: #343941;
+  --color-scroll-thumb: #6b6b6b;
+  --color-scroll-track: #2c2c2c;
+  --color-shadow: rgba(0, 0, 0, 0.16);
+  --color-table-bg: #0d1116;
+  --color-transparent: rgba(255, 255, 255, 0);
+  --color-bg-divider: #30363d;
+  --color-bg-subdivider: #2d3239;
+  --color-quoted-border: #30363d;
+  --color-scroll-border: #3d3d3d;
+  --color-selection: #e77076;
+  --color-table-border: #1e242a;
+  --color-primary: #f34c55;
+}
+
+* {
+  box-sizing: border-box;
+  font-size: 1.1rem;
+}
+
+::selection {
+  background: var(--color-selection);
+}
+
+html,
+body {
+  -moz-osx-font-smoothing: grayscale;
+  -ms-overflow-style: none;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: none;
+  background: var(--color-basic-bg);
+  color: var(--color-main);
+  font-family: var(--font-family-text), -apple-system, BlinkMacSystemFont,
+    'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+    'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-size: 16px;
+  height: 100%;
+  line-height: 1.15;
+  margin: 0;
+  padding: 0;
+  scrollbar-width: none;
+  word-break: keep-all;
+}
+
+@media (max-width: 960px) {
+  html,
+  body {
+    font-size: 14px;
+  }
+  h4 {
+    font-size: 1.5rem;
+  }
+  .tablet-mobile-only {
+    display: block;
+  }
+}
+
+@media (max-width: 576px) {
+  .pc-tablet-only {
+    display: none;
+  }
+  .mobile-only {
+    display: block;
+  }
+}
+
+#root {
+  height: 100%;
+}
+
+h4 {
+  font-size: 2rem;
+  margin: 0 0 1rem;
+}
+
+a {
+  color: var(--color-primary);
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-selection);
+  text-decoration: underline;
+}
+
+ul {
+  font-size: 1.1rem;
+  list-style: none;
+  margin: 0 0 1rem 0;
+  padding: 0;
+}
+
+ul li {
+  padding: 0.2rem 0 0.2rem 1rem;
+  position: relative;
+}
+
+ul li:before {
+  color: var(--color-primary);
+  content: '•';
+  display: inline-block;
+  left: 0;
+  position: absolute;
+}
+
+code {
+  font-family: var(--font-family-code-ligature), source-code-pro, Menlo,
+    Monaco, Consolas, 'Courier New', monospace;
+}
+
+::-webkit-scrollbar {
+  background-color: var(--color-scroll-track);
+  border: solid 1px var(--color-scroll-border);
+  margin: 1px;
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  border: solid 3px transparent;
+  box-shadow: inset 0 0 10px 10px var(--color-scroll-track);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  border: solid 3px transparent;
+  box-shadow: inset 0 0 10px 10px var(--color-scroll-thumb);
+}
+
+.pc-tablet-only {
+  display: block;
+}
+.tablet-mobile-only {
+  display: none;
+}
+.mobile-only {
+  display: none;
+}

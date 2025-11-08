@@ -6,7 +6,6 @@
 	src: url('/fonts/PretendardVariable.woff2') format('woff2-variations');
 }
 
-
 :root {
   --font-size-header1: 2.125rem;
   --font-size-header2: 1.25rem;
@@ -96,35 +95,34 @@ body {
   word-break: keep-all;
 }
 
-@media (max-width: 960px) {
-  html,
-  body {
-    font-size: 14px;
-  }
-  h4 {
-    font-size: 1.5rem;
-  }
-  .tablet-mobile-only {
-    display: block;
-  }
-}
-
-@media (max-width: 576px) {
-  .pc-tablet-only {
-    display: none;
-  }
-  .mobile-only {
-    display: block;
-  }
-}
-
 #root {
   height: 100%;
+}
+
+h2 {
+  font-size: 3rem;
+  margin: 4rem 0 2rem;
+}
+
+h3 {
+  font-size: 2rem;
+  margin: 0 0 1rem;
 }
 
 h4 {
   font-size: 2rem;
   margin: 0 0 1rem;
+}
+
+h5 {
+  font-size: 1.3rem;
+  margin: 0 0 0.5rem;
+}
+
+p {
+  margin: 0 0 1rem;
+  font-size: 1.1rem;
+  line-height: 1.4;
 }
 
 a {
@@ -184,9 +182,36 @@ code {
 .pc-tablet-only {
   display: block;
 }
+
 .tablet-mobile-only {
   display: none;
 }
+
 .mobile-only {
   display: none;
+}
+
+@media (max-width: 960px) {
+  html,
+  body {
+    font-size: 14px;
+  }
+
+  h4 {
+    font-size: 1.5rem;
+  }
+
+  .tablet-mobile-only {
+    display: block;
+  }
+}
+
+@media (max-width: 576px) {
+  .pc-tablet-only {
+    display: none;
+  }
+
+  .mobile-only {
+    display: block;
+  }
 }

@@ -2,7 +2,6 @@ export interface IntroductionProps {
   briefing: string[];
   githubLink: string;
   linkedinLink: string;
-  mailLink: string;
   title: string;
 }
 

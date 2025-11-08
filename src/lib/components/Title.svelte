@@ -1,58 +1,58 @@
 <script lang="ts">
   import Github from '$lib/components/Icon/Github.svelte';
   import Linkedin from '$lib/components/Icon/Linkedin.svelte';
-  import Mail from '$lib/components/Icon/Mail.svelte';
 
   interface Props {
+    date?: string;
     githubLink?: string;
     linkedinLink?: string;
-    mailLink?: string;
     title: string;
   }
 
-  const { githubLink, linkedinLink, mailLink, title }: Props = $props();
+  const { date, githubLink, linkedinLink, title }: Props = $props();
+  const originalDate = date ? new Date(date) : null;
+  const formattedDate = originalDate
+    ? originalDate.toLocaleDateString('ko-KR', { year: 'numeric', month: 'long', day: 'numeric' })
+    : '';
 </script>
 
-<header class="header">
-  <h1 class="title">{title}</h1>
-  <div class="icons">
-    {#if githubLink}
-      <div class="icon">
-        <a
-          href={githubLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Go to Github page"
-          title="Go to Github page"
-        >
-          <Github />
-        </a>
-      </div>
-    {/if}
+<div>
+  <header class="header">
+    <h1 class="title">{title}</h1>
+    <div class="icons">
+      {#if githubLink}
+        <div class="icon">
+          <a
+            href={githubLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Go to Github page"
+            title="Go to Github page"
+          >
+            <Github />
+          </a>
+        </div>
+      {/if}
 
-    {#if linkedinLink}
-      <div class="icon">
-        <a
-          href={linkedinLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Go to Linkedin page"
-          title="Go to Linkedin page"
-        >
-          <Linkedin />
-        </a>
-      </div>
-    {/if}
-
-    {#if mailLink}
-      <div class="icon">
-        <a href={mailLink} aria-label={`Mail to ${mailLink}`} title={`Mail to ${mailLink}`}>
-          <Mail />
-        </a>
-      </div>
-    {/if}
-  </div>
-</header>
+      {#if linkedinLink}
+        <div class="icon">
+          <a
+            href={linkedinLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Go to Linkedin page"
+            title="Go to Linkedin page"
+          >
+            <Linkedin />
+          </a>
+        </div>
+      {/if}
+    </div>
+  </header>
+  {#if formattedDate}
+    <p>{formattedDate}</p>
+  {/if}
+</div>
 
 <style>
   .header {

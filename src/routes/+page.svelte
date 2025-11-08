@@ -16,7 +16,6 @@
   <Title
     githubLink={introduction.githubLink}
     linkedinLink={introduction.linkedinLink}
-    mailLink={introduction.mailLink}
     title={introduction.title}
   />
 

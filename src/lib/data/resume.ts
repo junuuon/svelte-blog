@@ -7,17 +7,41 @@ import type {
 } from '../../types/about';
 
 const introduction: IntroductionProps = {
-  title: '새로운 것을 끊임없이 탐구하는 개발자 박준원입니다.',
+  title: '제품의 기획부터 운영까지 전 과정을 주도하는 5년 차 개발자 박준원입니다.',
   githubLink: 'https://github.com/junuuon',
   linkedinLink: 'https://www.linkedin.com/in/junuuon/',
   briefing: [
-    '2년 차 개발자로 스타트업에서 웹 서비스를 기획/개발/배포/운영하였습니다. 주로 웹 서비스 개발을 담당하였으며 PO(Product Owner) 역할을 겸하였습니다.',
-    '코드 컨벤션을 설정하여 일관성을 유지하는 것을 좋아하며 같은 기능을 하는 코드도 알아보기 쉽게 간단한 코드로 작성하고 있습니다. 레거시 코드를 리팩터링하고 개선하는 것을 즐겨합니다.',
+    '총 5년의 경력을 보유하고 있습니다. AI 챗봇 앱 스타트업 ‘오르카에이아이’에서 공동 창업자이자 프론트엔드 개발을 총괄하며, Expo 기반의 앱 기획부터 배포, 운영, 수익화까지의 전 과정을 주도했습니다. 이전 스타트업 ‘볼트마이크로’에서도 PO 역할을 겸하며 제품 성장을 이끈 경험이 있습니다.',
+    '코드 컨벤션을 설정하여 일관성을 유지하는 것을 좋아하며, 같은 기능을 하는 코드도 알아보기 쉽게 간단한 코드로 작성하고 있습니다. 레거시 코드를 리팩터링하고 개선하는 것을 즐겨합니다.',
     '혼자서의 개발보다는 동료들과 끊임없는 커뮤니케이션을 통해 협업하는 것을 더 선호합니다. 국방부에서 진행한 프로젝트에서도 동료들과의 계속된 소통으로 서로의 생각을 정리하고 공유하여 제한된 자원으로 주어진 짧은 기간 안에 성공적으로 프로젝트를 끝마친 경험이 있습니다.',
   ],
 };
 
 const workExperiences: WorkExperienceProps[] = [
+  {
+    companyName: '오르카에이아이 주식회사',
+    dateFrom: '2024-01',
+    project: [
+      {
+        title: '아이라',
+        dateFrom: '2024-01',
+        description:
+          'Expo(React Native) 기반의 AI 캐릭터 채팅 앱 서비스입니다. 공동 창업자이자 프론트엔드 개발을 전담하여, 기획부터 앱 스토어 배포 및 운영까지 전체 개발 사이클을 주도하였습니다.',
+        detail: [
+          'EAS 및 GitHub Actions 기반의 CI/CD 파이프라인 구축',
+          'RevenueCat, AdMob을 활용한 앱 수익화 모델 구축',
+          'Expo Router 기반 아키텍처 설계 및 Universal Link를 통한 크로스 플랫폼 통합',
+          'React Compiler 도입 및 Flashlist, MMKV 적용을 통한 성능 최적화',
+          'React Query(Persister)를 통한 전역 상태 관리 및 Event Stream 기반 채팅 UI 구현',
+          'Reanimated(v4) 및 react-native-keyboard-controller를 활용한 네이티브 UX 구현',
+          'Sentry, Zod, i18n(3개국어) 도입을 통한 프로덕션 레벨의 안정성 및 확장성 확보',
+        ],
+        productLink: 'https://aira.gg',
+        skill: 'TypeScript, Expo, React Query, Reanimated, Flashlist',
+      },
+    ],
+    role: '공동 창업자 / 프론트엔드 리드',
+  },
   {
     companyName: '볼트마이크로',
     dateFrom: '2022-01',
@@ -98,29 +122,29 @@ const workExperiences: WorkExperienceProps[] = [
 ];
 
 const otherExperiences: OtherExperienceProps[] = [
-  {
-    companyName: '한양대학교',
-    dateFrom: '2017-03',
-    project: [
-      {
-        title: '대선 뉴스 모아보기 페이지',
-        dateFrom: '2021-11',
-        dateTo: '2021-12',
-        description:
-          '한양대학교 소프트웨어스튜디오2 수업 과제로 대선 관련 정보를 모아 볼 수 있는 웹페이지를 제작 프로젝트입니다. 팀원 4명이서 진행하였으며 팀장을 맡아 기획, 디자인 개발 등 전 과정을 담당하였습니다.',
-        detail: [
-          '프론트엔드 기술환경 구성 및 기본 기능 구현',
-          'AWS Amplify를 이용한 회원 정보 관리 및 로그인, 로그아웃, 회원가입 기능 구현',
-          'GraphQL을 이용한 데이터 관리',
-          'React기반 컴포넌트 계층 구조 디자인',
-        ],
-        detailLink: '/projects/daesun',
-        githubLink: 'https://github.com/junuuon/ITE3068_team8',
-        skill: 'Javascript, React, AWS Amplify, GraphQL, styled-components',
-      },
-    ],
-    role: '컴퓨터소프트웨어학부 전공',
-  },
+  // {
+  //   companyName: '한양대학교',
+  //   dateFrom: '2017-03',
+  //   project: [
+  //     {
+  //       title: '대선 뉴스 모아보기 페이지',
+  //       dateFrom: '2021-11',
+  //       dateTo: '2021-12',
+  //       description:
+  //         '한양대학교 소프트웨어스튜디오2 수업 과제로 대선 관련 정보를 모아 볼 수 있는 웹페이지를 제작 프로젝트입니다. 팀원 4명이서 진행하였으며 팀장을 맡아 기획, 디자인 개발 등 전 과정을 담당하였습니다.',
+  //       detail: [
+  //         '프론트엔드 기술환경 구성 및 기본 기능 구현',
+  //         'AWS Amplify를 이용한 회원 정보 관리 및 로그인, 로그아웃, 회원가입 기능 구현',
+  //         'GraphQL을 이용한 데이터 관리',
+  //         'React기반 컴포넌트 계층 구조 디자인',
+  //       ],
+  //       detailLink: '/projects/daesun',
+  //       githubLink: 'https://github.com/junuuon/ITE3068_team8',
+  //       skill: 'Javascript, React, AWS Amplify, GraphQL, styled-components',
+  //     },
+  //   ],
+  //   role: '컴퓨터소프트웨어학부 전공',
+  // },
   {
     project: [
       {
@@ -128,7 +152,7 @@ const otherExperiences: OtherExperienceProps[] = [
         dateFrom: '2021-04',
         dateTo: '2021-05',
         description:
-          '2021 우리은행 온(On)택트 해커톤 본선대회에 참여하여 개발한 프로젝트입니다. 복잡해진 은행 앱의 사용 편의성을 위하여 채팅을 통한 송금 기능을 가진 애플리케이션을 개발하였습니다. 대회에는 팀원과 같이 나갔으나 개발은 100% 혼자서 진행하였습니다. React와 달리 React Native는 경험이 없어 책으로 학습 후 개발 완료까지 5일이 소요되었습니다.',
+          '2021 우리은행 해커톤 본선 참여, 5일간 React Native를 학습하여 채팅 송금 앱을 단독 개발하였습니다.',
         detail: [
           '프론트엔드 기술환경 구성 및 모든 기능 구현',
           'Firebase를 사용한 스토어 디자인',
@@ -148,7 +172,7 @@ const otherExperiences: OtherExperienceProps[] = [
         title: '개인 블로그',
         dateFrom: '2021-02',
         description:
-          'Next.js를 이용하여 이력서를 제작하는 프로젝트입니다. 처음엔 React로 개발하였으나 pre-rendered 정적 페이지 구현을 위해 Next.js로 변경하였습니다.',
+          '개인 이력서 및 블로그. 정적 페이지 생성(SSG), 다크 모드, 반응형 디자인을 Svelte로 구현하였습니다.',
         detail: [
           '프론트엔드 기술환경 구성 및 모든 기능 구현',
           'Atomic 디자인',
@@ -179,12 +203,38 @@ const certificates: CertificateProps[] = [
 
 const skills: SkillProps[] = [
   {
-    title: 'Front-end',
-    list: ['React', 'Next.js', 'JavaScript', 'TypeScript', 'HTML5', 'CSS3'],
+    title: 'Core',
+    list: [
+      'TypeScript',
+      'JavaScript (ES6+)',
+      'React',
+      'React Native',
+      'Expo (Router, EAS)',
+      'Next.js',
+      'Svelte / SvelteKit',
+    ],
   },
-  { title: 'Back-end', list: ['Firebase', 'GCP', 'AWS', 'GraphQL', 'Java', 'Python'] },
-  { title: 'Application', list: ['React Native', 'Expo'] },
-  { title: 'etc', list: ['Ubuntu', 'Git/Github/Gitlab', 'Confluence', 'JIRA', 'Figma'] },
+  {
+    title: 'Perf & UI',
+    list: ['React Compiler', 'Reanimated (v3)', 'Flashlist', 'MMKV', 'Unistyles', 'PWA'],
+  },
+  {
+    title: 'Data & Revenue',
+    list: [
+      'React Query (TanStack Query)',
+      'RevenueCat',
+      'Google AdMob',
+      'React Hook Form',
+      'Zod',
+      'Firebase',
+      'Event Stream (SSE)',
+      'Redux / Redux-Saga (Legacy)',
+    ],
+  },
+  {
+    title: 'DevOps & Tools',
+    list: ['GitHub Actions', 'Sentry', 'Git / GitHub', 'JIRA / Figma', 'Vim'],
+  },
 ];
 
 export const resumeData = {

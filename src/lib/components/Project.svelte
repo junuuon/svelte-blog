@@ -66,7 +66,6 @@
   <h5>Description</h5>
   <p>
     {description}
-    &nbsp;
     {#if detailLink}
       <a href={detailLink}>자세히 보기</a>
     {/if}

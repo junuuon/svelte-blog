@@ -11,9 +11,9 @@ export const introduction: IntroductionProps = {
   githubLink: 'https://github.com/junuuon',
   linkedinLink: 'https://www.linkedin.com/in/junuuon/',
   briefing: [
-    "총 5년의 경력을 보유하고 있습니다. AI 챗봇 앱 스타트업 '오르카에이아이'에서 공동 창업자이자 프론트엔드 개발을 총괄하며, Expo 기반의 앱 기획부터 배포, 운영, 수익화까지의 전 과정을 주도했습니다. 이전 스타트업 '볼트마이크로'에서도 PO 역할을 겸하며 제품 성장을 이끈 경험이 있습니다.",
-    '코드 컨벤션을 설정하여 일관성을 유지하는 것을 좋아하며, 같은 기능을 하는 코드도 알아보기 쉽게 간단한 코드로 작성하고 있습니다. 레거시 코드를 리팩터링하고 개선하는 것을 즐겨합니다.',
-    '혼자서의 개발보다는 동료들과 끊임없는 커뮤니케이션을 통해 협업하는 것을 더 선호합니다. 국방부에서 진행한 프로젝트에서도 동료들과의 계속된 소통으로 서로의 생각을 정리하고 공유하여 제한된 자원으로 주어진 짧은 기간 안에 성공적으로 프로젝트를 끝마친 경험이 있습니다.',
+    "총 5년의 경력을 보유하고 있습니다. AI 챗봇 앱 스타트업 '오르카에이아이'에서 공동 창업자이자 프론트엔드 개발을 총괄하며, Expo(React Native) 기반의 앱 기획부터 배포, 운영, 수익화까지의 전 과정을 주도했습니다. 이전 스타트업 '볼트마이크로'에서도 PO 역할을 겸하며 제품 성장을 이끈 경험이 있습니다.",
+    '코드 컨벤션을 통한 일관성 유지를 중시하며, 가독성과 유지보수성을 고려한 클린 코드를 지향합니다. 레거시 코드를 리팩터링하고 개선하는 작업에 강점이 있습니다.',
+    '독립적인 개발 역량과 더불어, 동료들과의 끊임없는 소통을 통한 협업 시너지를 중요하게 생각합니다. 국방부에서 진행한 프로젝트에서도 동료들과의 계속된 소통으로 서로의 생각을 정리하고 공유하여 제한된 자원으로 주어진 짧은 기간 안에 성공적으로 프로젝트를 끝마친 경험이 있습니다.',
   ],
 };
 
@@ -33,7 +33,7 @@ export const workExperiences: WorkExperienceProps[] = [
           'Expo Router 기반 아키텍처 설계 및 Universal Link를 통한 크로스 플랫폼 통합',
           'React Compiler 도입 및 Flashlist, MMKV 적용을 통한 성능 최적화',
           'React Query(Persister)를 통한 전역 상태 관리 및 Event Stream 기반 채팅 UI 구현',
-          'Reanimated(v4) 및 react-native-keyboard-controller를 활용한 네이티브 UX 구현',
+          'Reanimated 및 react-native-keyboard-controller를 활용한 네이티브 UX 구현',
           'Sentry, Zod, i18n(3개국어) 도입을 통한 프로덕션 레벨의 안정성 및 확장성 확보',
         ],
         productLink: 'https://aira.gg',
@@ -52,9 +52,9 @@ export const workExperiences: WorkExperienceProps[] = [
         dateFrom: '2022-02',
         dateTo: '2023-06',
         description:
-          '웹 오버레이 스코어보드 및 자막 서비스를 제공하는 CameraFi Studio 서비스 프로젝트입니다. 프로젝트를 혼자 시작하여 프론트엔드 기술환경 구성 및 기능 구현하여 사내의 두 번째 메인 프로젝트로 성장하였습니다.',
+          '웹 오버레이 스코어보드 및 자막 서비스를 제공하는 CameraFi Studio 서비스 프로젝트입니다. 프로젝트를 혼자 시작하여 프론트엔드 기술환경 구성 및 기능 구현하여 사내의 두 번째 메인 프로젝트로 성장시켰습니다.',
         detail: [
-          'Firebase를 이용하여 커스텀 토큰과 쿠키를 이용한 로그인 방식 적용된 별도의 통합 로그인 페이지 제작',
+          'Firebase 커스텀 토큰 및 쿠키를 활용한 통합 로그인 페이지 개발 및 적용',
           'Cookie consent 직접 개발하여 쿠키 제어',
           'Next-PWA를 이용한 PWA 앱 개발 및 빌드',
           'Paddle을 이용한 구독 및 결제 서비스 적용',
@@ -90,10 +90,10 @@ export const workExperiences: WorkExperienceProps[] = [
         dateFrom: '2020-08',
         dateTo: '2020-10',
         description:
-          '워드와 엑셀 파일을 웹 내에서 특정 라인 및 셀 강조 표시, 코멘트 기능이 있는 웹페이지 제작 프로젝트입니다. 프로젝트 기획, 디자인, 개발 전 과정에 참여하였습니다. Antd를 사용했던 이전 프로젝트와 달리 모든 컴포넌트를 직접 디자인 개발하였습니다.',
+          '워드와 엑셀 파일을 웹 내에서 특정 라인 및 셀 강조 표시, 코멘트 기능이 있는 웹페이지 제작 프로젝트입니다. 프로젝트 기획, 디자인, 개발 전 과정에 참여하였습니다. Antd를 사용했던 이전 프로젝트와 달리 모든 컴포넌트를 직접 설계하고 개발하였습니다.',
         detail: [
           '프론트엔드 기술환경 구성 및 핵심 기능 구현',
-          'Redux, Redux-Saga를 사용한 스토어 디자인',
+          'Redux, Redux-Saga를 사용한 스토어 설계',
           'React기반 컴포넌트 계층 구조 디자인',
           'Atomic 디자인',
           'Lazy loading을 사용한 뷰어 최적화',
@@ -125,7 +125,7 @@ export const otherExperiences: OtherExperienceProps[] = [
   {
     project: [
       {
-        title: '한줄 은행',
+        title: '한줄 은행 (해커톤)',
         dateFrom: '2021-04',
         dateTo: '2021-05',
         description:
@@ -146,10 +146,9 @@ export const otherExperiences: OtherExperienceProps[] = [
   {
     project: [
       {
-        title: '개인 블로그',
+        title: '개인 이력서/블로그',
         dateFrom: '2021-02',
-        description:
-          '개인 이력서 및 블로그. 정적 페이지 생성(SSG), 다크 모드, 반응형 디자인을 Svelte로 구현하였습니다.',
+        description: '정적 페이지 생성(SSG), 다크 모드, 반응형 디자인을 Svelte로 구현하였습니다.',
         detail: [
           '프론트엔드 기술환경 구성 및 모든 기능 구현',
           'Atomic 디자인',

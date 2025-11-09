@@ -1,8 +1,12 @@
 <script lang="ts">
+  import { onMount } from 'svelte';
+  import { browser } from '$app/environment';
   import type { Snippet } from 'svelte';
   import Github from '$lib/components/Icon/Github.svelte';
   import OpenInNewTab from '$lib/components/Icon/OpenInNewTab.svelte';
   import Period from '$lib/components/Period.svelte';
+  import { getLanguage, type Language } from '$lib/utils/language';
+  import { getLabels } from '$lib/data/labels';
 
   interface Props {
     children?: Snippet;
@@ -28,6 +32,17 @@
     skill,
     title,
   }: Props = $props();
+
+  let labels = $state(getLabels('en'));
+
+  onMount(() => {
+    if (browser) {
+      const pathname = window.location.pathname;
+      const langMatch = pathname.match(/^\/(ko|en)/);
+      const lang = langMatch ? (langMatch[1] as Language) : getLanguage();
+      labels = getLabels(lang);
+    }
+  });
 </script>
 
 <div class="block" class:other>
@@ -40,8 +55,8 @@
             href={productLink}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Go to product page"
-            title="Go to product page"
+            aria-label={labels.goToProductPage}
+            title={labels.goToProductPage}
           >
             <OpenInNewTab />
           </a>
@@ -53,8 +68,8 @@
           href={githubLink}
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Go to Github page"
-          title="Go to Github page"
+          aria-label={labels.goToGithubPage}
+          title={labels.goToGithubPage}
         >
           <Github />
         </a>
@@ -64,24 +79,24 @@
   </header>
 
   {#if !other}
-    <h4>Description</h4>
+    <h4>{labels.description}</h4>
   {/if}
   <p>
     {description}
     {#if detailLink}
-      <a href={detailLink}>"{title}" 프로젝트 자세히 보기</a>
+      <a href={detailLink}>"{title}" {labels.viewProjectDetails}</a>
     {/if}
   </p>
 
   {#if children}
-    <h4>What did I Do</h4>
+    <h4>{labels.whatDidIDo}</h4>
     <div>
       {@render children()}
     </div>
   {/if}
 
   {#if skill && !other}
-    <h4>Tech Stack</h4>
+    <h4>{labels.techStack}</h4>
     {skill}
   {/if}
 </div>

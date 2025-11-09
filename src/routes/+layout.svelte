@@ -5,11 +5,19 @@
   import { onMount } from 'svelte';
   import { browser } from '$app/environment';
   import Footer from '$lib/components/Footer.svelte';
+  import { getLanguage } from '$lib/utils/language';
+  import { getMetadata } from '$lib/utils/metadata';
 
   let { children } = $props();
 
+  let metadata = $state(getMetadata('en'));
+
   onMount(() => {
     if (browser) {
+      const detectedLang = getLanguage();
+      metadata = getMetadata(detectedLang);
+      document.documentElement.lang = detectedLang;
+
       const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
 
       const handleChange = (mediaQuery: MediaQueryListEvent) => {
@@ -32,53 +40,10 @@
 </script>
 
 <svelte:head>
-  <title>Junwon Park | Portfolio</title>
-  <meta name="author" content="junwon" />
-  <meta name="description" content="Junwon's portfolio" />
-
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://junuuon.github.io" />
-
-  <meta property="og:title" content="Junwon Park | Portfolio" />
-  <meta property="og:description" content="Junwon's portfolio" />
-  <meta property="og:url" content="https://junuuon.github.io" />
-  <meta property="og:image" content="/images/preview.webp" />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Junwon Park | Portfolio" />
-
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Junwon Park | Portfolio" />
-  <meta name="twitter:description" content="Junwon's portfolio" />
-  <meta name="twitter:image" content="/images/preview.webp" />
-  <meta name="twitter:site" content="@junuuon" />
-
-  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#FFFFFF" />
-  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0d1116" />
-
-  <link
-    rel="preload"
-    href="/fonts/PretendardVariable.woff2"
-    as="font"
-    type="font/woff2"
-    crossorigin="anonymous"
-  />
-
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Junwon Park",
-      "jobTitle": "Front-end Developer",
-      "url": "https://junuuon.github.io",
-      "sameAs": ["https://github.com/junuuon", "https://www.linkedin.com/in/junuuon/"],
-      "image": "https://junuuon.github.io/images/preview.webp",
-      "description": "5년 차 프론트엔드 개발자. AI 챗봇 앱 스타트업 공동 창업자이자 프론트엔드 리드로 Expo 기반 앱 기획부터 배포, 운영, 수익화까지의 전 과정을 주도했습니다."
-    }
-  </script>
   <link rel="icon" href={favicon} />
 </svelte:head>
 
-<a href="#main-content" class="skip-link">본문으로 건너뛰기</a>
+<a href="#main-content" class="skip-link">{metadata.skipLink}</a>
 <div class="wrapper">
   <div class="content-wrapper">
     <main id="main-content" class="content" tabindex="-1">
@@ -125,5 +90,30 @@
     width: 800px;
     max-width: 100%;
     padding: 2rem;
+  }
+
+  @media (min-width: 1024px) {
+    main.content {
+      width: 900px;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    main.content {
+      width: 1000px;
+    }
+  }
+
+  @media (min-width: 1536px) {
+    main.content {
+      width: 1200px;
+    }
+  }
+
+  @media print {
+    main.content {
+      width: 800px;
+      max-width: 800px;
+    }
   }
 </style>

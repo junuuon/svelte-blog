@@ -1,13 +1,17 @@
 <script lang="ts">
   import type { PageData } from './$types';
   import Title from '$lib/components/Title.svelte';
+  import { getLabels } from '$lib/data/labels';
 
   let { data }: { data: PageData } = $props();
-  const { component: Component, metadata, slug } = data;
+  const { component: Component, metadata, slug, lang } = data;
+  const labels = $derived(getLabels(lang));
 </script>
 
 <svelte:head>
-  <title>{metadata.title ? `${metadata.title} | Junwon Park` : `${slug} | 프로젝트`}</title>
+  <title>
+    {metadata.title ? `${metadata.title} | Junwon Park` : `${slug} | ${labels.project}`}
+  </title>
   {#if metadata.description}
     <meta name="description" content={metadata.description} />
     <meta property="og:description" content={metadata.description} />
@@ -15,7 +19,7 @@
   {/if}
   <meta
     property="og:title"
-    content={metadata.title ? `${metadata.title} | Junwon Park` : `${slug} | 프로젝트`}
+    content={metadata.title ? `${metadata.title} | Junwon Park` : `${slug} | ${labels.project}`}
   />
   {#if metadata.image}
     <meta property="og:image" content={metadata.image} />
@@ -24,10 +28,15 @@
 </svelte:head>
 
 <article>
-  <Title title={metadata.title || slug} date={metadata.date} githubLink={metadata.originalLink} />
+  <Title
+    title={metadata.title || slug}
+    date={metadata.date}
+    githubLink={metadata.originalLink}
+    {lang}
+  />
   {#if Component}
     <Component />
   {:else}
-    <p>컨텐츠를 불러올 수 없습니다.</p>
+    <p>{labels.contentLoadError}</p>
   {/if}
 </article>

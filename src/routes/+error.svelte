@@ -1,18 +1,38 @@
 <script lang="ts">
+  import { onMount } from 'svelte';
+  import { browser } from '$app/environment';
   import { goto } from '$app/navigation';
   import Footer from '$lib/components/Footer.svelte';
   import { page } from '$app/state';
+  import { getLanguage, type Language } from '$lib/utils/language';
+  import { getLabels } from '$lib/data/labels';
 
   const errorStatus = page.status || 500;
-  const errorMessage = page.error?.message || '오류가 발생했습니다';
+
+  let currentLang = $state<Language>('en');
+  let labels = $state(getLabels('en'));
+
+  onMount(() => {
+    if (browser) {
+      const pathname = window.location.pathname;
+      const langMatch = pathname.match(/^\/(ko|en)/);
+      const lang = langMatch ? (langMatch[1] as Language) : getLanguage();
+      currentLang = lang;
+      labels = getLabels(lang);
+    }
+  });
+
+  const errorMessage = $derived(page.error?.message || labels.errorOccurred);
 
   const goHome = () => {
-    goto('/');
+    goto(`/${currentLang}`);
   };
 </script>
 
 <svelte:head>
-  <title>{errorStatus === 404 ? '404 - 페이지를 찾을 수 없습니다' : '오류 발생'}</title>
+  <title>
+    {errorStatus === 404 ? `404 - ${labels.pageNotFound}` : labels.errorOccurred}
+  </title>
 </svelte:head>
 
 <div class="error-wrapper">
@@ -20,15 +40,15 @@
     <h1 class="error-code">{errorStatus}</h1>
     <h2 class="error-message">
       {#if errorStatus === 404}
-        페이지를 찾을 수 없습니다
+        {labels.pageNotFound}
       {:else}
-        오류가 발생했습니다
+        {labels.errorOccurred}
       {/if}
     </h2>
     {#if errorMessage && errorStatus !== 404}
       <p class="error-detail">{errorMessage}</p>
     {/if}
-    <button class="home-button" onclick={goHome}>홈으로 돌아가기</button>
+    <button class="home-button" onclick={goHome}>{labels.goHome}</button>
   </div>
   <Footer />
 </div>

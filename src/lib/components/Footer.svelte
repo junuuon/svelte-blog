@@ -1,9 +1,27 @@
+<script lang="ts">
+  import { onMount } from 'svelte';
+  import { browser } from '$app/environment';
+  import { getLanguage, type Language } from '$lib/utils/language';
+  import { getLabels } from '$lib/data/labels';
+
+  let labels = $state(getLabels('en'));
+
+  onMount(() => {
+    if (browser) {
+      const pathname = window.location.pathname;
+      const langMatch = pathname.match(/^\/(ko|en)/);
+      const lang = langMatch ? (langMatch[1] as Language) : getLanguage();
+      labels = getLabels(lang);
+    }
+  });
+</script>
+
 <footer class="wrapper">
   <a
     href="https://github.com/junuuon"
     target="_blank"
     rel="noopener noreferrer"
-    aria-label="Go to Github link"
+    aria-label={labels.goToGithub}
   >
     <p class="link-text">@junuuon</p>
   </a>

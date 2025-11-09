@@ -83,9 +83,9 @@
   {/if}
   <p>
     {description}
-    {#if detailLink}
+    <!-- {#if detailLink}
       <a href={detailLink}>"{title}" {labels.viewProjectDetails}</a>
-    {/if}
+    {/if} -->
   </p>
 
   {#if children}

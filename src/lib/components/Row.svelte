@@ -40,6 +40,10 @@
       -webkit-box-orient: vertical;
       flex-direction: column;
     }
+
+    @media (max-width: 576px) {
+      padding: 1.5rem 0;
+    }
   }
 
   .left {

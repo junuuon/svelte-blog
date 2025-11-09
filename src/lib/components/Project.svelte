@@ -123,4 +123,14 @@
     flex: 1;
     justify-content: space-between;
   }
+
+  @media (max-width: 576px) {
+    .block {
+      padding: 0.75rem 0;
+    }
+
+    .block.other {
+      padding: 0.5rem 0;
+    }
+  }
 </style>

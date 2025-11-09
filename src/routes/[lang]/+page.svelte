@@ -154,6 +154,7 @@
   @media (max-width: 480px) {
     .skills-wrapper {
       grid-template-columns: 1fr;
+      gap: 0;
     }
   }
 

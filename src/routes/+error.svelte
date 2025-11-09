@@ -88,6 +88,12 @@
     opacity: 0.85;
   }
 
+  .home-button:focus-visible {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 2px;
+    opacity: 1;
+  }
+
   @media (max-width: 768px) {
     .error-code {
       font-size: 5rem;

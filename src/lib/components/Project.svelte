@@ -33,7 +33,7 @@
 <div class="block" class:other>
   <header class="header">
     <div class="title">
-      <h4>
+      <h3>
         {title}
         {#if productLink}
           <a
@@ -46,7 +46,7 @@
             <OpenInNewTab />
           </a>
         {/if}
-      </h4>
+      </h3>
 
       {#if githubLink}
         <a
@@ -64,24 +64,24 @@
   </header>
 
   {#if !other}
-    <h5>Description</h5>
+    <h4>Description</h4>
   {/if}
   <p>
     {description}
     {#if detailLink}
-      <a href={detailLink}>자세히 보기</a>
+      <a href={detailLink}>"{title}" 프로젝트 자세히 보기</a>
     {/if}
   </p>
 
   {#if children}
-    <h5>What did I Do</h5>
+    <h4>What did I Do</h4>
     <div>
       {@render children()}
     </div>
   {/if}
 
   {#if skill && !other}
-    <h5>Tech Stack</h5>
+    <h4>Tech Stack</h4>
     {skill}
   {/if}
 </div>

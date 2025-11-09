@@ -37,7 +37,7 @@
   --color-scroll-border: #e8e8e8;
   --color-selection: #feccd4;
   --color-table-border: #d1d7dd;
-  --color-primary: #f34c55;
+  --color-primary: #c62828;
 }
 
 html.dark {
@@ -63,7 +63,7 @@ html.dark {
   --color-scroll-border: #3d3d3d;
   --color-selection: #e77076;
   --color-table-border: #1e242a;
-  --color-primary: #f34c55;
+  --color-primary: #ff6b6b;
 }
 
 * {
@@ -128,12 +128,47 @@ p, aside {
 a {
   color: var(--color-primary);
   transition: color 0.3s ease;
+  text-decoration: underline;
+  text-decoration-color: var(--color-primary);
+  text-underline-offset: 0.2em;
+}
+
+.icon a,
+a svg:only-child {
   text-decoration: none;
 }
 
 a:hover {
   color: var(--color-selection);
-  text-decoration: underline;
+  text-decoration-color: var(--color-selection);
+}
+
+a:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.icon a:hover,
+a svg:only-child:hover {
+  text-decoration: none;
+}
+
+.icon a:focus-visible,
+a svg:only-child:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+button {
+  font-family: inherit;
+}
+
+button:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: 4px;
 }
 
 ul {

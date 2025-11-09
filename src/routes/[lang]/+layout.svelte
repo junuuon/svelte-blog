@@ -9,7 +9,7 @@
   const currentLang = $derived(data.lang);
   let metadata = $derived(getMetadata(currentLang));
 
-  let basePath = $state('/');
+  let basePath = $state(data.basePath || '/');
 
   const updateBasePath = () => {
     if (browser) {
@@ -31,6 +31,12 @@
   const koUrl = $derived(`https://junuuon.github.io/ko${basePath === '/' ? '' : basePath}`);
   const enUrl = $derived(`https://junuuon.github.io${basePath === '/' ? '' : basePath}`);
 
+  const canonicalUrl = $derived(
+    currentLang === 'ko'
+      ? `https://junuuon.github.io/ko${basePath === '/' ? '' : basePath}`
+      : `https://junuuon.github.io${basePath === '/' ? '' : basePath}`,
+  );
+
   $effect(() => {
     if (browser) {
       document.documentElement.lang = currentLang;
@@ -45,14 +51,14 @@
   <meta name="description" content={metadata.description} />
 
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://junuuon.github.io" />
+  <link rel="canonical" href={canonicalUrl} />
 
   <link rel="alternate" hreflang="ko" href={koUrl} />
   <link rel="alternate" hreflang="en" href={enUrl} />
   <link rel="alternate" hreflang="x-default" href={enUrl} />
 
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://junuuon.github.io" />
+  <meta property="og:url" content={canonicalUrl} />
   <meta property="og:title" content={metadata.ogTitle} />
   <meta property="og:description" content={metadata.ogDescription} />
   <meta property="og:image" content="https://junuuon.github.io/images/preview.webp" />
@@ -64,7 +70,7 @@
   <meta property="og:locale" content={metadata.locale} />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:url" content="https://junuuon.github.io" />
+  <meta name="twitter:url" content={canonicalUrl} />
   <meta name="twitter:title" content={metadata.twitterTitle} />
   <meta name="twitter:description" content={metadata.twitterDescription} />
   <meta name="twitter:image" content="https://junuuon.github.io/images/preview.webp" />

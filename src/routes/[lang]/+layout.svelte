@@ -29,12 +29,12 @@
   });
 
   const koUrl = $derived(`https://junuuon.github.io/ko${basePath === '/' ? '' : basePath}`);
-  const enUrl = $derived(`https://junuuon.github.io${basePath === '/' ? '' : basePath}`);
+  const enUrl = $derived(`https://junuuon.github.io/en${basePath === '/' ? '' : basePath}`);
 
   const canonicalUrl = $derived(
     currentLang === 'ko'
       ? `https://junuuon.github.io/ko${basePath === '/' ? '' : basePath}`
-      : `https://junuuon.github.io${basePath === '/' ? '' : basePath}`,
+      : `https://junuuon.github.io/en${basePath === '/' ? '' : basePath}`,
   );
 
   $effect(() => {

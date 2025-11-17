@@ -28,16 +28,18 @@ export const workExperiences: WorkExperienceProps[] = [
         description:
           'Expo(React Native) 기반의 AI 캐릭터 채팅 앱 서비스입니다. 공동 창업자이자 프론트엔드 개발을 전담하여, 기획부터 앱 스토어 배포 및 운영까지 전체 개발 사이클을 주도하였습니다.',
         detail: [
-          'EAS 및 GitHub Actions 기반의 CI/CD 파이프라인 구축',
-          'RevenueCat, AdMob을 활용한 앱 수익화 모델 구축',
-          'Expo Router 기반 아키텍처 설계 및 Universal Link를 통한 크로스 플랫폼 통합',
-          'React Compiler 도입 및 Flashlist, MMKV 적용을 통한 성능 최적화',
-          'React Query(Persister)를 통한 전역 상태 관리 및 Event Stream 기반 채팅 UI 구현',
-          'Reanimated 및 react-native-keyboard-controller를 활용한 네이티브 UX 구현',
-          'Sentry, Zod, i18n(3개국어) 도입을 통한 프로덕션 레벨의 안정성 및 확장성 확보',
+          '제품 핵심 비즈니스 지표(MAU 23K, MRR $3K) 및 앱 스토어 랭킹(구글 플레이 57위, 앱스토어 69위) 달성에 기여, 사용자 피드백(디스코드 등)을 반영한 제품 개선 주도',
+          'EAS 및 GitHub Actions 기반의 CI/CD 파이프라인 구축 (iOS TestFlight, Android 비공개 트랙 자동 배포)',
+          'Expo Router 기반 아키텍처 설계 및 Universal Link를 통한 크로스 플랫폼(iOS, Android, Web) 통합',
+          'Realm DB 기반 로컬 아키텍처 초기 설계 및, 서비스 확장에 따른 Firestore 동기화를 위한 데이터 마이그레이션 로직 개발 (React Query Persister 연동)',
+          'RevenueCat (인앱 구독) 및 AdMob (광고)을 활용한 앱 수익화 모델 구축',
+          'React Compiler 도입, Flashlist(목록), MMKV(로컬 스토리지) 적용을 통한 앱 전반의 성능 최적화',
+          'Reanimated(v4) 및 react-native-keyboard-controller를 활용한 60fps 네이티브 애니메이션 및 키보드 인터랙션 구현',
+          'Sentry(에러 트래킹), Zod(타입 검증), i18n(3개국어) 도입 및 `llama.rn`을 활용한 온디바이스(On-device) sLLM PoC 수행',
         ],
         productLink: 'https://aira.gg',
-        skill: 'TypeScript, Expo, React Query, Reanimated, Flashlist',
+        skill:
+          'TypeScript, React Native, Expo (Router, EAS), React Query, Realm DB, Firebase, Reanimated, Flashlist, RevenueCat, Sentry',
       },
     ],
     role: '공동 창업자 / 프론트엔드 리드',
@@ -192,7 +194,7 @@ export const skills: SkillProps[] = [
   },
   {
     title: 'Performance & UI',
-    list: ['React Compiler', 'Reanimated (v3)', 'Flashlist', 'MMKV', 'Unistyles', 'PWA'],
+    list: ['React Compiler', 'Reanimated (v4)', 'Flashlist', 'MMKV', 'Unistyles', 'PWA'],
   },
   {
     title: 'Data & Monetization',

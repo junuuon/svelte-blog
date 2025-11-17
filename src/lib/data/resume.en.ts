@@ -27,18 +27,20 @@ export const workExperiences: WorkExperienceProps[] = [
         title: 'aira',
         dateFrom: '2024-01',
         description:
-          'An AI character chat app service built with Expo (React Native). As co-founder and the sole front-end developer, I led the entire development cycle, from planning to app store deployment and operation.',
+          'An AI character chat app built with Expo (React Native). As co-founder and Front-end Lead, I led the entire development lifecycle, from planning to app store deployment and operation.',
         detail: [
-          'Built a CI/CD pipeline based on EAS and GitHub Actions for automated deployment (Android private track & iOS TestFlight).',
-          'Implemented app monetization models using RevenueCat and AdMob.',
-          'Designed the app architecture using Expo Router and integrated cross-platform support with Universal Links.',
-          'Optimized performance by adopting the React Compiler and implementing Flashlist and MMKV.',
-          'Managed global app state using React Query (with Persister) and implemented a real-time chat UI via Event Streams (SSE).',
-          'Delivered a native-like UX using Reanimated and react-native-keyboard-controller.',
-          'Ensured production-level stability and scalability by integrating Sentry, Zod, and i18n (3 languages).',
+          'Contributed to achieving key business metrics (23K MAU, $3K MRR, 46-min avg. session) and top App Store rankings (57th on Google Play, 69th on App Store).',
+          'Designed the initial local data architecture with Realm DB and later developed the data migration logic to Firestore (integrated with React Query Persister) for service scalability.',
+          'Built a CI/CD pipeline using EAS and GitHub Actions for automated, conditional deployments to iOS TestFlight and Android private tracks.',
+          'Designed the app architecture using Expo Router and integrated cross-platform support (iOS, Android, Web) with Universal Links.',
+          'Optimized app performance by adopting the React Compiler, Flashlist for virtualization, and MMKV for high-speed local storage.',
+          'Delivered a 60fps native-like UX using Reanimated (v4) and react-native-keyboard-controller for fluid keyboard interactions.',
+          'Implemented app monetization models using RevenueCat (in-app subscriptions) and AdMob (ads).',
+          'Ensured production-level stability via Sentry (error tracking), Zod (schema validation), and i18n (3 languages), while also conducting PoCs for on-device sLLM using `llama.rn`.',
         ],
         productLink: 'https://aira.gg',
-        skill: 'TypeScript, Expo, React Query, Reanimated, Flashlist',
+        skill:
+          'TypeScript, React Native, Expo (Router, EAS), React Query, Realm DB, Firebase, Reanimated, Flashlist, RevenueCat, Sentry',
       },
     ],
     role: 'Co-founder / Front-end Lead',
@@ -193,7 +195,7 @@ export const skills: SkillProps[] = [
   },
   {
     title: 'Performance & UI',
-    list: ['React Compiler', 'Reanimated (v3)', 'Flashlist', 'MMKV', 'Unistyles', 'PWA'],
+    list: ['React Compiler', 'Reanimated (v4)', 'Flashlist', 'MMKV', 'Unistyles', 'PWA'],
   },
   {
     title: 'Data & Monetization',

@@ -18,6 +18,16 @@ const config = {
     paths: {
       base: process.env.BASE_PATH || '',
     },
+    prerender: {
+      handleHttpError: ({ path, message }) => {
+        if (path.startsWith('/fonts/')) {
+          console.warn(message);
+          return;
+        }
+
+        throw new Error(message);
+      },
+    },
   },
   extensions: ['.svelte', '.svx'],
 };

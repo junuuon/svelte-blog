@@ -20,7 +20,11 @@ const config = {
     },
     prerender: {
       handleHttpError: ({ path, message }) => {
-        if (path.startsWith('/fonts/')) {
+        if (
+          path.startsWith('/fonts/') ||
+          path.startsWith('/certificates/') ||
+          path.startsWith('/images/')
+        ) {
           console.warn(message);
           return;
         }

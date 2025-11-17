@@ -77,18 +77,18 @@
     font-weight: bold;
     margin: 0;
     line-height: 1;
-    color: var(--color-text);
+    color: var(--color-bold);
   }
 
   .error-message {
     font-size: 2rem;
     margin: 1rem 0;
-    color: var(--color-text);
+    color: var(--color-bold);
   }
 
   .error-detail {
     font-size: 1rem;
-    color: var(--color-text-secondary, #666);
+    color: var(--color-sub);
     margin: 1rem 0;
   }
 

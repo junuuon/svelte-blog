@@ -33,7 +33,7 @@
   .image-description figcaption {
     margin-top: 0.5rem;
     font-size: 0.9rem;
-    color: var(--text-secondary);
+    color: var(--color-sub);
     line-height: 1.6;
   }
 </style>

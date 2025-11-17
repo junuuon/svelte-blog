@@ -118,18 +118,14 @@
 
   .lang-toggle {
     padding: 0.5rem 1rem;
-    border: 1px solid var(--color-border, #e0e0e0);
+    border: 1px solid var(--color-main, #e0e0e0);
     background: transparent;
     border-radius: 8px;
     cursor: pointer;
     font-size: 0.875rem;
     transition: all 0.2s;
-    color: var(--color-text, #333);
+    color: var(--color-main, #333);
     font-family: inherit;
-  }
-
-  .lang-toggle:hover {
-    background: var(--color-hover, #f5f5f5);
   }
 
   .icon {

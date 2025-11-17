@@ -23,7 +23,7 @@ jobs:
 
       - name: Build
         env:
-          BASE_PATH: ""
+          BASE_PATH: "/${{ github.event.repository.name }}"
         run: yarn build
 
       - name: Add .nojekyll file
@@ -41,6 +41,10 @@ jobs:
     permissions:
       pages: write
       id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       - name: Deploy to GitHub Pages

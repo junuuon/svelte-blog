@@ -23,7 +23,7 @@ jobs:
 
       - name: Build
         env:
-          BASE_PATH: "/${{ github.event.repository.name }}"
+          BASE_PATH: ""
         run: yarn build
 
       - name: Add .nojekyll file

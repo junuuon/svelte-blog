@@ -7,8 +7,9 @@ import type {
 } from '../../types/about';
 
 export const introduction: IntroductionProps = {
-  title:
-    'Junwon Park: A 5-year developer leading the full product lifecycle, from planning to operation.',
+  name: 'Junwon Park',
+  role: 'Frontend Engineer',
+  tagline: 'A 5-year developer leading the full product lifecycle, from planning to operation.',
   githubLink: 'https://github.com/junuuon',
   linkedinLink: 'https://www.linkedin.com/in/junuuon/',
   briefing: [

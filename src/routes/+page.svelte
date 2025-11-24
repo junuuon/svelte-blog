@@ -5,7 +5,6 @@
   import { getLanguage, type Language } from '$lib/utils/language';
   import { getMetadata } from '$lib/utils/metadata';
 
-  // 루트 경로에서는 기본 언어를 'en'으로 설정하여 메타태그 제공
   const metadata = getMetadata('en');
 
   onMount(() => {

@@ -21,8 +21,10 @@ export const entries = async () => {
 };
 
 interface PostMetadata {
-  title?: string;
+  name?: string;
   description?: string;
+  role?: string;
+  tagline?: string;
   date?: string;
   image?: string;
   originalLink?: string;

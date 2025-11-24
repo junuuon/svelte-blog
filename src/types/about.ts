@@ -1,8 +1,10 @@
 export interface IntroductionProps {
+  name: string;
+  role: string;
+  tagline: string;
   briefing: string[];
   githubLink: string;
   linkedinLink: string;
-  title: string;
 }
 
 interface ProjectProps {

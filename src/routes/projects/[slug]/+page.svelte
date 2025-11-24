@@ -1,6 +1,5 @@
 <script lang="ts">
   import type { PageData } from './$types';
-  import Title from '$lib/components/Title.svelte';
 
   let { data }: { data: PageData } = $props();
   const { component: Component, metadata, slug } = data;
@@ -24,7 +23,6 @@
 </svelte:head>
 
 <article>
-  <Title title={metadata.title || slug} date={metadata.date} githubLink={metadata.originalLink} />
   {#if Component}
     <Component />
   {:else}

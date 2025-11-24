@@ -81,7 +81,7 @@
   {#if !other}
     <h4>{labels.description}</h4>
   {/if}
-  <p>
+  <p class:description-text={!children}>
     {description}
     <!-- {#if detailLink}
       <a href={detailLink}>"{title}" {labels.viewProjectDetails}</a>
@@ -102,15 +102,6 @@
 </div>
 
 <style>
-  .block {
-    padding: 1.5rem 0;
-  }
-
-  .block.other {
-    border-bottom: 1px solid var(--color-bg-divider);
-    padding: 1rem 0;
-  }
-
   .header {
     display: flex;
     flex-direction: column;
@@ -122,6 +113,10 @@
     display: flex;
     flex: 1;
     justify-content: space-between;
+  }
+
+  .description-text {
+    margin: 0;
   }
 
   @media (max-width: 576px) {

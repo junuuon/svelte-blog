@@ -10,7 +10,7 @@
 
 <svelte:head>
   <title>
-    {metadata.title ? `${metadata.title} | Junwon Park` : `${slug} | ${labels.project}`}
+    {metadata.name ? `${metadata.name} | Junwon Park` : `${slug} | ${labels.project}`}
   </title>
   {#if metadata.description}
     <meta name="description" content={metadata.description} />
@@ -28,12 +28,6 @@
 </svelte:head>
 
 <article>
-  <Title
-    title={metadata.title || slug}
-    date={metadata.date}
-    githubLink={metadata.originalLink}
-    {lang}
-  />
   {#if Component}
     <Component />
   {:else}

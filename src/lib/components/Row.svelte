@@ -30,9 +30,7 @@
 
 <style>
   .row {
-    border-bottom: 1px solid var(--color-bg-divider);
     display: flex;
-    padding: 3rem 0;
 
     @media (max-width: 960px) {
       -ms-flex-direction: column;
@@ -68,6 +66,11 @@
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+    gap: 3rem;
+
+    @media (max-width: 576px) {
+      gap: 1.5rem;
+    }
 
     :global(> *:first-child) {
       padding-top: 0;

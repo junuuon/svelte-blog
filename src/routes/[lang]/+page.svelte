@@ -24,7 +24,9 @@
     githubLink={introduction.githubLink}
     linkedinLink={introduction.linkedinLink}
     lang={data.lang}
-    title={introduction.title}
+    name={introduction.name}
+    role={introduction.role}
+    tagline={introduction.tagline}
   />
 
   <div class="content-wrapper">
@@ -70,6 +72,9 @@
             {/each}
           {/snippet}
         </Row>
+        {#if experienceIndex < workExperiences.length - 1}
+          <hr class="row-divider" aria-hidden="true" />
+        {/if}
       {/each}
     {/if}
 
@@ -94,9 +99,15 @@
               {/each}
             {/snippet}
           </Row>
+          {#if experienceIndex < otherExperiences.length - 1}
+            <hr class="row-divider" aria-hidden="true" />
+          {/if}
         {:else}
           {#each experience.project as singleProject (singleProject.title)}
             <Project {...singleProject} other />
+            {#if experienceIndex < otherExperiences.length - 1}
+              <hr class="row-divider" aria-hidden="true" />
+            {/if}
           {/each}
         {/if}
       {/each}
@@ -145,9 +156,25 @@
     word-break: break-word;
   }
 
+  .row-divider {
+    background-color: var(--color-bg-divider);
+    border: none;
+    height: 1px;
+    margin: 3rem 0;
+    width: 100%;
+  }
+
   @media (max-width: 960px) {
+    h2 {
+      font-size: 2.5rem;
+    }
+
     .skills-wrapper {
       grid-template-columns: repeat(2, 1fr);
+    }
+
+    .row-divider {
+      margin: 1rem 0;
     }
   }
 

@@ -21,7 +21,6 @@
       };
 
       handleChange(mediaQuery as unknown as MediaQueryListEvent);
-
       mediaQuery.addEventListener('change', handleChange);
 
       return () => {

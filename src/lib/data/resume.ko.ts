@@ -7,7 +7,9 @@ import type {
 } from '../../types/about';
 
 export const introduction: IntroductionProps = {
-  title: '제품의 기획부터 운영까지 전 과정을 주도하는 5년 차 개발자 박준원입니다.',
+  name: '박준원',
+  role: 'Frontend Engineer',
+  tagline: '제품의 기획부터 운영까지 전 과정을 주도하는 5년 차 개발자',
   githubLink: 'https://github.com/junuuon',
   linkedinLink: 'https://www.linkedin.com/in/junuuon/',
   briefing: [

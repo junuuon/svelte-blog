@@ -4,6 +4,7 @@ import type {
   OtherExperienceProps,
   CertificateProps,
   SkillProps,
+  EducationProps,
 } from '../../types/about';
 
 export const introduction: IntroductionProps = {
@@ -138,7 +139,17 @@ export const otherExperiences: OtherExperienceProps[] = [
   {
     project: [
       {
-        title: 'Oneline Bank (Hackathon)',
+        title: 'Seoul Campus Town Business Selection',
+        dateFrom: '2024',
+        description: 'Selected as a business for the Seoul Campus Town due to business potential and technical capabilities.',
+        detail: [],
+      },
+    ],
+  },
+  {
+    project: [
+      {
+        title: '2021 Woori Bank Hackathon Finals',
         dateFrom: '2021-04',
         dateTo: '2021-05',
         description:
@@ -159,7 +170,7 @@ export const otherExperiences: OtherExperienceProps[] = [
   {
     project: [
       {
-        title: 'Personal Blog',
+        title: 'Personal Portfolio Site',
         dateFrom: '2021-02',
         description:
           'Implemented a personal resume and blog with SSG, dark mode, and responsive design using Svelte.',
@@ -188,6 +199,20 @@ export const certificates: CertificateProps[] = [
   {
     label: 'Linux Master 2nd Class',
     link: '/certificates/linux-master-2.pdf',
+  },
+];
+
+export const education: EducationProps[] = [
+  {
+    school: 'Hanyang University',
+    dateFrom: '2017-03',
+    dateTo: '2024-02',
+    major: 'Bachelor of Science in Computer Software Engineering',
+  },
+  {
+    school: 'Sejong Science High School',
+    dateFrom: '2014-03',
+    dateTo: '2017-02',
   },
 ];
 

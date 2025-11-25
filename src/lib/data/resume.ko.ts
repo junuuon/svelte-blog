@@ -4,6 +4,7 @@ import type {
   OtherExperienceProps,
   CertificateProps,
   SkillProps,
+  EducationProps,
 } from '../../types/about';
 
 export const introduction: IntroductionProps = {
@@ -139,7 +140,17 @@ export const otherExperiences: OtherExperienceProps[] = [
   {
     project: [
       {
-        title: '한줄 은행 (해커톤)',
+        title: '서울 캠퍼스 타운 입주 기업 선정',
+        dateFrom: '2024',
+        description: '사업성과 기술력을 인정받아 서울시 및 대학교 지원 선정되었습니다.',
+        detail: [],
+      },
+    ],
+  },
+  {
+    project: [
+      {
+        title: '2021 우리은행 해커톤 본선 진출',
         dateFrom: '2021-04',
         dateTo: '2021-05',
         description:
@@ -160,7 +171,7 @@ export const otherExperiences: OtherExperienceProps[] = [
   {
     project: [
       {
-        title: '개인 이력서/블로그',
+        title: '개인 포트폴리오 사이트',
         dateFrom: '2021-02',
         description: '정적 페이지 생성(SSG), 다크 모드, 반응형 디자인을 Svelte로 구현하였습니다.',
         detail: [
@@ -188,6 +199,20 @@ export const certificates: CertificateProps[] = [
   {
     label: '리눅스 마스터 2급',
     link: '/certificates/linux-master-2.pdf',
+  },
+];
+
+export const education: EducationProps[] = [
+  {
+    school: '한양대학교',
+    dateFrom: '2017-03',
+    dateTo: '2024-02',
+    major: '컴퓨터소프트웨어 학부',
+  },
+  {
+    school: '세종과학고등학교',
+    dateFrom: '2014-03',
+    dateTo: '2017-02',
   },
 ];
 

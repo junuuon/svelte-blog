@@ -1,6 +1,5 @@
 <script lang="ts">
   import { getResumeData } from '$lib/data/resume';
-  import { getLabels } from '$lib/data/labels';
   import type { PageData } from './$types';
   import Title from '$lib/components/Title.svelte';
   import Project from '$lib/components/Project.svelte';
@@ -10,12 +9,11 @@
   let { data }: { data: PageData } = $props();
 
   const resumeData = $derived(getResumeData(data.lang));
-  const labels = $derived(getLabels(data.lang));
 
   const introduction = $derived(resumeData.introduction);
   const workExperiences = $derived(resumeData.workExperiences);
   const otherExperiences = $derived(resumeData.otherExperiences);
-  const certificates = $derived(resumeData.certificates);
+  const education = $derived(resumeData.education);
   const skills = $derived(resumeData.skills);
 </script>
 
@@ -36,8 +34,7 @@
       {/each}
     </div>
 
-    <h2>{labels.workExperience}</h2>
-
+    <h2>Work Experience</h2>
     {#if workExperiences}
       {#each workExperiences as experience, experienceIndex (experienceIndex)}
         <Row
@@ -78,7 +75,16 @@
       {/each}
     {/if}
 
-    <h2>{labels.otherExperiences}</h2>
+    <h2>Skills Set</h2>
+    {#if skills}
+      <div class="skills-wrapper">
+        {#each skills as skill (skill.title)}
+          <SideList title={skill.title} list={skill.list} />
+        {/each}
+      </div>
+    {/if}
+
+    <h2>Awards & Projects</h2>
     {#if otherExperiences}
       {#each otherExperiences as experience, experienceIndex (experienceIndex)}
         {#if experience.companyName && experience.dateFrom && experience.role}
@@ -113,7 +119,7 @@
       {/each}
     {/if}
 
-    <h2>{labels.certificates}</h2>
+    <!-- <h2>Certificates</h2>
     {#if certificates}
       <ul>
         {#each certificates as certificate (certificate.label)}
@@ -130,15 +136,15 @@
           </li>
         {/each}
       </ul>
-    {/if}
+    {/if} -->
 
-    <h2>{labels.skills}</h2>
-    {#if skills}
-      <div class="skills-wrapper">
-        {#each skills as skill (skill.title)}
-          <SideList title={skill.title} list={skill.list} />
+    <h2>Education</h2>
+    {#if education}
+      <ul>
+        {#each education as education, educationIndex (educationIndex)}
+          <Row {...education} companyName={education.school} role={education.major ?? ''} />
         {/each}
-      </div>
+      </ul>
     {/if}
   </div>
 </article>

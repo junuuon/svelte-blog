@@ -4,7 +4,7 @@
 
   interface Props {
     additional?: Snippet;
-    children: Snippet;
+    children?: Snippet;
     companyName: string;
     role: string;
     dateFrom: string;
@@ -24,7 +24,11 @@
     {/if}
   </div>
   <div class="right">
-    {@render children()}
+    {#if children}
+      <div>
+        {@render children()}
+      </div>
+    {/if}
   </div>
 </div>
 

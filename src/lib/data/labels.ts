@@ -1,10 +1,6 @@
 import type { Language } from '../utils/language';
 
 export interface Labels {
-  workExperience: string;
-  otherExperiences: string;
-  certificates: string;
-  skills: string;
   switchToKorean: string;
   switchToEnglish: string;
   errorOccurred: string;
@@ -24,10 +20,6 @@ export interface Labels {
 
 export const labelsMap: Record<Language, Labels> = {
   ko: {
-    workExperience: '경력',
-    otherExperiences: '기타 경험',
-    certificates: '자격증',
-    skills: '기술 스택',
     switchToKorean: '한국어로 전환',
     switchToEnglish: 'Switch to English',
     errorOccurred: '오류가 발생했습니다',
@@ -45,10 +37,6 @@ export const labelsMap: Record<Language, Labels> = {
     projectNotFound: '프로젝트를 찾을 수 없습니다.',
   },
   en: {
-    workExperience: 'Work Experience',
-    otherExperiences: 'Other Experiences',
-    certificates: 'Certificates',
-    skills: 'Skills',
     switchToKorean: '한국어로 전환',
     switchToEnglish: 'Switch to English',
     errorOccurred: 'An error occurred',

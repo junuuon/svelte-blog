@@ -47,6 +47,13 @@ export type CertificateProps = {
   link: string;
 };
 
+export type EducationProps = {
+  school: string;
+  dateFrom: string;
+  dateTo?: string;
+  major?: string;
+};
+
 export type SkillProps = {
   list: string[];
   title: string;

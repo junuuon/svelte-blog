@@ -2,5 +2,5 @@
 title: 아이라
 description: 글로벌 AI 캐릭터 채팅 플랫폼
 date: '2025-11-25'
-image: ''
+image: '/images/daesun/daesun01.webp'
 ---

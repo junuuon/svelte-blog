@@ -3,7 +3,7 @@ title: OnelineBank
 description: 2021 우리은행 온(On)택트 해커톤 본선대회 출품작
 date: '2021-06-05'
 image: '/images/bank/bank01.webp'
-originalLink: 'https://github.com/Julrum/OnelineBank'
+originalLink: 'https://github.com/junuuon/OnelineBank'
 ---
 
 <script>

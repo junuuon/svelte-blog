@@ -255,7 +255,7 @@ export const archives: ArchiveProps[] = [
           '**[컴포넌트 설계]** React 및 styled-components를 활용하여 재사용 가능한 컴포넌트 계층 구조 디자인',
         ],
         detailLink: '/projects/daesun',
-        githubLink: 'https://github.com/Julrum/ITE3068_team8',
+        githubLink: 'https://github.com/junuuon/ITE3068_team8',
         skills: ['React', 'Javascript', 'AWS Amplify', 'GraphQL', 'styled-components'],
       },
     ],

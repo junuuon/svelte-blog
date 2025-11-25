@@ -3,7 +3,7 @@ title: Daesun
 description: 2022 소프트웨어 스튜디오 2 프로젝트
 date: '2021-12-30'
 image: '/images/daesun/daesun01.webp'
-originalLink: 'https://github.com/Julrum/ITE3068_team8'
+originalLink: 'https://github.com/junuuon/ITE3068_team8'
 ---
 
 <script>

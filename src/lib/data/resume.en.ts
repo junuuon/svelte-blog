@@ -256,7 +256,7 @@ export const archives: ArchiveProps[] = [
           '**[Component Design]** Designed a reusable component hierarchy using React and styled-components.',
         ],
         detailLink: '/projects/daesun',
-        githubLink: 'https://github.com/Julrum/ITE3068_team8',
+        githubLink: 'https://github.com/junuuon/ITE3068_team8',
         skills: ['React', 'JavaScript', 'AWS Amplify', 'GraphQL', 'styled-components'],
       },
     ],

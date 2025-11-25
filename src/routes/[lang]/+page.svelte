@@ -5,6 +5,7 @@
   import Project from '$lib/components/Project.svelte';
   import SideList from '$lib/components/SideList.svelte';
   import Row from '$lib/components/Row.svelte';
+  import { parseMarkdownBold } from '$lib/utils/markdown';
 
   let { data }: { data: PageData } = $props();
 
@@ -62,7 +63,7 @@
               <Project {...singleProject}>
                 <ul>
                   {#each singleProject.detail as line, detailIndex (detailIndex)}
-                    <li>{line}</li>
+                    <li>{@html parseMarkdownBold(line)}</li>
                   {/each}
                 </ul>
               </Project>

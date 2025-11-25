@@ -23,7 +23,8 @@ const config = {
         if (
           path.startsWith('/fonts/') ||
           path.startsWith('/certificates/') ||
-          path.startsWith('/images/')
+          path.startsWith('/images/') ||
+          path.startsWith('/projects/')
         ) {
           console.warn(message);
           return;

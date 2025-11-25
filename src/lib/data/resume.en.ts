@@ -10,13 +10,13 @@ import type {
 export const introduction: IntroductionProps = {
   name: 'Junwon Park',
   role: 'Frontend Engineer',
-  tagline: 'A 5-year developer leading the full product lifecycle, from planning to operation.',
+  tagline: 'Frontend Engineer: From Inception to Scale',
   githubLink: 'https://github.com/junuuon',
   linkedinLink: 'https://www.linkedin.com/in/junuuon/',
   briefing: [
-    "With 5 years of experience, I served as Co-founder and Front-end Lead at 'Orca AI,' an AI chatbot startup. I led the entire development cycle—from planning to deployment, operation, and monetization—for our Expo-based app. Previously, I also drove product growth at 'Vault Micro' while serving as a Product Owner (PO).",
-    'I am passionate about maintaining consistency by setting code conventions and writing simple, readable code. I enjoy refactoring and improving legacy systems.',
-    'I prefer collaborating with teammates through constant communication over working solo. This was demonstrated during my service at the ROK Ministry of National Defense, where continuous dialogue and shared understanding led to successfully completing a project within a tight deadline and with limited resources.',
+    'Experienced in scaling a service from ideation to 23k MAU. Skilled in the entire product lifecycle—planning, development, deployment, and operations—focusing on creating stable services with tangible business impact.',
+    'Prefers deep technical exploration over reliance on external libraries. Experienced in designing proprietary UI systems (Zero-dependency) and optimizing rendering performance to the limit.',
+    'Pursues rational engineering based on business needs and user value ("Is this truly necessary?"), rather than blindly chasing the latest trends or flashy technologies.',
   ],
 };
 
@@ -29,33 +29,33 @@ export const workExperiences: WorkExperienceProps[] = [
         title: 'aira',
         dateFrom: '2024-01',
         description:
-          'An AI character chat app built with Expo (React Native). As co-founder and Front-end Lead, I led the entire development lifecycle, from planning to app store deployment and operation.',
+          'Global AI character chat platform. As Co-Founder & Frontend Lead, led the entire lifecycle from architecture design to optimization for 23k users.',
         detail: [
-          'Contributed to achieving key business metrics (23K MAU, $3K MRR, 46-min avg. session) and top App Store rankings (57th on Google Play, 69th on App Store).',
-          'Designed the initial local data architecture with Realm DB and later developed the data migration logic to Firestore (integrated with React Query Persister) for service scalability.',
-          'Built a CI/CD pipeline using EAS and GitHub Actions for automated, conditional deployments to iOS TestFlight and Android private tracks.',
-          'Designed the app architecture using Expo Router and integrated cross-platform support (iOS, Android, Web) with Universal Links.',
-          'Optimized app performance by adopting the React Compiler, Flashlist for virtualization, and MMKV for high-speed local storage.',
-          'Delivered a 60fps native-like UX using Reanimated (v4) and react-native-keyboard-controller for fluid keyboard interactions.',
-          'Implemented app monetization models using RevenueCat (in-app subscriptions) and AdMob (ads).',
-          'Ensured production-level stability via Sentry (error tracking), Zod (schema validation), and i18n (3 languages), while also conducting PoCs for on-device sLLM using `llama.rn`.',
+          "**[Key Achievements]** Achieved 23k MAU, $3k MRR, and 46-minute average retention time (Ranked 57th in Google Play Entertainment / as of Feb '25).",
+          '**[Architecture Advancement]** Overcame local model limits by migrating to a server-based multi-model and established a cloud environment by migrating Realm data to Firestore without data loss. Implemented **React Query Persister** to cache server data and prevent redundant refetches.',
+          '**[Cross-Platform Design]** Adopted **Expo Router** for file-based routing and implemented **Universal Links** to integrate seamless user experience (UX) across Web, iOS, and Android.',
+          '**[Rendering Optimization]** Pre-emptively adopted **React Compiler** to prevent unnecessary re-renders and implemented **Flashlist** and **MMKV** to ensure smooth list scrolling and fast data loading even on low-end devices.',
+          '**[UI System Construction]** Designed a proprietary UI system (Zero-dependency) without external libraries to minimize bundle size and flexibly handle custom design requirements.',
+          '**[High-Performance Interaction]** Implemented native-level keyboard interactions and gesture animations maintaining 60fps using **Reanimated (v4)** and react-native-keyboard-controller.',
+          '**[Service Stability]** Built a precise error tracking environment with Sentry & dSym. Defended against user churn by prioritizing service normalization via a rapid **Rollback** policy when detecting third-party library conflicts on specific Android devices. Ensured type safety with **Zod**.',
+          '**[Operational Efficiency]** Established CI/CD pipelines (Android Internal Track, iOS TestFlight) using **EAS** & **GitHub Actions** and standardized device compatibility testing using **Samsung Test Lab**.',
+          '**[Global Expansion & R&D]** Supported 3 languages (KO/EN/JP) via **i18n** to drive global user acquisition and conducted an **On-device sLLM PoC** using `llama.rn` to verify edge computing possibilities.',
         ],
         productLink: 'https://aira.gg',
-        skills:        [
-          'TypeScript',
+        skills: [
           'React Native',
-          'Expo (Router, EAS)',
-          'React Query',
-          'Realm DB',
-          'Firebase',
-          'Reanimated',
+          'TypeScript',
+          'Expo',
           'Flashlist',
-          'RevenueCat',
+          'Reanimated',
+          'React Query',
+          'Zod',
+          'Firebase',
           'Sentry',
         ],
       },
     ],
-    role: 'Co-founder / Front-end Lead',
+    role: 'Co-Founder / Frontend Lead',
   },
   {
     companyName: 'Vault Micro',
@@ -67,71 +67,60 @@ export const workExperiences: WorkExperienceProps[] = [
         dateFrom: '2022-02',
         dateTo: '2023-06',
         description:
-          "A web-based overlay scoreboard and caption service. I initiated the project solo, building the front-end architecture and features, growing it into the company's second main product.",
+          'Web overlay scoreboard service. Started as a solo developer, established the frontend architecture, and grew it into a core company project.',
         detail: [
-          'Developed a separate, unified login page using Firebase Auth with custom tokens and cookies.',
-          'Implemented custom cookie consent controls.',
-          'Developed and built the PWA version using Next-PWA.',
-          'Integrated subscription and payment services using Paddle.',
-          'Optimized build size for the account page (324KB -> 277KB) using dynamic imports, webpack config, and tree shaking.',
+          '**[Bundle Optimization]** Reduced main page bundle size by 15% (324KB → 277KB) and improved initial load speed by establishing Webpack Tree Shaking, Code Splitting, and Dynamic Import strategies.',
+          '**[Security & Auth]** Implemented Cookie Consent and token-based authentication logic directly without external libraries, removing dependencies and enhancing security.',
+          '**[Service Enhancement]** Improved user accessibility via **Next-PWA** (A2HS) and established a recurring subscription payment process by integrating the **Paddle** solution.',
         ],
         productLink: 'https://studio.camerafi.com',
-        skills: ['Typescript', 'Next.js', 'Mui', 'Firebase', 'TanStack Query', 'PWA'],
+        skills: ['Next.js', 'TypeScript', 'Mui', 'PWA', 'Webpack', 'Firebase', 'Paddle'],
       },
       {
-        title: 'Internal Page',
+        title: 'Internal Admin Dashboard',
         dateFrom: '2022-03',
         dateTo: '2023-06',
-        description:
-          'An internal admin dashboard for service management, including user statistics, user/notice management.',
+        description: 'Internal service management and statistics dashboard.',
         detail: [
-          'Displayed DAU and various service metrics using Chart.js.',
-          'Developed a reusable table component with data mutation (delete/update) features.',
-          "Implemented lazy loading for a list of hundreds of thousands of videos, referencing YouTube's UI.",
-          'Hosted on Firebase Hosting.',
+          '**[Large-List Optimization]** Benchmarked YouTube UI and implemented Infinite Scroll based on **Intersection Observer** to efficiently browse hundreds of thousands of video logs, achieving initial load times under 0.5s.',
+          '**[Component Abstraction]** Designed reusable components abstracting CRUD (Create, Read, Update, Delete) logic and Chart.js visualization modules, boosting admin page development productivity.',
+          '**[Infrastructure]** Established SPA deployment pipelines using **Firebase Hosting**.',
         ],
-        skills: ['Typescript', 'React', 'Mui', 'Firebase', 'TanStack Query', 'Chart.js'],
+        skills: ['React', 'TypeScript', 'Mui', 'Chart.js', 'React Query', 'Firebase Hosting'],
       },
     ],
     role: 'Frontend Developer',
   },
   {
-    companyName: 'ROK Ministry of National Defense',
+    companyName: 'Ministry of National Defense',
     dateFrom: '2019-05',
     dateTo: '2020-12',
     project: [
       {
-        title: 'Word/Excel Web Viewer',
+        title: 'Web-based Document Viewer',
         dateFrom: '2020-08',
         dateTo: '2020-10',
         description:
-          'A project to create a web viewer for Word/Excel files with features for highlighting specific lines/cells and commenting. I participated in the entire process (planning, design, development) and built all components from scratch without a UI library.',
+          'Document viewer development project within a closed network environment where external libraries were restricted.',
         detail: [
-          'Configured the front-end tech stack and implemented core features.',
-          'Designed the global state using Redux and Redux-Saga.',
-          'Designed component hierarchy based on Atomic Design.',
-          'Optimized viewer loading with lazy loading.',
+          '**[Large-Scale Data Rendering]** Implemented seamless scrolling for thousands of Excel rows by adopting **React Table** and **Virtualization** techniques to resolve rendering bottlenecks.',
+          '**[Architecture Design]** Adopted Redux-Saga for asynchronous data processing and applied Atomic Design Pattern to build a maintainable component system.',
         ],
-        skills: ['Typescript', 'React', 'Redux', 'styled-components', 'React Router'],
+        skills: ['React', 'TypeScript', 'React Table', 'Redux-Saga', 'Atomic Design'],
       },
       {
-        title: 'Dashboard Page',
+        title: 'Defense Dashboard Page',
         dateFrom: '2019-06',
         dateTo: '2019-09',
         description:
-          'Joined mid-project to perform maintenance and develop new, unreleased features for an internal dashboard (for the ROK military intranet).',
+          'Maintenance and advancement project for the dashboard web page within the Ministry of National Defense network.',
         detail: [
-          'Improved performance and implemented sorting features for table components.',
-          'Utilized and customized components from the Ant Design library.',
+          '**[Maintenance]** Customized Ant Design libraries to develop UI components and refactored legacy code to ensure system stability.',
         ],
-        skills: ['Javascript', 'React', 'Antd', 'Redux', 'styled-components', 'React Router'],
+        skills: ['React', 'JavaScript', 'Ant Design', 'styled-components', 'Redux'],
       },
     ],
-    role: 'Software Developer (Military Service)',
-    additional: {
-      label: 'View Recommendation',
-      link: '/certificates/recommendation-letter-en.pdf',
-    },
+    role: 'Software Developer',
   },
 ];
 
@@ -139,9 +128,10 @@ export const otherExperiences: OtherExperienceProps[] = [
   {
     project: [
       {
-        title: 'Seoul Campus Town Business Selection',
+        title: 'Selected as Seoul Campus Town Resident Startup (Orca AI)',
         dateFrom: '2024',
-        description: 'Selected as a business for the Seoul Campus Town due to business potential and technical capabilities.',
+        description:
+          'Selected for office space and business funding support from Seoul Metropolitan Government and the university, recognized for business potential and technical capability.',
         detail: [],
       },
     ],
@@ -149,21 +139,16 @@ export const otherExperiences: OtherExperienceProps[] = [
   {
     project: [
       {
-        title: '2021 Woori Bank Hackathon Finals',
+        title: '2021 Woori Bank Hackathon Finalist',
         dateFrom: '2021-04',
-        dateTo: '2021-05',
         description:
-          'Participated in the 2021 Woori Bank Hackathon finals. Taught myself React Native over 5 days to single-handedly develop a chat-based money transfer app.',
+          'Developed a Fintech app solo within 5 days by fast-tracking React Native learning, recognized for technical execution.',
         detail: [
-          'Configured the front-end tech stack and implemented all features.',
-          'Designed the store using Firebase.',
-          'Implemented transfer feature via Woori Bank API.',
-          'Implemented user verification via biometric authentication.',
+          'Fintech App Dev: Implemented full logic for remittance, biometric authentication, and Firebase store.',
+          'Code and release verified via GitHub link.',
         ],
-        detailLink: '/projects/onelinebank',
         githubLink: 'https://github.com/junuuon/OnelineBank',
-        productLink: 'https://github.com/junuuon/OnelineBank/releases/tag/v1.0',
-        skills: ['Javascript', 'React Native', 'Firebase', 'Expo'],
+        skills: ['React Native', 'JavaScript', 'Firebase', 'Expo'],
       },
     ],
   },
@@ -173,15 +158,13 @@ export const otherExperiences: OtherExperienceProps[] = [
         title: 'Personal Portfolio Site',
         dateFrom: '2021-02',
         description:
-          'Implemented a personal resume and blog with SSG, dark mode, and responsive design using Svelte.',
+          'High-performance static website built with Svelte to achieve fast rendering without React Virtual DOM overhead.',
         detail: [
-          'Configured the front-end tech stack and implemented all features.',
-          'Applied Atomic Design principles.',
-          'Implemented theme switching based on browser preference.',
-          'Ensured responsiveness across various browsers and screen sizes.',
+          '**[Web Standards]** Achieved perfect 100 scores across all 4 Lighthouse categories (Performance, Accessibility, Best Practices, SEO).',
+          '**[Features]** Implemented Dark Mode, Responsive Design, and MDX parsing pipeline.',
         ],
         githubLink: 'https://github.com/junuuon/junuuon.github.io',
-        skills: ['Typescript', 'Svelte', 'SvelteKit', 'MDX'],
+        skills: ['Svelte', 'SvelteKit', 'TypeScript', 'MDX'],
       },
     ],
   },
@@ -189,7 +172,7 @@ export const otherExperiences: OtherExperienceProps[] = [
 
 export const certificates: CertificateProps[] = [
   {
-    label: 'AWS training and certification',
+    label: 'AWS Training and Certification',
     link: '/certificates/aws-training.pdf',
   },
   {
@@ -197,7 +180,7 @@ export const certificates: CertificateProps[] = [
     link: '/certificates/topcit.pdf',
   },
   {
-    label: 'Linux Master 2nd Class',
+    label: 'Linux Master Level 2',
     link: '/certificates/linux-master-2.pdf',
   },
 ];
@@ -207,7 +190,7 @@ export const education: EducationProps[] = [
     school: 'Hanyang University',
     dateFrom: '2017-03',
     dateTo: '2024-02',
-    major: 'Bachelor of Science in Computer Software Engineering',
+    major: 'B.S. in Computer Software Engineering',
   },
   {
     school: 'Sejong Science High School',
@@ -218,36 +201,38 @@ export const education: EducationProps[] = [
 
 export const skills: SkillProps[] = [
   {
-    title: 'Core',
-    list: [
-      'TypeScript',
-      'JavaScript (ES6+)',
-      'React',
-      'React Native',
-      'Expo (Router, EAS)',
-      'Next.js',
-      'Svelte / SvelteKit',
-    ],
+    title: 'Languages',
+    list: ['TypeScript', 'JavaScript (ES6+)'],
   },
   {
-    title: 'Performance & UI',
-    list: ['React Compiler', 'Reanimated (v4)', 'Flashlist', 'MMKV', 'Unistyles', 'PWA'],
+    title: 'Frontend',
+    list: ['React', 'React Native', 'Expo (Router, EAS)', 'Next.js', 'Svelte / SvelteKit'],
   },
   {
-    title: 'Data & Monetization',
+    title: 'Engineering',
     list: [
-      'React Query (TanStack Query)',
-      'RevenueCat',
-      'Google AdMob',
-      'React Hook Form',
+      'Reanimated (v4)',
+      'Flashlist',
+      'React Compiler',
+      'MMKV',
+      'Unistyles',
+      'PWA',
+      'React Query',
       'Zod',
-      'Firebase',
-      'Event Stream (SSE)',
-      'Redux / Redux-Saga (Legacy)',
+      'React Hook Form',
     ],
   },
   {
     title: 'DevOps & Tools',
-    list: ['GitHub Actions', 'Sentry', 'Git / GitHub', 'JIRA / Figma', 'Vim'],
+    list: [
+      'GitHub Actions',
+      'Firebase',
+      'Sentry',
+      'RevenueCat',
+      'Google AdMob',
+      'Git / GitHub',
+      'Figma',
+      'Vim',
+    ],
   },
 ];

@@ -17,7 +17,7 @@
     githubLink?: string;
     other?: boolean;
     productLink?: string;
-    skill?: string;
+    skills?: string[];
     title: string;
   }
   const {
@@ -29,7 +29,7 @@
     githubLink,
     other = false,
     productLink,
-    skill,
+    skills,
     title,
   }: Props = $props();
 
@@ -95,9 +95,13 @@
     </div>
   {/if}
 
-  {#if skill && !other}
+  {#if skills && !other}
     <h4>{labels.techStack}</h4>
-    {skill}
+    <ul class="skill-list">
+      {#each skills as s}
+        <li class="skill-chip">{s}</li>
+      {/each}
+    </ul>
   {/if}
 </div>
 
@@ -117,6 +121,27 @@
 
   .description-text {
     margin: 0;
+  }
+
+  .skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0 0 1rem 0;
+  }
+
+  .skill-chip {
+    background-color: var(--color-inline-bg);
+    border-radius: 0.5rem;
+    color: var(--color-main);
+    display: inline-block;
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+    position: relative;
+  }
+
+  .skill-chip:before {
+    display: none;
   }
 
   @media (max-width: 576px) {

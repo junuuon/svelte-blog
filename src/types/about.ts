@@ -16,7 +16,7 @@ interface ProjectProps {
     detailLink?: string;
     githubLink?: string;
     productLink?: string;
-    skill?: string;
+    skills?: string[];
     title: string;
   }[];
 }

@@ -16,6 +16,7 @@
   const otherExperiences = $derived(resumeData.otherExperiences);
   const education = $derived(resumeData.education);
   const skills = $derived(resumeData.skills);
+  const archives = $derived(resumeData.archives);
 </script>
 
 <article>
@@ -146,6 +147,18 @@
           <Row {...education} companyName={education.school} role={education.major ?? ''} />
         {/each}
       </ul>
+    {/if}
+
+    <h2>Archives</h2>
+    {#if archives}
+      {#each archives as archive, archiveIndex (archiveIndex)}
+        {#each archive.project as singleProject (singleProject.title)}
+          <Project {...singleProject} other />
+          {#if archiveIndex < archives.length - 1}
+            <hr class="row-divider" aria-hidden="true" />
+          {/if}
+        {/each}
+      {/each}
     {/if}
   </div>
 </article>

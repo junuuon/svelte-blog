@@ -5,6 +5,7 @@ import type {
   CertificateProps,
   SkillProps,
   EducationProps,
+  ArchiveProps,
 } from '../../types/about';
 import * as koData from './resume.ko';
 import * as enData from './resume.en';
@@ -17,6 +18,7 @@ export interface ResumeData {
   certificates: CertificateProps[];
   education: EducationProps[];
   skills: SkillProps[];
+  archives: ArchiveProps[];
 }
 
 const resumeDataMap: Record<Language, ResumeData> = {
@@ -27,6 +29,7 @@ const resumeDataMap: Record<Language, ResumeData> = {
     certificates: koData.certificates,
     education: koData.education,
     skills: koData.skills,
+    archives: koData.archives,
   },
   en: {
     introduction: enData.introduction,
@@ -35,6 +38,7 @@ const resumeDataMap: Record<Language, ResumeData> = {
     certificates: enData.certificates,
     education: enData.education,
     skills: enData.skills,
+    archives: enData.archives,
   },
 };
 

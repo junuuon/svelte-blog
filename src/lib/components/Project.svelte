@@ -50,15 +50,14 @@
     <div class="title">
       <h3 class="project-title">
         {title}
-        {#if productLink}
+        {#if detailLink}
           <a
-            href={productLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={labels.goToProductPage}
-            title={labels.goToProductPage}
+            href={detailLink}
+            class="detail-link"
+            aria-label={labels.viewProjectDetails}
+            title={labels.viewProjectDetails}
           >
-            <OpenInNewTab />
+            {labels.viewProjectDetails} →
           </a>
         {/if}
       </h3>
@@ -83,9 +82,6 @@
   {/if}
   <p class:description-text={!children}>
     {description}
-    <!-- {#if detailLink}
-      <a href={detailLink}>"{title}" {labels.viewProjectDetails}</a>
-    {/if} -->
   </p>
 
   {#if children}
@@ -145,10 +141,22 @@
   }
 
   .project-title {
+    align-items: center;
     display: flex;
-    gap: 0.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
     margin-bottom: var(--space-xs);
     margin-top: 0;
+  }
+
+  .detail-link {
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  .detail-link:hover {
+    text-decoration: underline;
   }
 
   @media (max-width: 960px) {

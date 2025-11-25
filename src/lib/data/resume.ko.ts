@@ -5,6 +5,7 @@ import type {
   CertificateProps,
   SkillProps,
   EducationProps,
+  ArchiveProps,
 } from '../../types/about';
 
 export const introduction: IntroductionProps = {
@@ -41,6 +42,7 @@ export const workExperiences: WorkExperienceProps[] = [
           '**[운영 효율화]** **EAS** 및 **GitHub Actions** 기반의 CI/CD 파이프라인(Android 비공개 트랙 자동 배포, iOS TestFlight)을 구축하고, **Samsung Test Lab**을 활용한 기기 호환성 테스트 프로세스 정립',
           '**[글로벌 확장 및 R&D]** **i18n** 도입으로 3개국어(한/영/일)를 지원하여 글로벌 유저 유입을 이끌어냈으며, `llama.rn`을 활용한 **온디바이스(On-device) sLLM PoC**를 수행하여 엣지 컴퓨팅 가능성 검증',
         ],
+        detailLink: '/projects/aira',
         productLink: 'https://aira.gg',
         skills: [
           'React Native',
@@ -146,6 +148,7 @@ export const otherExperiences: OtherExperienceProps[] = [
           '핀테크 앱 개발: 송금, 생체 인증, Firebase 스토어 등 전 기능 단독 구현',
           'GitHub 링크를 통해 코드 및 릴리즈 확인 가능',
         ],
+        detailLink: '/projects/onelinebank',
         githubLink: 'https://github.com/junuuon/OnelineBank',
         skills: ['React Native', 'JavaScript', 'Firebase', 'Expo'],
       },
@@ -162,6 +165,7 @@ export const otherExperiences: OtherExperienceProps[] = [
           '**[웹 표준 준수]** Lighthouse 4개 전 영역(Performance, Accessibility, Best Practices, SEO) 100점 달성',
           '**[기능 구현]** 다크 모드, 반응형 디자인, Markdown(MDX) 파싱 파이프라인 구축',
         ],
+        detailLink: '/projects/portfolio',
         githubLink: 'https://github.com/junuuon/junuuon.github.io',
         skills: ['Svelte', 'SvelteKit', 'TypeScript', 'MDX'],
       },
@@ -232,6 +236,28 @@ export const skills: SkillProps[] = [
       'Git / GitHub',
       'Figma',
       'Vim',
+    ],
+  },
+];
+
+export const archives: ArchiveProps[] = [
+  {
+    project: [
+      {
+        title: '대선 뉴스 모아보기 페이지',
+        dateFrom: '2021-11',
+        dateTo: '2021-12',
+        description:
+          '한양대학교 소프트웨어스튜디오2 수업 프로젝트입니다. 팀장으로서 기획, 디자인, 개발 전 과정을 주도하며 Serverless 아키텍처를 경험했습니다.',
+        detail: [
+          '**[Serverless 도입]** AWS Amplify를 활용하여 별도의 백엔드 구축 없이 인증(로그인/회원가입) 및 데이터 관리 환경 구축',
+          '**[데이터 관리]** GraphQL을 도입하여 클라이언트에서 필요한 데이터만 효율적으로 쿼리하는 구조 설계',
+          '**[컴포넌트 설계]** React 및 styled-components를 활용하여 재사용 가능한 컴포넌트 계층 구조 디자인',
+        ],
+        detailLink: '/projects/daesun',
+        githubLink: 'https://github.com/Julrum/ITE3068_team8',
+        skills: ['React', 'Javascript', 'AWS Amplify', 'GraphQL', 'styled-components'],
+      },
     ],
   },
 ];

@@ -5,6 +5,7 @@ import type {
   CertificateProps,
   SkillProps,
   EducationProps,
+  ArchiveProps,
 } from '../../types/about';
 
 export const introduction: IntroductionProps = {
@@ -41,6 +42,7 @@ export const workExperiences: WorkExperienceProps[] = [
           '**[Operational Efficiency]** Established CI/CD pipelines (Android Internal Track, iOS TestFlight) using **EAS** & **GitHub Actions** and standardized device compatibility testing using **Samsung Test Lab**.',
           '**[Global Expansion & R&D]** Supported 3 languages (KO/EN/JP) via **i18n** to drive global user acquisition and conducted an **On-device sLLM PoC** using `llama.rn` to verify edge computing possibilities.',
         ],
+        detailLink: '/projects/aira',
         productLink: 'https://aira.gg',
         skills: [
           'React Native',
@@ -147,6 +149,7 @@ export const otherExperiences: OtherExperienceProps[] = [
           'Fintech App Dev: Implemented full logic for remittance, biometric authentication, and Firebase store.',
           'Code and release verified via GitHub link.',
         ],
+        detailLink: '/projects/onelinebank',
         githubLink: 'https://github.com/junuuon/OnelineBank',
         skills: ['React Native', 'JavaScript', 'Firebase', 'Expo'],
       },
@@ -163,6 +166,7 @@ export const otherExperiences: OtherExperienceProps[] = [
           '**[Web Standards]** Achieved perfect 100 scores across all 4 Lighthouse categories (Performance, Accessibility, Best Practices, SEO).',
           '**[Features]** Implemented Dark Mode, Responsive Design, and MDX parsing pipeline.',
         ],
+        detailLink: '/projects/portfolio',
         githubLink: 'https://github.com/junuuon/junuuon.github.io',
         skills: ['Svelte', 'SvelteKit', 'TypeScript', 'MDX'],
       },
@@ -233,6 +237,28 @@ export const skills: SkillProps[] = [
       'Git / GitHub',
       'Figma',
       'Vim',
+    ],
+  },
+];
+
+export const archives: ArchiveProps[] = [
+  {
+    project: [
+      {
+        title: 'Election News Aggregator',
+        dateFrom: '2021-11',
+        dateTo: '2021-12',
+        description:
+          'University team project (4 members). As the team leader, led the entire process from planning to development, experimenting with Serverless architecture.',
+        detail: [
+          '**[Serverless Architecture]** Implemented authentication and backend infrastructure using AWS Amplify without managing physical servers.',
+          '**[Data Management]** Adopts GraphQL to efficiently query only the necessary data from the client side.',
+          '**[Component Design]** Designed a reusable component hierarchy using React and styled-components.',
+        ],
+        detailLink: '/projects/daesun',
+        githubLink: 'https://github.com/Julrum/ITE3068_team8',
+        skills: ['React', 'JavaScript', 'AWS Amplify', 'GraphQL', 'styled-components'],
+      },
     ],
   },
 ];

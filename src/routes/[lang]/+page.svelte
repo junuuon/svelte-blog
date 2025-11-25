@@ -180,7 +180,7 @@
     }
 
     .row-divider {
-      margin: 1rem 0;
+      margin: var(--space-sm) 0;
     }
   }
 

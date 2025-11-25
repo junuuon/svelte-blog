@@ -16,7 +16,7 @@
 
 <div class="row">
   <div class="left">
-    <h3>{companyName}</h3>
+    <h3 class="company-name">{companyName}</h3>
     <span>{role}</span>
     <Period {dateFrom} {dateTo} />
     {#if additional}
@@ -25,9 +25,7 @@
   </div>
   <div class="right">
     {#if children}
-      <div>
         {@render children()}
-      </div>
     {/if}
   </div>
 </div>
@@ -35,16 +33,13 @@
 <style>
   .row {
     display: flex;
+    padding: var(--space-row-padding) 0;
 
     @media (max-width: 960px) {
       -ms-flex-direction: column;
       -webkit-box-direction: normal;
       -webkit-box-orient: vertical;
       flex-direction: column;
-    }
-
-    @media (max-width: 576px) {
-      padding: 1.5rem 0;
     }
   }
 
@@ -64,17 +59,17 @@
     }
   }
 
+  .company-name {
+    margin-top: 0;
+    margin-bottom: var(--space-xs);
+  }
+
   .right {
     -ms-flex-positive: 1;
     -webkit-box-flex: 1;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    gap: 3rem;
-
-    @media (max-width: 576px) {
-      gap: 1.5rem;
-    }
 
     :global(> *:first-child) {
       padding-top: 0;

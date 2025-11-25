@@ -48,7 +48,7 @@
 <div class="block" class:other>
   <header class="header">
     <div class="title">
-      <h3>
+      <h3 class="project-title">
         {title}
         {#if productLink}
           <a
@@ -142,6 +142,35 @@
 
   .skill-chip:before {
     display: none;
+  }
+
+  .project-title {
+    margin-top: 0;
+    margin-bottom: var(--space-xs);
+  }
+
+  @media (max-width: 960px) {
+    .project-title {
+      font-size: 1.2rem;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .project-title {
+      font-size: 1.1rem;
+    }
+  }
+
+  .block {
+    margin-bottom: var(--space-project-gap);
+  }
+
+  .block:last-child {
+    margin-bottom: 0;
+  }
+
+  .block.other {
+    margin-bottom: var(--space-sm);
   }
 
   @media (max-width: 576px) {

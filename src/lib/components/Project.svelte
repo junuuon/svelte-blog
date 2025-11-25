@@ -145,8 +145,10 @@
   }
 
   .project-title {
-    margin-top: 0;
+    display: flex;
+    gap: 0.5rem;
     margin-bottom: var(--space-xs);
+    margin-top: 0;
   }
 
   @media (max-width: 960px) {

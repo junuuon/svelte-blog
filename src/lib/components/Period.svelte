@@ -6,12 +6,14 @@
   const { dateFrom, dateTo }: Props = $props();
 
   const timeFormatter = (time?: string) =>
-    time ? `${time.split('-')[0]}. ${time.split('-')[1]}` : '';
+    time ? `${time.split('-')[0]}. ${time.split('-')[1] ?? ''}` : '';
 </script>
 
 <span>
   <time datetime={dateFrom}>{timeFormatter(dateFrom)}</time>
-  {' ~ '}
+  {#if dateFrom.includes('-')}
+    {' ~ '}
+  {/if}
   {#if dateTo}
     <time datetime={dateTo}>{timeFormatter(dateTo)}</time>
   {/if}

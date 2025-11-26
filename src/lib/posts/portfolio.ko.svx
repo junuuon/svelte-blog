@@ -1,40 +1,82 @@
 ---
-title: Next.JS Blog
-description: Next.JS로 제작한 MDX 블로그
-date: '2022-03-05'
-image: '/images/blog/blog01.webp'
+title: SvelteKit 포트폴리오
+description: Next.js에서 Svelte 5로 마이그레이션하여 성능을 극대화한 정적 웹사이트
+date: '2025-11-20'
+image: '/images/blog/1.webp'
+productLink: 'https://junuuon.github.io'
+originalLink: 'https://github.com/junuuon/junuuon.github.io'
+techStack: ['Svelte 5', 'SvelteKit', 'TypeScript', 'Mdsvex']
 ---
 
 <script>
   import ImageDescription from '$lib/components/ImageDescription.svelte';
 </script>
 
-Next.JS로 제작한 MDX 블로그
+## 💡 프로젝트 소개
 
-## 프로젝트 소개
+**"Virtual DOM을 넘어, 컴파일러 기반의 고성능 포트폴리오로"**
 
-Next.JS로 제작한 MDX 블로그
+기존 Next.js로 운영하던 블로그를 **Svelte 5**와 **SvelteKit**으로 전면 마이그레이션했습니다.
+단순한 프레임워크 교체가 아니라, **런타임 오버헤드를 제거하고 초기 로딩 속도(FCP)를 극한으로 줄이기 위한 기술적 도전**이었습니다.
 
-### 사용한 기술 스택
+Tailwind CSS 같은 유틸리티 프레임워크 없이 **Pure CSS와 CSS Variables**만으로 다크 모드와 반응형 디자인을 설계하여, 불필요한 CSS 로딩을 방지하고 시맨틱한 마크업을 구현했습니다.
 
-Next.JS
+### 🛠 Tech Stack
 
-## 프로젝트 스크린샷
+- **Framework:** Svelte 5, SvelteKit (Adapter Static)
+- **Content:** Mdsvex (Markdown for Svelte)
+- **Styling:** Pure CSS (CSS Variables), Normalize.css
+- **Deployment:** GitHub Pages
 
-### 메인 화면
+---
 
-<ImageDescription src="/images/blog/blog01.webp" alt="Main page">
-  현재 올라와 있는 포스트들의 썸네일, 제목, 설명, 작성시간이 보여집니다.
+## 💻 핵심 기능 구현
+
+### 1. 하이브리드 UX (Resume + Portfolio)
+
+<ImageDescription src="/images/blog/1.webp" alt="Main page">
+  이력서의 정보 전달력과 포트폴리오의 시각적 경험을 결합했습니다.
+  홈 화면은 <strong>'경력 기술서(Resume)'</strong> 형식으로 핵심 정보를 빠르게 전달하고, '상세 보기'를 클릭하면 <strong>'프로젝트 회고(Showcase)'</strong> 페이지로 전환되는 구조입니다.
 </ImageDescription>
 
-### 포스트 페이지
+### 2. Pure CSS 기반 반응형 디자인
 
-<ImageDescription src="/images/blog/blog02.webp" alt="Post page">
-  포스트의 제목, 설명, 작성날짜 등이 헤더에 알맞게 파싱되어 나타납니다.
+<ImageDescription src="/images/blog/2.webp" alt="Responsive design demo">
+  무거운 CSS 프레임워크(Tailwind, Bootstrap) 없이 <strong>Pure CSS</strong>로 반응형 레이아웃을 직접 설계했습니다.
+  모바일, 태블릿, 데스크탑 등 <strong>모든 뷰포트 크기에 유동적으로 대응</strong>하며, CSS Variables를 활용하여 유지보수성을 높였습니다.
 </ImageDescription>
 
-### 자기소개 페이지
+### 3. 웹 표준과 성능 최적화 (Lighthouse 100)
 
-<ImageDescription src="/images/blog/blog03.webp" alt="About page">
-  커스텀 컴포넌트를 이용하여 데이터들을 보여줍니다.
+<ImageDescription src="/images/blog/3.webp" alt="Lighthouse performance score">
+  Svelte의 컴파일러 특성과 Zero-runtime CSS를 통해 <strong>Lighthouse 4개 전 영역(Performance, Accessibility, Best Practices, SEO) 만점</strong>을 달성했습니다.
+  특히 <strong>시맨틱 태그(Semantic Tag)</strong>를 적극 활용하여 스크린 리더 접근성을 준수하고, 검색 엔진 최적화(SEO)를 강화했습니다.
 </ImageDescription>
+
+### 4. 시스템 테마 및 언어 감지
+
+<ImageDescription src="/images/blog/3.webp" alt="Dark mode transition">
+  사용자 경험(UX)을 최우선으로 고려한 환경 감지 시스템입니다.
+  <br/>
+  1. <strong>테마 감지:</strong> <code>prefers-color-scheme</code>을 감지하여 시스템 설정(Dark/Light)에 즉각 반응하며, 깜빡임(Flicker) 현상을 원천 차단했습니다.
+  <br/>
+  2. <strong>언어 감지:</strong> 브라우저 언어 설정에 맞춰 한국어/영어를 자동으로 제공합니다.
+</ImageDescription>
+
+---
+
+## 💬 기술적 의사결정
+
+### 1. Next.js에서 Svelte로의 전환
+
+Next.js의 정적 배포(Static Export) 방식도 훌륭하지만, 페이지 로드 후 React가 실행되는 하이드레이션 과정이 블로그 성격의 사이트에는 불필요하게 무겁다고 느꼈습니다.
+**Svelte**는 빌드 타임에 최적화된 바닐라 JS로 컴파일되기 때문에, 런타임 오버헤드가 적고 초기 로딩 속도가 빠르다는 장점이 있어 이번 프로젝트에 도입했습니다.
+
+### 2. CSS Framework를 사용하지 않은 이유
+
+프로젝트 규모가 크지 않아 Tailwind CSS 같은 도구 없이도 충분히 관리가 가능하다고 판단했습니다.
+**Semantic CSS**와 **CSS Variables**를 직접 정의하여 사용함으로써 HTML 마크업을 깔끔하게 유지하고, 다크 모드 전환 로직을 더 세밀하게 제어할 수 있었습니다.
+
+### 3. Mdsvex 도입
+
+React의 MDX 대신 Svelte 전용인 **Mdsvex**를 사용했습니다. 마크다운 파일 내부에서 Svelte 컴포넌트(`<script>`, `<style>`)를 바로 사용할 수 있어, 포스트별로 필요한 스타일이나 스크립트를 직관적으로 추가하기 편했습니다.

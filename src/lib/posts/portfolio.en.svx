@@ -1,40 +1,82 @@
 ---
-title: Next.JS Blog
-description: Next.JS로 제작한 MDX 블로그
-date: '2022-03-05'
-image: '/images/blog/blog01.webp'
+title: SvelteKit Portfolio
+description: High-performance static website migrated from Next.js to Svelte 5
+date: '2025-11-20'
+image: '/images/blog/1.webp'
+productLink: 'https://junuuon.github.io'
+originalLink: 'https://github.com/junuuon/junuuon.github.io'
+techStack: ['Svelte 5', 'SvelteKit', 'TypeScript', 'Mdsvex']
 ---
 
 <script>
   import ImageDescription from '$lib/components/ImageDescription.svelte';
 </script>
 
-Next.JS로 제작한 MDX 블로그
+## 💡 Project Overview
 
-## 프로젝트 소개
+**"Beyond the Virtual DOM: A Compiler-Based High-Performance Portfolio"**
 
-Next.JS로 제작한 MDX 블로그
+I completely migrated my existing Next.js blog to **Svelte 5** and **SvelteKit**.
+This was not just a simple framework replacement, but a **technical challenge to eliminate runtime overhead and drastically reduce First Contentful Paint (FCP).**
 
-### 사용한 기술 스택
+Instead of using utility frameworks like Tailwind CSS, I designed Dark Mode and Responsive layouts using only **Pure CSS and CSS Variables**. This approach prevented unnecessary CSS loading and ensured semantic markup.
 
-Next.JS
+### 🛠 Tech Stack
 
-## 프로젝트 스크린샷
+- **Framework:** Svelte 5, SvelteKit (Adapter Static)
+- **Content:** Mdsvex (Markdown for Svelte)
+- **Styling:** Pure CSS (CSS Variables), Normalize.css
+- **Deployment:** GitHub Pages
 
-### 메인 화면
+---
 
-<ImageDescription src="/images/blog/blog01.webp" alt="Main page">
-  현재 올라와 있는 포스트들의 썸네일, 제목, 설명, 작성시간이 보여집니다.
+## 💻 Key Features
+
+### 1. Hybrid UX (Resume + Portfolio)
+
+<ImageDescription src="/images/blog/1.webp" alt="Main page">
+  Combines the information density of a resume with the visual experience of a portfolio.
+  The home screen delivers key information in a <strong>'Resume'</strong> format for quick scanning, while clicking 'View Details' transitions to a rich <strong>'Project Showcase'</strong> page.
 </ImageDescription>
 
-### 포스트 페이지
+### 2. Pure CSS Responsive Design
 
-<ImageDescription src="/images/blog/blog02.webp" alt="Post page">
-  포스트의 제목, 설명, 작성날짜 등이 헤더에 알맞게 파싱되어 나타납니다.
+<ImageDescription src="/images/blog/2.webp" alt="Responsive design demo">
+  Designed a responsive layout using <strong>Pure CSS</strong> without heavy frameworks like Tailwind or Bootstrap.
+  It <strong>adapts fluidly to all viewport sizes</strong> (Mobile, Tablet, Desktop) and utilizes CSS Variables to maximize maintainability.
 </ImageDescription>
 
-### 자기소개 페이지
+### 3. Web Standards & Performance (Lighthouse 100)
 
-<ImageDescription src="/images/blog/blog03.webp" alt="About page">
-  커스텀 컴포넌트를 이용하여 데이터들을 보여줍니다.
+<ImageDescription src="/images/blog/3.webp" alt="Lighthouse performance score">
+  Leveraging Svelte's compiler nature and Zero-runtime CSS, I achieved <strong>perfect scores (100) across all 4 Lighthouse categories (Performance, Accessibility, Best Practices, SEO)</strong>.
+  I extensively used <strong>Semantic Tags</strong> to ensure screen reader accessibility and strengthened SEO.
 </ImageDescription>
+
+### 4. System Theme & Language Detection
+
+<ImageDescription src="/images/blog/3.webp" alt="Dark mode transition">
+  An environment detection system designed with UX as the top priority.
+  <br/>
+  1. <strong>Theme Detection:</strong> Reacts immediately to system settings (Dark/Light) using <code>prefers-color-scheme</code>, completely eliminating the "Flicker" effect.
+  <br/>
+  2. <strong>Language Detection:</strong> Automatically serves Korean or English content based on the browser's language settings.
+</ImageDescription>
+
+---
+
+## 💬 Technical Decisions
+
+### 1. Transitioning from Next.js to Svelte
+
+While Next.js's Static Export is excellent, I felt the hydration process—where React executes after the page loads—was unnecessarily heavy for a blog-type site.
+I adopted **Svelte** because it compiles to optimized Vanilla JS at build time, offering the distinct advantages of minimal runtime overhead and exceptionally fast initial load speeds.
+
+### 2. Why No CSS Framework?
+
+I determined that the project scale was manageable without tools like Tailwind CSS.
+By manually defining and using **Semantic CSS** and **CSS Variables**, I was able to keep the HTML markup clean and have finer control over the Dark Mode transition logic.
+
+### 3. Adopting Mdsvex
+
+Instead of React's MDX, I used **Mdsvex**, which is tailored for Svelte. It allows the direct use of Svelte components (`<script>`, `<style>`) within Markdown files, making it intuitive to add post-specific styles or scripts where needed.

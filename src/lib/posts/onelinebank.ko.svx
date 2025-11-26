@@ -2,7 +2,7 @@
 title: OnelineBank
 description: 2021 우리은행 온(On)택트 해커톤 본선 진출작 - 대화형 송금 핀테크 앱
 date: '2021-06-05'
-image: '/images/bank/bank01.webp'
+image: '/images/bank/1.webp'
 originalLink: 'https://github.com/junuuon/OnelineBank'
 techStack: ['React Native', 'Expo', 'Firebase', 'Woori Bank API']
 ---
@@ -10,7 +10,6 @@ techStack: ['React Native', 'Expo', 'Firebase', 'Woori Bank API']
 <script>
   import ImageDescription from '$lib/components/ImageDescription.svelte';
 </script>
-
 
 ## 💡 프로젝트 소개
 
@@ -32,37 +31,39 @@ techStack: ['React Native', 'Expo', 'Firebase', 'Woori Bank API']
 ## 📱 핵심 기능 및 스크린샷
 
 #### 1. 스플래쉬 & 인트로
-<ImageDescription src='/images/bank/bank01.webp' alt="Splash page">
+
+<ImageDescription src='/images/bank/1.webp' alt="Splash page">
   앱의 정체성을 보여주는 직관적인 로고와 인트로 화면입니다.
 </ImageDescription>
 
 #### 2. 간편 로그인
-<ImageDescription src="/images/bank/bank02.webp" alt="Login page">
+
+<ImageDescription src="/images/bank/2.webp" alt="Login page">
   Firebase Auth를 연동하여 안전하고 빠른 로그인을 구현했습니다.
 </ImageDescription>
 
 #### 3. 대화형 송금
-<ImageDescription src="/images/bank/bank03.webp" alt="Chatting page">
+
+<ImageDescription src="/images/bank/3.webp" alt="Chatting page">
   <strong>핵심 기능입니다.</strong> 사용자가 입력한 자연어 텍스트("엄마한테 5만원 보내줘")를 분석하여 수취인, 은행, 금액 정보를 자동으로 추출합니다.
-  <br/>
-  1. <strong>텍스트 파싱:</strong> 정규표현식 등을 활용해 비정형 텍스트에서 계좌 정보와 금액을 인식
-  <br/>
-  2. <strong>사용자 확인:</strong> 인식된 정보가 맞는지 되물어보는 봇(Bot) 인터랙션 구현
-  <br/>
-  3. <strong>보안 인증:</strong> 최종 송금 전 생체 인증(Face ID/Touch ID) 강제
-  <br/>
-  4. <strong>API 호출:</strong> 우리은행 오픈 API를 통해 실제 송금 트랜잭션 요청
 </ImageDescription>
 
+1. **텍스트 파싱:** 정규표현식 등을 활용해 비정형 텍스트에서 계좌 정보와 금액을 인식
+2. **사용자 확인:** 인식된 정보가 맞는지 되물어보는 봇(Bot) 인터랙션 구현
+3. **보안 인증:** 최종 송금 전 생체 인증(Face ID/Touch ID) 강제
+4. **API 호출:** 우리은행 오픈 API를 통해 실제 송금 트랜잭션 요청
+
 #### 4. 단축 송금 (주소록)
-<ImageDescription src="/images/bank/bank04.webp" alt="Contact page">
+
+<ImageDescription src="/images/bank/4.webp" alt="Contact page">
   자주 보내는 계좌를 별칭(예: 엄마, 친구)으로 등록하여, 채팅창에서 이름만 입력해도 즉시 매칭되도록 데이터베이스를 설계했습니다.
 </ImageDescription>
 
 #### 5. 계좌 및 사용자 관리
-<ImageDescription src="/images/bank/bank05.webp" alt="Account add page">
+
+<ImageDescription src="/images/bank/5.webp" alt="Account add page">
   <br/>
-  <img src="/images/bank/bank06.webp" alt="Account page" />
+  <img src="/images/bank/6.webp" alt="Account page" />
   <br/>
   Firestore와 연동하여 사용자의 계좌 정보와 송금 내역을 실시간으로 관리합니다.
 </ImageDescription>
@@ -82,12 +83,10 @@ techStack: ['React Native', 'Expo', 'Firebase', 'Woori Bank API']
 
 ## 💬 회고: "기술적 러닝 커브를 극복한 실행력"
 
-- **5일간의 React Native 속성 마스터:**
-  <aside>
-    웹(React) 경험을 바탕으로, 해커톤이라는 극한의 일정 속에서 React Native의 동작 원리와 Native Module(생체 인증 등) 활용법을 빠르게 습득했습니다. 문법 공부보다는 <strong>"기능 구현을 위한 문제 해결"</strong>에 집중하여 학습 속도를 높였습니다.
-  </aside>
+**5일간의 React Native 속성 마스터**
 
-- **핀테크 도메인 경험:**
-  <aside>
-    단순한 UI 구현을 넘어, 실제 은행 API를 연동하며 금융 서비스의 트랜잭션 처리 흐름과 보안(인증)의 중요성을 체감했습니다. 특히 텍스트라는 비정형 데이터를 금융 데이터로 변환하는 과정에서 예외 처리의 중요성을 배웠습니다.
-  </aside>
+웹(React) 경험을 바탕으로, 해커톤이라는 극한의 일정 속에서 React Native의 동작 원리와 Native Module(생체 인증 등) 활용법을 빠르게 습득했습니다. 문법 공부보다는 **"기능 구현을 위한 문제 해결"**에 집중하여 학습 속도를 높였습니다.
+
+**핀테크 도메인 경험**
+
+단순한 UI 구현을 넘어, 실제 은행 API를 연동하며 금융 서비스의 트랜잭션 처리 흐름과 보안(인증)의 중요성을 체감했습니다. 특히 텍스트라는 비정형 데이터를 금융 데이터로 변환하는 과정에서 예외 처리의 중요성을 배웠습니다.

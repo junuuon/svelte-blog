@@ -1,151 +1,86 @@
 ---
 title: Election News Aggregator
-description: 2022 소프트웨어 스튜디오 2 프로젝트
+description: AWS Serverless-based 2022 Election Info Aggregator
 date: '2021-12-30'
-image: '/images/daesun/daesun01.webp'
+image: '/images/daesun/1.webp'
 originalLink: 'https://github.com/junuuon/ITE3068_team8'
+techStack: ['React', 'AWS Amplify', 'Recharts', 'MUI', 'Styled Components']
 ---
 
 <script>
   import ImageDescription from '$lib/components/ImageDescription.svelte';
 </script>
 
-## 프로젝트 소개
+## 💡 Project Overview
 
-대선 관련 뉴스 및 정보를 한 곳에서 모아 보여주면 좋겠다는 생각에 시작한 프로젝트입니다.<br />
-선거 일정 및 선거 정보, 후보 정보, 선거 뉴스, 여론 조사 정보가 제공이 됩니다.<br />
-선거 뉴스의 경우 네이버 뉴스 API를 이용하여 가져오며 후보자별 필터링 기능이 제공됩니다.<br />
-또한 로그인을 하면 마음에 드는 기사를 북마크하여 한 곳에 모아볼 수 있게 만들었습니다.
+**"Aggregating fragmented election information into one dashboard"**
 
-### 사용한 기술 스택
+During the presidential election, critical information such as news, polls, and candidate pledges was scattered across various platforms, making it difficult for voters to access. To address this, we developed an **Aggregator Service that collects and visualizes all election-related data in one place**.
 
-- ReactJS
-- AWS Amplify
-- GraphQL
+We adopted **AWS Amplify (Serverless)** to minimize backend infrastructure costs and efficiently handle authentication and data synchronization. On the frontend, we utilized **MUI (Material UI)** and **Recharts** to build an intuitive, data-rich dashboard.
 
-## 프로젝트 스크린샷
+### 🛠 Tech Stack
 
-### 메인 화면
+- **Frontend:** React, Styled Components, MUI (Material UI)
+- **Visualization:** Recharts
+- **Backend (Serverless):** AWS Amplify (Auth, API)
+- **Crawling & Network:** Cheerio, Microlink, Axios
 
-<ImageDescription src="/images/daesun/daesun01.webp" alt="Main page">
-  헤더에는 홈화면, 선거정보, 후보정보, 뉴스, 여론조사 페이지로 갈 수 있는 버튼이
-  있으며 우측에는 로그인과 회원가입을 할 수 있는 버튼이 존재합니다. 대선까지
-  남은 기간이 표시가 되며 운영자가 선정한 오늘의 뉴스가 나옵니다. 아래에는
-  선거의 주요 일정을 순서대로 나타내었습니다.
+---
+
+## 💻 Key Features & Screenshots
+
+### 1. Main Dashboard
+
+<ImageDescription src="/images/daesun/1.webp" alt="Main page">
+  The landing dashboard. Utilizing <strong>MUI's Grid System</strong>, we organized key metrics like the D-Day counter, daily headlines, and the election timeline into a responsive layout optimized for various screen sizes.
 </ImageDescription>
 
-#### 로그인 모달
+### 2. AWS Amplify Authentication
 
-<ImageDescription src="/images/daesun/daesun02.webp" alt="Login page">
-  직접 제작한 모달 컴포넌트에 AWS Sign-In API를 연결하여 로그인을 지원합니다.
-  모달 바깥을 클릭하여 모달을 닫을 수 있습니다.
+<ImageDescription src="/images/daesun/2.webp" alt="Login page">
+  <br/>
+  <img src="/images/daesun/3.webp" alt="Signup page" />
+  <br/>
+  Integrated <strong>AWS Amplify Auth</strong> (Cognito) to implement secure sign-up and login session management without the overhead of building a separate backend server.
 </ImageDescription>
 
-#### 회원가입 모달
+### 3. Personalization (Bookmarks)
 
-<ImageDescription src="/images/daesun/daesun03.webp" alt="Signup page">
-  로그인 모달 위에 회원가입 모달을 띄워 회원가입을 안내합니다. 역시 AWS SignUp
-  API를 연결하여 정상적으로 회원가입을 할 수 있습니다.
+<ImageDescription src="/images/daesun/5.webp" alt="Reading list">
+  Users can bookmark articles of interest. These bookmarks are synchronized to their personal storage in real-time via <strong>Amplify API (GraphQL)</strong>.
 </ImageDescription>
 
-### 로그인 시
+### 4. News Curation & Visualization
 
-<ImageDescription src="/images/daesun/daesun04.webp" alt="Login page">
-  상단바에 읽기 목록을 볼 수 있는 버튼과 로그아웃 버튼이 생성됩니다.
+<ImageDescription src="/images/daesun/11.webp" alt="Election news page">
+  Displays election news collected via Naver News API in a card format. We enhanced information delivery by parsing and visualizing metadata (thumbnails, summaries) using <strong>Microlink</strong>.
 </ImageDescription>
 
-### 읽기목록 페이지
+### 5. Poll Charts
 
-<ImageDescription src="/images/daesun/daesun05.webp" alt="Reading list">
-  하트를 눌러 북마크한 기사를 모아 볼 수 있습니다. 다시 하트를 누르면 북마크에서
-  지울 수 있습니다.
+<ImageDescription src="/images/daesun/13.webp" alt="Election poll page">
+  Visualized complex approval rating trends into intuitive line and bar charts using the <strong>Recharts</strong> library, enabling users to track candidate performance easily.
 </ImageDescription>
 
-### 선거정보 페이지
+---
 
-<ImageDescription src="/images/daesun/daesun06.webp" alt="Election inform page">
-  이번 대선에 대한 소개 글과 참고하면 좋을 자료를 보여줍니다.
-</ImageDescription>
+## 🧑‍💻 Role (Team Leader & Full Stack)
 
-### 후보정보 페이지
+**Led the initial environment setup, AWS infrastructure integration, and core frontend development.**
 
-<ImageDescription
-  src="/images/daesun/daesun07.webp"
-  alt="Candidate inform page"
->
-  주요 후보의 리스트를 표시합니다.
-</ImageDescription>
+- **Tech Lead:** Established ESLint/Prettier code conventions and introduced Git Flow strategy for efficient team collaboration.
+- **Serverless Architecture:** Built Authentication (Cognito) and Data (AppSync) communication environments using AWS Amplify.
+- **Frontend Development:**
+  - Implemented interactive data visualization components using **Recharts**.
+  - Designed a consistent UI system based on **MUI & Styled Components**.
+  - Resolved CORS issues and integrated third-party APIs using Axios and Proxy settings.
 
-<ImageDescription
-  src="/images/daesun/daesun08.webp"
-  alt="Candidate inform page"
->
-  마우스 호버시 애니메이션과 함께 후보의 사진이 강조됩니다. 클릭 시 후보의
-  상세정보 페이지로 넘어가게 됩니다.
-</ImageDescription>
+---
 
-### 후보 상세정보 페이지
+## 💬 Retrospective: "Productivity of Serverless Architecture"
 
-<ImageDescription
-  src="/images/daesun/daesun09.webp"
-  alt="Candidate detail page"
->
-  후보의 약력 및 대표 공약 등 후보의 상세 정보를 적어놓았으며 대표 공약을 보기
-  쉽게 분류하여 나타내었습니다.
-</ImageDescription>
-
-<ImageDescription
-  src="/images/daesun/daesun10.webp"
-  alt="Candidate detail page"
->
-  후보의 약력 및에 상세 정보 버튼을 누르면 후보의 상세한 정보가 나옵니다.
-</ImageDescription>
-
-### 선거뉴스 페이지
-
-<ImageDescription src="/images/daesun/daesun11.webp" alt="Election news page">
-  네이버 뉴스 API를 이용하여 뉴스를 가져오고 있으며 뉴스의 링크에 있는 opengraph
-  메타데이터를 통해 해당 기사의 썸네일, 제목, 요약, 신문사 등 정보를 가져와
-  컴포넌트에 알맞게 나타내어 줍니다.
-</ImageDescription>
-
-<ImageDescription src="/images/daesun/daesun12.webp" alt="Election news page">
-  왼쪽 사이드바에 있는 키워드를 클릭하면 해당 키워드와 연관된 뉴스 기사가 필터링
-  되어 나타납니다. 또한 뉴스 컴포넌트 우하단의 하트 아이콘을 클릭하면 북마크가
-  되어 읽기 목록에서 모아 다시 볼 수 있습니다.
-</ImageDescription>
-
-### 여론조사 페이지
-
-<ImageDescription src="/images/daesun/daesun13.webp" alt="Election poll page">
-  react chart 라이브러리를 이용하여 다양한 여론 조사 정보를 보기 쉽게 나타내어
-  줍니다.
-</ImageDescription>
-
-### 담당 역할
-
-- **Global**
-  - 팀장을 맡아 프로젝트 초반 세팅, 커밋 컨벤션 등 규칙을 정하고 일정을 조율하고 종합하였습니다.
-  - Amplify, Lambda 등 AWS 주요 서비스를 적용해 보았습니다.
-  - AWS Sign-In API를 연결하여 로그인기능을 구현하였습니다.
-  - GraphQL로 북마크한 기사를 저장하는 기능을 구현하였습니다.
-- **Page**
-  - 메인 화면, 선거 정보 화면, 선거 뉴스 페이지를 제작하였습니다.
-  - 네이버 뉴스 API와 opengraph 메타데이터를 이용하여 실제 뉴스 페이지처럼 보이도록 구현하였습니다.
-
-### 💬 회고
-
-- **팀장으로서의 역할**
-
+- **Efficiency with AWS Amplify:**
   <aside>
-    👉 학교 수업과 과제와 병행하여 진행한 프로젝트인 만큼 프로젝트에 대한 애정에
-    비해 적은 시간을 들일 수 밖에 없어 계획대로 다 구현하였지만 깔끔하게 코딩을
-    하지 못하였고 다른 팀원의 코드 리뷰를 제대로 해주지 않아 처음에 정했던
-    컨벤션들이 잘 지켜지지 않아 아쉬웠습니다.
-  </aside>
-- **전반적인 AWS 서비스에 대한 이해**
-
-  <aside>
-    👉 기존에는 Firebase나 GCP만 사용해보았으나 이번 수업을 통애 처음으로 AWS의
-    각종 서비스를 사용해볼 수 있었습니다.
+    By adopting <strong>AWS Amplify</strong> instead of building complex backend infrastructure from scratch, we created an environment where frontend developers could focus on business logic and data visualization. This allowed us to deploy a complete service with Auth, DB, and API capabilities within a limited project timeframe.
   </aside>

@@ -2,6 +2,6 @@
 title: CameraFi Studio
 description: 웹 오버레이 스코어보드
 date: '2025-11-25'
-image: '/images/daesun/daesun01.webp'
+image: ''
 productLink: 'https://studio.camerafi.com'
 ---

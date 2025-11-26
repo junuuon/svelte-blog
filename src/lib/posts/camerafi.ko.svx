@@ -1,7 +1,87 @@
 ---
 title: CameraFi Studio
-description: 웹 오버레이 스코어보드
-date: '2025-11-25'
-image: '/images/daesun/daesun01.webp'
+description: 웹 기반 방송용 오버레이(Scoreboard) 플랫폼
+date: '2022-02-01'
+image: ''
 productLink: 'https://studio.camerafi.com'
+techStack: ['Next.js', 'TypeScript', 'PWA', 'Webpack', 'Paddle']
 ---
+
+<script>
+  import ImageDescription from '$lib/components/ImageDescription.svelte';
+</script>
+
+## 💡 프로젝트 소개
+
+**"방송 장비 없이 웹 브라우저만으로 프로급 스포츠 중계 자막을 입힌다면?"**
+
+CameraFi Studio는 별도의 고가 장비 없이, 웹 브라우저 소스(Browser Source)를 이용해 송출 화면에 스코어보드나 자막을 실시간으로 오버레이할 수 있는 서비스입니다.
+
+1인 개발로 시작하여 **프론트엔드 아키텍처 설계부터 배포 파이프라인 구축, 성능 최적화**까지 전담했습니다. 특히 **번들 사이즈 최적화**와 **PWA 도입**을 통해 웹 애플리케이션의 사용성을 네이티브 앱 수준으로 끌어올리는 데 주력했습니다.
+
+### 🛠 Tech Stack
+
+- **Core:** Next.js, TypeScript
+- **Optimization:** Webpack (Custom Config), Dynamic Imports
+- **Features:** PWA (Next-PWA), Paddle (Payment), Firebase Auth
+
+---
+
+## 💻 Key Technical Challenges
+
+_(스크린샷이 없으므로, 기술적 문제 해결 과정을 도식화하거나 코드로 보여줍니다)_
+
+### 1. 번들 사이즈 15% 감량 (324KB → 277KB)
+
+초기 로딩 속도 개선을 위해 Webpack 설정을 커스터마이징하고, 불필요한 모듈을 제거하는 다이어트 작업을 수행했습니다.
+
+**[최적화 전략]**
+
+1.  **Tree Shaking:** 사용하지 않는 라이브러리(Lodash 등)의 데드 코드 제거
+2.  **Code Splitting:** 페이지별로 필요한 자바스크립트만 로드하도록 청크(Chunk) 분리
+3.  **Dynamic Import:** 무거운 차트 라이브러리나 모달 컴포넌트는 사용 시점에 로드
+
+```tsx
+// [Code] Dynamic Import 적용 예시
+import dynamic from 'next/dynamic';
+
+const HeavyChart = dynamic(() => import('@components/Chart'), {
+  loading: () => <p>Loading...</p>,
+  ssr: false, // 서버 사이드 렌더링 제외
+});
+```
+
+### 2. Next-PWA를 활용한 앱 수준의 접근성 확보
+
+웹 서비스지만 사용자가 앱처럼 느끼게 하기 위해 **PWA(Progressive Web App)**를 도입했습니다.
+
+A2HS (Add to Home Screen): 브라우저 주소창 입력 없이 아이콘 터치로 즉시 실행
+
+Offline Fallback: 네트워크가 불안정한 경기장 환경을 고려해 오프라인 캐싱 전략 수립
+
+```JavaScript
+// [Config] next.config.js PWA 설정
+const withPWA = require('next-pwa')({
+  dest: 'public',
+  disable: process.env.NODE_ENV === 'development',
+  register: true,
+  skipWaiting: true,
+});
+```
+
+### 3. 외부 의존성 없는 인증/결제 로직 구현
+
+라이브러리 의존도를 낮추기 위해 핵심 비즈니스 로직을 직접 구현했습니다.
+
+- **Cookie Consent:** GDPR 준수를 위한 쿠키 동의 컴포넌트 자체 개발
+- **Paddle 결제:** 구독 모델(SaaS) 구현을 위한 결제 및 웹훅 처리 로직 연동
+
+### 💬 회고: "1인 개발자에서 아키텍트까지"
+
+**주도적인 기술 환경 구성:**
+
+기존 레거시 없이 바닥부터 프로젝트를 설계하며 Next.js와 PWA의 기술적 장단점을 깊이 이해했습니다. 특히 "라이브러리를 쓸 것인가, 직접 만들 것인가"를 고민하며 비즈니스 상황에 맞는 합리적 의사결정 능력을 길렀습니다.
+
+**성능 최적화의 즐거움:**
+
+단순히 기능을 만드는 것을 넘어, <strong>Webpack 분석 도구(Bundle Analyzer)</strong>를 통해 모듈 크기를 눈으로 확인하고 줄여나가는 과정에서 엔지니어링의 희열을 느꼈습니다.

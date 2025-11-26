@@ -25,9 +25,11 @@
 
   .image-description img {
     max-width: 100%;
+    max-height: 60vh;
     height: auto;
     border-radius: 16px;
     width: 100%;
+    object-fit: contain;
   }
 
   .image-description figcaption {

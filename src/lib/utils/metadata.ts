@@ -52,5 +52,5 @@ export const metadataMap: Record<Language, MetadataContent> = {
 };
 
 export const getMetadata = (lang: Language): MetadataContent => {
-  return metadataMap[lang] || metadataMap.en;
+  return metadataMap[lang];
 };

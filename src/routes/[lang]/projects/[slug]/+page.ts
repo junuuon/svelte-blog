@@ -5,7 +5,7 @@ import type { Language } from '$lib/utils/language';
 
 export const prerender = true;
 
-export const entries = async () => {
+export const entries = () => {
   const posts = import.meta.glob<PostModule>('/src/lib/posts/*.svx', {
     eager: true,
   });
@@ -20,7 +20,7 @@ export const entries = async () => {
       if (!langSpecificPosts.has(slug)) {
         langSpecificPosts.set(slug, new Set());
       }
-      langSpecificPosts.get(slug)!.add(lang);
+      langSpecificPosts.get(slug)?.add(lang);
     }
   });
 
@@ -43,6 +43,7 @@ interface PostMetadata {
   date?: string;
   image?: string;
   originalLink?: string;
+  productLink?: string;
   [key: string]: unknown;
 }
 
@@ -51,11 +52,11 @@ interface PostModule {
   metadata?: PostMetadata;
 }
 
-const posts = import.meta.glob<PostModule>('/src/lib/posts/*.svx', {
+const posts: Record<string, PostModule> = import.meta.glob<PostModule>('/src/lib/posts/*.svx', {
   eager: true,
 });
 
-export const load: PageLoad = async ({ params }) => {
+export const load: PageLoad = ({ params }) => {
   const { slug, lang } = params;
 
   if (lang !== 'ko' && lang !== 'en') {
@@ -63,11 +64,12 @@ export const load: PageLoad = async ({ params }) => {
   }
 
   const langSpecificPath = `/src/lib/posts/${slug}.${lang}.svx`;
-  const postModule = posts[langSpecificPath];
 
-  if (!postModule) {
+  if (!(langSpecificPath in posts)) {
     error(404, { message: `Project "${slug}" not found in ${lang}.` });
   }
+
+  const postModule = posts[langSpecificPath];
 
   const PostComponent = postModule.default;
   const metadata: PostMetadata = postModule.metadata || {};

@@ -12,7 +12,7 @@
 <span>
   <time datetime={dateFrom}>{timeFormatter(dateFrom)}</time>
   {#if dateFrom.includes('-')}
-    {' ~ '}
+    ~
   {/if}
   {#if dateTo}
     <time datetime={dateTo}>{timeFormatter(dateTo)}</time>

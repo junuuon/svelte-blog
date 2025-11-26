@@ -1,10 +1,11 @@
 <script lang="ts">
   import { browser } from '$app/environment';
-  import { setLanguage } from '$lib/utils/language';
+  import { setLanguage, type Language } from '$lib/utils/language';
   import { getMetadata } from '$lib/utils/metadata';
+  import type { Snippet } from 'svelte';
   import type { PageData } from './$types';
 
-  let { children, data }: { children: any; data: PageData } = $props();
+  let { children, data }: { children: Snippet; data: PageData & { lang: Language } } = $props();
 
   const currentLang = $derived(data.lang);
   let metadata = $derived(getMetadata(currentLang));

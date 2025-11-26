@@ -42,8 +42,8 @@ const resumeDataMap: Record<Language, ResumeData> = {
   },
 };
 
-export const getResumeData = (lang: Language = 'en'): ResumeData => {
-  return resumeDataMap[lang] || resumeDataMap.en;
+export const getResumeData = (lang: Language): ResumeData => {
+  return resumeDataMap[lang];
 };
 
 export const resumeData = resumeDataMap.en;

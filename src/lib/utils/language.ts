@@ -7,7 +7,12 @@ export const detectBrowserLanguage = (): Language => {
     return 'en';
   }
 
-  const browserLang = navigator.language || (navigator as any).userLanguage || 'en';
+  const browserLang: string =
+    navigator.language ||
+    ('userLanguage' in navigator
+      ? (navigator as { userLanguage?: string }).userLanguage
+      : undefined) ||
+    'en';
   const langCode = browserLang.toLowerCase().split('-')[0];
 
   return langCode === 'ko' ? 'ko' : 'en';

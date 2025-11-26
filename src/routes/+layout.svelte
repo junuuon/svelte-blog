@@ -4,9 +4,10 @@
   import favicon from '$lib/assets/favicon.svg';
   import { onMount } from 'svelte';
   import { browser } from '$app/environment';
+  import type { Snippet } from 'svelte';
   import Footer from '$lib/components/Footer.svelte';
 
-  let { children } = $props();
+  let { children }: { children: Snippet } = $props();
 
   onMount(() => {
     if (browser) {

@@ -42,7 +42,7 @@ export interface OtherExperienceProps extends ProjectProps {
   role?: string;
 }
 
-export interface ArchiveProps extends ProjectProps {}
+export type ArchiveProps = ProjectProps;
 
 export type CertificateProps = {
   label: string;

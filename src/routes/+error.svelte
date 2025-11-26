@@ -5,6 +5,7 @@
   import { page } from '$app/state';
   import { getLanguage, type Language } from '$lib/utils/language';
   import { getLabels } from '$lib/data/labels';
+  import { resolve } from '$app/paths';
 
   const errorStatus = page.status || 500;
 
@@ -24,7 +25,7 @@
   const errorMessage = $derived(page.error?.message || labels.errorOccurred);
 
   const goHome = () => {
-    goto(`/${currentLang}`);
+    void goto(resolve(`/${currentLang}`));
   };
 </script>
 

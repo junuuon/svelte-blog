@@ -56,5 +56,5 @@ export const labelsMap: Record<Language, Labels> = {
 };
 
 export const getLabels = (lang: Language): Labels => {
-  return labelsMap[lang] || labelsMap.en;
+  return labelsMap[lang];
 };

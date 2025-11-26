@@ -3,6 +3,7 @@ export type PostType = {
   description?: string;
   image?: string;
   originalLink?: string;
+  productLink?: string;
   slug: string;
   title: string;
 };

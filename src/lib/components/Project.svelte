@@ -15,7 +15,6 @@
     detailLink?: string;
     githubLink?: string;
     other?: boolean;
-    productLink?: string;
     skills?: string[];
     title: string;
   }
@@ -27,7 +26,6 @@
     detailLink,
     githubLink,
     other = false,
-    productLink,
     skills,
     title,
   }: Props = $props();
@@ -76,7 +74,7 @@
         <a
           href={githubLink}
           target="_blank"
-          rel="noopener noreferrer"
+          rel="external noopener noreferrer"
           aria-label={labels.goToGithubPage}
           title={labels.goToGithubPage}
         >
@@ -104,7 +102,7 @@
   {#if skills && !other}
     <h4>{labels.techStack}</h4>
     <ul class="skill-list">
-      {#each skills as s}
+      {#each skills as s (s)}
         <li class="skill-chip">{s}</li>
       {/each}
     </ul>

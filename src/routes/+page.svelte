@@ -2,7 +2,8 @@
   import { onMount } from 'svelte';
   import { browser } from '$app/environment';
   import { goto } from '$app/navigation';
-  import { getLanguage, type Language } from '$lib/utils/language';
+  import { resolve } from '$app/paths';
+  import { getLanguage } from '$lib/utils/language';
   import { getMetadata } from '$lib/utils/metadata';
 
   const metadata = getMetadata('en');
@@ -21,7 +22,7 @@
       }
 
       const lang = getLanguage();
-      goto(`/${lang}`, { replaceState: true });
+      void goto(resolve(`/${lang}`), { replaceState: true });
     }
   });
 </script>

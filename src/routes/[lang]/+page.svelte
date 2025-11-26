@@ -6,8 +6,9 @@
   import SideList from '$lib/components/SideList.svelte';
   import Row from '$lib/components/Row.svelte';
   import { parseMarkdownBold } from '$lib/utils/markdown';
+  import type { Language } from '$lib/utils/language';
 
-  let { data }: { data: PageData } = $props();
+  let { data }: { data: PageData & { lang: Language } } = $props();
 
   const resumeData = $derived(getResumeData(data.lang));
 
@@ -58,18 +59,23 @@
               </a>
             {/if}
           {/snippet}
-
-          {#snippet children()}
-            {#each experience.project as singleProject (singleProject.title)}
-              <Project {...singleProject}>
-                <ul>
-                  {#each singleProject.detail as line, detailIndex (detailIndex)}
-                    <li>{@html parseMarkdownBold(line)}</li>
-                  {/each}
-                </ul>
-              </Project>
-            {/each}
-          {/snippet}
+          {#each experience.project as singleProject (singleProject.title)}
+            <Project {...singleProject}>
+              <ul>
+                {#each singleProject.detail as line, detailIndex (detailIndex)}
+                  <li>
+                    {#each parseMarkdownBold(line) as part, partIndex (partIndex)}
+                      {#if part.bold}
+                        <strong>{part.text}</strong>
+                      {:else}
+                        {part.text}
+                      {/if}
+                    {/each}
+                  </li>
+                {/each}
+              </ul>
+            </Project>
+          {/each}
         </Row>
         {#if experienceIndex < workExperiences.length - 1}
           <hr class="row-divider" aria-hidden="true" />
@@ -95,17 +101,15 @@
             dateFrom={experience.dateFrom}
             role={experience.role}
           >
-            {#snippet children()}
-              {#each experience.project as singleProject (singleProject.title)}
-                <Project {...singleProject}>
-                  <ul>
-                    {#each singleProject.detail as line, detailIndex (detailIndex)}
-                      <li>{line}</li>
-                    {/each}
-                  </ul>
-                </Project>
-              {/each}
-            {/snippet}
+            {#each experience.project as singleProject (singleProject.title)}
+              <Project {...singleProject}>
+                <ul>
+                  {#each singleProject.detail as line, detailIndex (detailIndex)}
+                    <li>{line}</li>
+                  {/each}
+                </ul>
+              </Project>
+            {/each}
           </Row>
           {#if experienceIndex < otherExperiences.length - 1}
             <hr class="row-divider" aria-hidden="true" />

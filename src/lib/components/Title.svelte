@@ -1,7 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import { browser } from '$app/environment';
-  import { goto } from '$app/navigation';
   import Github from '$lib/components/Icon/Github.svelte';
   import Linkedin from '$lib/components/Icon/Linkedin.svelte';
   import { getLanguage, setLanguage, type Language } from '$lib/utils/language';
@@ -60,7 +59,8 @@
             <a
               href={githubLink}
               target="_blank"
-              rel="noopener noreferrer"
+              data-sveltekit-reload
+              rel="external noopener noreferrer"
               aria-label="Go to Github page"
               title="Go to Github page"
             >
@@ -74,7 +74,7 @@
             <a
               href={linkedinLink}
               target="_blank"
-              rel="noopener noreferrer"
+              rel="external noopener noreferrer"
               aria-label="Go to Linkedin page"
               title="Go to Linkedin page"
             >

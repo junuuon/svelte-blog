@@ -1,0 +1,91 @@
+---
+title: OnelineBank
+description: Finalist of 2021 Woori Bank On(On)tact Hackathon - Conversational Money Transfer Fintech App
+date: '2021-06-05'
+image: '/images/bank/bank01.webp'
+originalLink: 'https://github.com/junuuon/OnelineBank'
+techStack: ['React Native', 'Expo', 'Firebase', 'Woori Bank API']
+---
+
+<script>
+  import ImageDescription from '$lib/components/ImageDescription.svelte';
+</script>
+
+
+## 💡 Project Introduction
+
+**"Can we solve complex money transfer procedures with just one line of chat?"**
+
+Traditional mobile banking apps required users to navigate through numerous depths and input processes to transfer money. OnelineBank is a fintech solution that addresses this inconvenience by introducing a **Conversational UI**.
+
+When users express their transfer intent in everyday language, the app analyzes it and automatically executes the transfer process. By **integrating 'chatting', the most familiar experience, into financial services**, we maximized usability.
+
+### 🛠 Tech Stack
+
+- **Core:** React Native, Expo
+- **Backend:** Google Firebase (Firestore)
+- **API:** Woori Bank Open API
+- **Security:** Expo Local Authentication (Biometrics)
+
+---
+
+## 📱 Key Features & Screenshots
+
+#### 1. Splash & Intro
+<ImageDescription src='/images/bank/bank01.webp' alt="Splash page">
+  An intuitive logo and intro screen that represents the app's identity.
+</ImageDescription>
+
+#### 2. Simple Login
+<ImageDescription src="/images/bank/bank02.webp" alt="Login page">
+  Implemented secure and fast login by integrating Firebase Auth.
+</ImageDescription>
+
+#### 3. Conversational Money Transfer (NLP-based Parsing)
+<ImageDescription src="/images/bank/bank03.webp" alt="Chatting page">
+  **This is the core feature.** The app analyzes natural language text entered by users (e.g., "Send 50,000 won to mom") and automatically extracts recipient, bank, and amount information.
+  <br/>
+  1. <strong>Text Parsing:</strong> Recognizes account information and amounts from unstructured text using regular expressions
+  2. <strong>User Confirmation:</strong> Implements bot interaction that asks users to confirm if the recognized information is correct
+  3. <strong>Security Authentication:</strong> Enforces biometric authentication (Face ID/Touch ID) before final transfer
+  4. <strong>API Call:</strong> Requests actual transfer transactions through Woori Bank Open API
+</ImageDescription>
+
+#### 4. Quick Transfer (Address Book)
+<ImageDescription src="/images/bank/bank04.webp" alt="Contact page">
+  Designed a database system that allows users to register frequently used accounts with aliases (e.g., mom, friend), enabling instant matching by simply entering the name in the chat.
+</ImageDescription>
+
+#### 5. Account & User Management
+<ImageDescription src="/images/bank/bank05.webp" alt="Account add page">
+  <br/>
+  <img src="/images/bank/bank06.webp" alt="Account page" />
+  <br/>
+  Manages user account information and transfer history in real-time by integrating with Firestore.
+</ImageDescription>
+
+---
+
+## 💻 Role & Responsibilities (Solo Development)
+
+**100% solo execution from planning to design and development (5-day sprint)**
+
+- **Frontend:** Built cross-platform app using React Native & Expo
+- **Logic:** Implemented text parsing algorithms for natural language processing and state management logic for transfer processes
+- **API Integration:** Integrated Woori Bank transfer API and handled asynchronous transaction processing
+- **Security:** Implemented secondary authentication using mobile device's native biometric authentication features
+
+---
+
+## 💬 Reflection: "Overcoming Technical Learning Curves with Execution"
+
+- **Mastering React Native in 5 Days:**
+  <aside>
+    Based on web (React) experience, I quickly learned React Native's principles and how to utilize Native Modules (biometric authentication, etc.) within the extreme schedule of a hackathon. Rather than studying syntax, I focused on <strong>"problem-solving for feature implementation"</strong> to accelerate learning.
+  </aside>
+
+- **Fintech Domain Experience:**
+  <aside>
+    Beyond simple UI implementation, I experienced the transaction processing flow of financial services and the importance of security (authentication) by integrating actual bank APIs. I particularly learned the importance of exception handling in the process of converting unstructured text data into financial data.
+  </aside>
+

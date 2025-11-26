@@ -27,6 +27,13 @@
   {/if}
 </svelte:head>
 
+<Title
+  githubLink={metadata.originalLink || ''}
+  {lang}
+  name={metadata.title || slug}
+  role={metadata.role || ''}
+  tagline={metadata.description || ''}
+/>
 <article>
   {#if Component}
     <Component />

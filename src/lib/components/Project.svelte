@@ -34,14 +34,25 @@
   }: Props = $props();
 
   let labels = $state(getLabels('en'));
+  let currentLang = $state<Language>('en');
 
   onMount(() => {
     if (browser) {
       const pathname = window.location.pathname;
       const langMatch = pathname.match(/^\/(ko|en)/);
       const lang = langMatch ? (langMatch[1] as Language) : getLanguage();
+      currentLang = lang;
       labels = getLabels(lang);
     }
+  });
+
+  const resolvedDetailLink = $derived(() => {
+    if (!detailLink) return undefined;
+    if (detailLink.startsWith('/projects/')) {
+      return `/${currentLang}${detailLink}`;
+    }
+    if (detailLink.startsWith('/')) return detailLink;
+    return `/${currentLang}/${detailLink}`;
   });
 </script>
 
@@ -50,9 +61,9 @@
     <div class="title">
       <h3 class="project-title">
         {title}
-        {#if detailLink}
+        {#if resolvedDetailLink()}
           <a
-            href={detailLink}
+            href={resolvedDetailLink()}
             class="detail-link"
             aria-label={labels.viewProjectDetails}
             title={labels.viewProjectDetails}

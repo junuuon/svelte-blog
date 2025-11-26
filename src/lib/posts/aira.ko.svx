@@ -1,0 +1,6 @@
+---
+title: aira
+description: Global AI character chat platform
+date: '2025-11-25'
+image: '/images/daesun/daesun01.webp'
+---

@@ -35,16 +35,12 @@
     if (browser) {
       const newLang: Language = currentLang === 'ko' ? 'en' : 'ko';
       setLanguage(newLang);
-      currentLang = newLang;
 
       const currentPath = window.location.pathname;
       const pathWithoutLang = currentPath.replace(/^\/(ko|en)(\/|$)/, '/') || '/';
-      if (pathWithoutLang === '/') {
-        goto(`/${newLang}`);
-      } else {
-        const newPath = newLang === 'en' ? pathWithoutLang : `/${newLang}${pathWithoutLang}`;
-        goto(newPath);
-      }
+      const newPath = pathWithoutLang === '/' ? `/${newLang}` : `/${newLang}${pathWithoutLang}`;
+      
+      window.location.href = newPath;
     }
   };
 

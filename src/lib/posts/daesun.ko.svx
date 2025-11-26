@@ -1,5 +1,5 @@
 ---
-title: Daesun
+title: 대선 뉴스 모아보기 페이지
 description: 2022 소프트웨어 스튜디오 2 프로젝트
 date: '2021-12-30'
 image: '/images/daesun/daesun01.webp'

@@ -9,19 +9,34 @@ export const entries = async () => {
   const posts = import.meta.glob<PostModule>('/src/lib/posts/*.svx', {
     eager: true,
   });
-  const slugs = Object.keys(posts)
-    .map((path) => {
-      const match = path.match(/\/([^/]+)\.svx$/);
-      return match ? match[1] : null;
-    })
-    .filter(Boolean) as string[];
 
-  const langs = ['ko', 'en'];
-  return langs.flatMap((lang) => slugs.map((slug) => ({ lang, slug })));
+  const langSpecificPosts = new Map<string, Set<string>>();
+
+  Object.keys(posts).forEach((path) => {
+    const langMatch = path.match(/\/([^/]+)\.(ko|en)\.svx$/);
+    if (langMatch) {
+      const slug = langMatch[1];
+      const lang = langMatch[2];
+      if (!langSpecificPosts.has(slug)) {
+        langSpecificPosts.set(slug, new Set());
+      }
+      langSpecificPosts.get(slug)!.add(lang);
+    }
+  });
+
+  const entries: Array<{ lang: string; slug: string }> = [];
+  langSpecificPosts.forEach((langs, slug) => {
+    langs.forEach((lang) => {
+      entries.push({ lang, slug });
+    });
+  });
+
+  return entries;
 };
 
 interface PostMetadata {
   name?: string;
+  title?: string;
   description?: string;
   role?: string;
   tagline?: string;
@@ -47,11 +62,11 @@ export const load: PageLoad = async ({ params }) => {
     error(404, { message: `Invalid language: ${lang}` });
   }
 
-  const postPath = `/src/lib/posts/${slug}.svx`;
-  const postModule = posts[postPath];
+  const langSpecificPath = `/src/lib/posts/${slug}.${lang}.svx`;
+  const postModule = posts[langSpecificPath];
 
   if (!postModule) {
-    error(404, { message: `Project "${slug}" not found.` });
+    error(404, { message: `Project "${slug}" not found in ${lang}.` });
   }
 
   const PostComponent = postModule.default;

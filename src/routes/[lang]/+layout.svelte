@@ -88,6 +88,7 @@
     crossorigin="anonymous"
   />
 
+  <!-- prettier-ignore -->
   <script type="application/ld+json">
     {JSON.stringify({
       '@context': 'https://schema.org',

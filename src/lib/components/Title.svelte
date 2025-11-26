@@ -39,7 +39,7 @@
       const currentPath = window.location.pathname;
       const pathWithoutLang = currentPath.replace(/^\/(ko|en)(\/|$)/, '/') || '/';
       const newPath = pathWithoutLang === '/' ? `/${newLang}` : `/${newLang}${pathWithoutLang}`;
-      
+
       window.location.href = newPath;
     }
   };

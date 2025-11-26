@@ -3,7 +3,6 @@
   import { browser } from '$app/environment';
   import type { Snippet } from 'svelte';
   import Github from '$lib/components/Icon/Github.svelte';
-  import OpenInNewTab from '$lib/components/Icon/OpenInNewTab.svelte';
   import Period from '$lib/components/Period.svelte';
   import { getLanguage, type Language } from '$lib/utils/language';
   import { getLabels } from '$lib/data/labels';

@@ -25,7 +25,7 @@
   </div>
   <div class="right">
     {#if children}
-        {@render children()}
+      {@render children()}
     {/if}
   </div>
 </div>

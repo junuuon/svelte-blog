@@ -58,6 +58,7 @@
   <meta name="twitter:image:alt" content={metadata.imageAlt} />
   <meta name="twitter:site" content="@junuuon" />
 
+  <!-- prettier-ignore -->
   <script type="application/ld+json">
     {JSON.stringify({
       '@context': 'https://schema.org',

@@ -2,7 +2,6 @@
   import { onMount } from 'svelte';
   import { browser } from '$app/environment';
   import { goto } from '$app/navigation';
-  import Footer from '$lib/components/Footer.svelte';
   import { page } from '$app/state';
   import { getLanguage, type Language } from '$lib/utils/language';
   import { getLabels } from '$lib/data/labels';
@@ -50,7 +49,6 @@
     {/if}
     <button class="home-button" onclick={goHome}>{labels.goHome}</button>
   </div>
-  <Footer />
 </div>
 
 <style>

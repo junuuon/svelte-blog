@@ -10,17 +10,14 @@
 
 <svelte:head>
   <title>
-    {metadata.name ? `${metadata.name} | Junwon Park` : `${slug} | ${labels.project}`}
+    {`${metadata.title || slug} | ${labels.project}`}
   </title>
   {#if metadata.description}
     <meta name="description" content={metadata.description} />
     <meta property="og:description" content={metadata.description} />
     <meta name="twitter:description" content={metadata.description} />
   {/if}
-  <meta
-    property="og:title"
-    content={metadata.title ? `${metadata.title} | Junwon Park` : `${slug} | ${labels.project}`}
-  />
+  <meta property="og:title" content={`${metadata.title || slug} | ${labels.project}`} />
   {#if metadata.image}
     <meta property="og:image" content={metadata.image} />
     <meta name="twitter:image" content={metadata.image} />
@@ -29,6 +26,7 @@
 
 <Title
   githubLink={metadata.originalLink || ''}
+  productLink={metadata.productLink || ''}
   {lang}
   name={metadata.title || slug}
   role={metadata.role || ''}

@@ -76,6 +76,7 @@ export const workExperiences: WorkExperienceProps[] = [
           '**[서비스 고도화]** Next-PWA를 도입하여 웹앱의 설치 유도(A2HS) 기능을 구현하고, Paddle 결제 솔루션을 연동하여 정기 구독 결제 프로세스 구축',
         ],
         productLink: 'https://studio.camerafi.com',
+        detailLink: '/projects/camerafi',
         skills: ['Next.js', 'TypeScript', 'Mui', 'PWA', 'Webpack', 'Firebase', 'Paddle'],
       },
       {

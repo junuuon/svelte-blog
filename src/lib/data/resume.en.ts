@@ -76,6 +76,7 @@ export const workExperiences: WorkExperienceProps[] = [
           '**[Service Enhancement]** Improved user accessibility via **Next-PWA** (A2HS) and established a recurring subscription payment process by integrating the **Paddle** solution.',
         ],
         productLink: 'https://studio.camerafi.com',
+        detailLink: '/projects/camerafi',
         skills: ['Next.js', 'TypeScript', 'Mui', 'PWA', 'Webpack', 'Firebase', 'Paddle'],
       },
       {

@@ -3,18 +3,20 @@
   import { browser } from '$app/environment';
   import Github from '$lib/components/Icon/Github.svelte';
   import Linkedin from '$lib/components/Icon/Linkedin.svelte';
+  import Globe from '$lib/components/Icon/Globe.svelte';
   import { getLanguage, setLanguage, type Language } from '$lib/utils/language';
 
   interface Props {
     githubLink?: string;
     linkedinLink?: string;
+    productLink?: string;
     lang?: Language;
     name: string;
     role: string;
     tagline: string;
   }
 
-  const { githubLink, linkedinLink, lang, name, role, tagline }: Props = $props();
+  const { githubLink, linkedinLink, productLink, lang, name, role, tagline }: Props = $props();
   let currentLang = $state<Language>(lang || 'en');
 
   $effect(() => {
@@ -54,6 +56,19 @@
         <button class="lang-toggle" onclick={toggleLanguage} aria-label="Toggle language">
           {langDisplay}
         </button>
+        {#if productLink}
+          <div class="icon">
+            <a
+              href={productLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Go to product page"
+              title="Go to product page"
+            >
+              <Globe />
+            </a>
+          </div>
+        {/if}
         {#if githubLink}
           <div class="icon">
             <a
@@ -74,7 +89,7 @@
             <a
               href={linkedinLink}
               target="_blank"
-              rel="external noopener noreferrer"
+              rel="noopener noreferrer"
               aria-label="Go to Linkedin page"
               title="Go to Linkedin page"
             >

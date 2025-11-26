@@ -83,7 +83,7 @@
 
   <link
     rel="preload"
-    href="/fonts/PretendardVariable.woff2"
+    href="/fonts/WantedSansVariable.woff2"
     as="font"
     type="font/woff2"
     crossorigin="anonymous"

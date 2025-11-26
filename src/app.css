@@ -1,9 +1,9 @@
 @font-face {
-  font-family: 'Pretendard';
-  font-weight: 45 920;
+  font-family: 'Wanted Sans';
+  font-weight: 400 1000;
   font-style: normal;
   font-display: swap;
-  src: url('/fonts/PretendardVariable.woff2') format('woff2-variations');
+  src: url('/fonts/WantedSansVariable.woff2') format('woff2-variations');
 }
 
 :root {
@@ -23,7 +23,7 @@
 
   --font-family-code: 'D2Coding';
   --font-family-code-ligature: 'D2Coding ligature';
-  --font-family-text: 'Pretendard';
+  --font-family-text: 'Wanted Sans';
 
   --color-bold: #000000;
   --color-inline-code: #212529;

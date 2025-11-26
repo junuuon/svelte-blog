@@ -4,5 +4,14 @@
   "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact", "svelte"],
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
+  },
+  "files.associations": {
+    "*.svx": "markdown"
+  },
+  "[svelte]": {
+    "editor.defaultFormatter": "svelte.svelte-vscode"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }

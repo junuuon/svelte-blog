@@ -24,7 +24,6 @@
     isHome
     githubLink={introduction.githubLink}
     linkedinLink={introduction.linkedinLink}
-    lang={data.locale}
     name={introduction.name}
     role={introduction.role}
     tagline={introduction.tagline}

@@ -5,12 +5,13 @@
   import Linkedin from '$lib/components/Icon/Linkedin.svelte';
   import Globe from '$lib/components/Icon/Globe.svelte';
   import type { Language } from '$lib/utils/language';
+  import { page } from '$app/state';
+  import { getLabels } from '$lib/data/labels';
 
   interface Props {
     githubLink?: string;
     linkedinLink?: string;
     productLink?: string;
-    lang?: Language;
     name: string;
     role: string;
     tagline: string;
@@ -21,23 +22,18 @@
     githubLink,
     linkedinLink,
     productLink,
-    lang,
     name,
     role,
     tagline,
     isHome = false,
   }: Props = $props();
-  let currentLang = $state<Language>(lang || 'en');
 
-  $effect(() => {
-    if (lang) {
-      currentLang = lang;
-    }
-  });
+  const locale = $derived((page.data.locale as Language | undefined) ?? 'en');
+  const labels = $derived(getLabels(locale));
 
   const toggleLanguage = async () => {
     if (browser) {
-      const newLang: Language = currentLang === 'ko' ? 'en' : 'ko';
+      const newLang: Language = locale === 'ko' ? 'en' : 'ko';
 
       try {
         const response = await fetch('/api/locale', {
@@ -57,7 +53,7 @@
     }
   };
 
-  const langDisplay = $derived(currentLang === 'ko' ? 'English' : '한국어');
+  const langDisplay = $derived(locale === 'ko' ? 'English' : '한국어');
 </script>
 
 <div>
@@ -66,7 +62,7 @@
       <h1 class="title">{name}</h1>
       <div class="icons">
         {#if isHome}
-          <button class="lang-toggle" onclick={toggleLanguage} aria-label="Toggle language">
+          <button class="lang-toggle" onclick={toggleLanguage} aria-label={labels.toggleLanguage}>
             {langDisplay}
           </button>
         {/if}
@@ -76,8 +72,8 @@
               href={productLink}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Go to product page"
-              title="Go to product page"
+              aria-label={labels.goToProductPage}
+              title={labels.goToProductPage}
             >
               <Globe />
             </a>
@@ -90,8 +86,8 @@
               target="_blank"
               data-sveltekit-reload
               rel="external noopener noreferrer"
-              aria-label="Go to Github page"
-              title="Go to Github page"
+              aria-label={labels.goToGithubPage}
+              title={labels.goToGithubPage}
             >
               <Github />
             </a>
@@ -104,8 +100,8 @@
               href={linkedinLink}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Go to Linkedin page"
-              title="Go to Linkedin page"
+              aria-label={labels.goToLinkedinPage}
+              title={labels.goToLinkedinPage}
             >
               <Linkedin />
             </a>

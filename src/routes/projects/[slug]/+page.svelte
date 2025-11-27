@@ -27,7 +27,6 @@
 <Title
   githubLink={metadata.originalLink || ''}
   productLink={metadata.productLink || ''}
-  lang={locale}
   name={metadata.title || slug}
   role={metadata.role || ''}
   tagline={metadata.description || ''}

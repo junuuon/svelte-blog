@@ -1,57 +1,57 @@
 import type { Language } from '../utils/language';
 
 export interface Labels {
-  switchToKorean: string;
-  switchToEnglish: string;
-  errorOccurred: string;
-  pageNotFound: string;
-  goHome: string;
-  project: string;
   contentLoadError: string;
-  goToGithub: string;
-  goToGithubPage: string;
-  goToProductPage: string;
   description: string;
-  whatDidIDo: string;
-  techStack: string;
-  viewProjectDetails: string;
+  errorOccurred: string;
+  goHome: string;
+  goToGithubPage: string;
+  goToGithubProfile: string;
+  goToLinkedinPage: string;
+  goToProductPage: string;
+  pageNotFound: string;
+  project: string;
   projectNotFound: string;
+  techStack: string;
+  toggleLanguage: string;
+  viewProjectDetails: string;
+  whatDidIDo: string;
 }
 
 export const labelsMap: Record<Language, Labels> = {
   ko: {
-    switchToKorean: '한국어로 전환',
-    switchToEnglish: 'Switch to English',
-    errorOccurred: '오류가 발생했습니다',
-    pageNotFound: '페이지를 찾을 수 없습니다',
-    goHome: '홈으로 돌아가기',
-    project: '프로젝트',
     contentLoadError: '컨텐츠를 불러올 수 없습니다.',
-    goToGithub: 'GitHub 링크로 이동',
-    goToGithubPage: 'GitHub 페이지로 이동',
-    goToProductPage: '제품 페이지로 이동',
     description: '설명',
-    whatDidIDo: '주요 작업',
-    techStack: '기술 스택',
-    viewProjectDetails: '프로젝트 자세히 보기',
+    errorOccurred: '오류가 발생했습니다',
+    goHome: '홈으로 돌아가기',
+    goToGithubPage: 'GitHub 페이지로 이동',
+    goToGithubProfile: 'GitHub 프로필로 이동',
+    goToLinkedinPage: 'Linkedin 페이지로 이동',
+    goToProductPage: '제품 페이지로 이동',
+    pageNotFound: '페이지를 찾을 수 없습니다',
+    project: '프로젝트',
     projectNotFound: '프로젝트를 찾을 수 없습니다.',
+    techStack: '기술 스택',
+    toggleLanguage: 'Switch to English',
+    viewProjectDetails: '프로젝트 자세히 보기',
+    whatDidIDo: '주요 작업',
   },
   en: {
-    switchToKorean: '한국어로 전환',
-    switchToEnglish: 'Switch to English',
-    errorOccurred: 'An error occurred',
-    pageNotFound: 'Page not found',
-    goHome: 'Go home',
-    project: 'Project',
     contentLoadError: 'Unable to load content.',
-    goToGithub: 'Go to Github link',
-    goToGithubPage: 'Go to Github page',
-    goToProductPage: 'Go to product page',
     description: 'Description',
-    whatDidIDo: 'What did I Do',
-    techStack: 'Tech Stack',
-    viewProjectDetails: 'View project details',
+    errorOccurred: 'An error occurred',
+    goHome: 'Go home',
+    goToGithubPage: 'Go to Github page',
+    goToGithubProfile: 'Go to Github profile',
+    goToLinkedinPage: 'Go to Linkedin page',
+    goToProductPage: 'Go to product page',
+    pageNotFound: 'Page not found',
+    project: 'Project',
     projectNotFound: 'Project not found.',
+    techStack: 'Tech Stack',
+    toggleLanguage: '한국어로 전환하기',
+    viewProjectDetails: 'View project details',
+    whatDidIDo: 'What did I Do',
   },
 };
 

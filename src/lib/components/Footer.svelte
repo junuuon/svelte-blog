@@ -12,7 +12,8 @@
     href="https://github.com/junuuon"
     target="_blank"
     rel="author me external noopener noreferrer"
-    aria-label={labels.goToGithub}
+    aria-label={labels.goToGithubProfile}
+    title={labels.goToGithubProfile}
   >
     <p class="link-text">@junuuon</p>
   </a>

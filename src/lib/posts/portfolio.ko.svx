@@ -1,11 +1,11 @@
 ---
 title: SvelteKit 포트폴리오
-description: Next.js에서 Svelte 5로 마이그레이션하여 성능을 극대화한 정적 웹사이트
-date: '2025-11-20'
+description: Cloudflare Pages와 Svelte 5를 활용한 엣지 기반 고성능 웹사이트
+date: '2025-11-27'
 image: '/images/blog/1.webp'
-productLink: 'https://junuuon.github.io'
+techStack: ['Svelte 5', 'SvelteKit', 'TypeScript', 'Mdsvex', 'Cloudflare Pages']
+productLink: 'https://junwon.pages.dev'
 originalLink: 'https://github.com/junuuon/junuuon.github.io'
-techStack: ['Svelte 5', 'SvelteKit', 'TypeScript', 'Mdsvex']
 ---
 
 <script>
@@ -14,19 +14,19 @@ techStack: ['Svelte 5', 'SvelteKit', 'TypeScript', 'Mdsvex']
 
 ## 💡 프로젝트 소개
 
-**"Virtual DOM을 넘어, 컴파일러 기반의 고성능 포트폴리오로"**
+**"정적 사이트의 한계를 넘어, 동적인 사용자 경험으로"**
 
-기존 Next.js로 운영하던 블로그를 **Svelte 5**와 **SvelteKit**으로 전면 마이그레이션했습니다.
-단순한 프레임워크 교체가 아니라, **런타임 오버헤드를 제거하고 초기 로딩 속도(FCP)를 극한으로 줄이기 위한 기술적 도전**이었습니다.
+기존 GitHub Pages에서 운영하던 포트폴리오를 **Cloudflare Pages**로 마이그레이션했습니다.
+단순히 파일을 호스팅하는 것을 넘어, **Cloudflare Functions(Serverless)**를 활용하여 정적 사이트에서는 구현하기 힘든 서버 사이드 로직을 추가했습니다.
 
-Tailwind CSS 같은 유틸리티 프레임워크 없이 **Pure CSS와 CSS Variables**만으로 다크 모드와 반응형 디자인을 설계하여, 불필요한 CSS 로딩을 방지하고 시맨틱한 마크업을 구현했습니다.
+Svelte 5의 최신 런타임과 Cloudflare의 인프라를 결합하여, **초기 로딩 속도 최적화**와 **매끄러운 사용자 경험**을 동시에 잡았습니다.
 
 ### 🛠 Tech Stack
 
-- **Framework:** Svelte 5, SvelteKit (Adapter Static)
-- **Content:** Mdsvex (Markdown for Svelte)
-- **Styling:** Pure CSS (CSS Variables), Normalize.css
-- **Deployment:** GitHub Pages
+- **Framework:** Svelte 5, SvelteKit (Adapter Cloudflare)
+- **Infrastructure:** Cloudflare Pages (Functions)
+- **Styling:** Pure CSS (CSS Variables)
+- **Content:** Mdsvex
 
 ---
 
@@ -34,48 +34,59 @@ Tailwind CSS 같은 유틸리티 프레임워크 없이 **Pure CSS와 CSS Variab
 
 ### 1. 하이브리드 UX (Resume + Portfolio)
 
-<ImageDescription src="/images/blog/1.webp" alt="Main page">
-  이력서의 정보 전달력과 포트폴리오의 시각적 경험을 결합했습니다.
-  홈 화면은 <strong>'경력 기술서(Resume)'</strong> 형식으로 핵심 정보를 빠르게 전달하고, '상세 보기'를 클릭하면 <strong>'프로젝트 회고(Showcase)'</strong> 페이지로 전환되는 구조입니다.
+<ImageDescription src="/images/blog/1.webp" alt="Main page" />
+
+이력서의 정보 전달력과 포트폴리오의 시각적 경험을 결합했습니다.
+홈 화면은 **'이력서(Resume)'** 형식으로 핵심 정보를 빠르게 전달하고, '프로젝트 자세히 보기'를 클릭하면 **'프로젝트 회고(Showcase)'** 페이지로 전환되는 구조입니다.
+
+### 2. 서버 사이드 언어 감지
+
+<ImageDescription src="/images/blog/i18n_demo.gif" alt="Server-side language detection">
+ 
 </ImageDescription>
 
-### 2. Pure CSS 기반 반응형 디자인
+```typescript
+const response = await fetch('/api/locale', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({ locale: newLang }),
+});
+```
 
-<ImageDescription src="/images/blog/2.webp" alt="Responsive design demo">
-  무거운 CSS 프레임워크(Tailwind, Bootstrap) 없이 <strong>Pure CSS</strong>로 반응형 레이아웃을 직접 설계했습니다.
-  모바일, 태블릿, 데스크탑 등 <strong>모든 뷰포트 크기에 유동적으로 대응</strong>하며, CSS Variables를 활용하여 유지보수성을 높였습니다.
-</ImageDescription>
+기존 클라이언트 사이드(`navigator.language`) 감지의 한계였던 '화면 깜빡임' 현상을 해결했습니다.
+**Cloudflare Functions**를 활용하여 요청 헤더의 `Accept-Language`를 **서버 사이드에서 미리 파싱**합니다. 이를 통해 HTML이 브라우저에 도달하기 전에 이미 사용자의 언어(한국어/영어)로 렌더링되어 전달됩니다.
 
-### 3. 웹 표준과 성능 최적화 (Lighthouse 100)
+### 3. 웹 표준과 성능 최적화
 
 <ImageDescription src="/images/blog/3.webp" alt="Lighthouse performance score">
-  Svelte의 컴파일러 특성과 Zero-runtime CSS를 통해 <strong>Lighthouse 4개 전 영역(Performance, Accessibility, Best Practices, SEO) 만점</strong>을 달성했습니다.
-  특히 <strong>시맨틱 태그(Semantic Tag)</strong>를 적극 활용하여 스크린 리더 접근성을 준수하고, 검색 엔진 최적화(SEO)를 강화했습니다.
+  <strong>Performance 97점, Accessibility/Best Practices 100점</strong>을 달성했습니다.
+  <br/>
+  개인 정보 보호를 위해 검색 엔진 인덱싱(SEO)은 의도적으로 차단(<code>robots.txt</code>)하였으나, 그 외 모든 영역에서는 시맨틱 마크업과 이미지 최적화를 통해 웹 표준을 철저히 준수했습니다.
 </ImageDescription>
 
-### 4. 시스템 테마 및 언어 감지
+### 4. Pure CSS 기반 반응형 디자인
 
-<ImageDescription src="/images/blog/4.gif" alt="Dark mode transition">
-  사용자 경험(UX)을 최우선으로 고려한 환경 감지 시스템입니다.
+<ImageDescription src="/images/blog/2.webp" alt="Responsive design demo">
+  무거운 CSS 프레임워크 없이 <strong>Pure CSS</strong>로 반응형 레이아웃을 직접 설계했습니다.
+  단순한 크기 조절을 넘어, <strong>모바일과 PC 환경 각각에 최적화된 UI/UX</strong>를 제공하여 어떤 디바이스에서도 정보가 명확하게 전달되도록 구현했습니다.
 </ImageDescription>
-
-1. **테마 감지:** `prefers-color-scheme`을 감지하여 시스템 설정(Dark/Light)에 즉각 반응하며, 깜빡임(Flicker) 현상을 원천 차단했습니다.
-2. **언어 감지:** 브라우저 언어 설정에 맞춰 한국어/영어를 자동으로 제공합니다.
 
 ---
 
-## 💬 기술적 의사결정
+## 💬 기술적 의사결정 (Migration Story)
 
-### 1. Next.js에서 Svelte로의 전환
+### 1. 왜 GitHub Pages에서 Cloudflare Pages로 옮겼는가?
 
-Next.js의 정적 배포(Static Export) 방식도 훌륭하지만, 페이지 로드 후 React가 실행되는 하이드레이션 과정이 블로그 성격의 사이트에는 불필요하게 무겁다고 느꼈습니다.
-**Svelte**는 빌드 타임에 최적화된 바닐라 JS로 컴파일되기 때문에, 런타임 오버헤드가 적고 초기 로딩 속도가 빠르다는 장점이 있어 이번 프로젝트에 도입했습니다.
+GitHub Pages는 훌륭한 정적 호스팅 도구이지만, **요청 헤더(Request Header)를 다룰 수 없다**는 한계가 있었습니다.
+브라우저 언어 설정에 맞춰 콘텐츠를 제공하기 위해서는 **서버 사이드에서의 처리가 필수적**이었습니다.
+**Cloudflare Pages**는 정적 파일 호스팅뿐만 아니라 **Serverless Functions**를 지원하므로, 별도의 백엔드 서버를 구축하지 않고도 필요한 로직을 수행할 수 있어 마이그레이션을 결정했습니다.
 
-### 2. CSS Framework를 사용하지 않은 이유
+### 2. Svelte 5 Runes를 통한 상태 관리
 
-프로젝트 규모가 크지 않아 Tailwind CSS 같은 도구 없이도 충분히 관리가 가능하다고 판단했습니다.
-**Semantic CSS**와 **CSS Variables**를 직접 정의하여 사용함으로써 HTML 마크업을 깔끔하게 유지하고, 다크 모드 전환 로직을 더 세밀하게 제어할 수 있었습니다.
+복잡한 상태 관리를 위해 Svelte 5의 **Runes($state, $derived)**를 도입했습니다. 기존 React의 `useEffect`나 Svelte 4의 스토어보다 훨씬 직관적인 문법으로 반응형 로직을 작성할 수 있었으며, 이를 통해 코드베이스를 경량화했습니다.
 
-### 3. Mdsvex 도입
+### 3. SEO 점수와 프라이버시 (Trade-off)
 
-React의 MDX 대신 Svelte 전용인 **Mdsvex**를 사용했습니다. 마크다운 파일 내부에서 Svelte 컴포넌트(`<script>`, `<style>`)를 바로 사용할 수 있어, 포스트별로 필요한 스타일이나 스크립트를 직관적으로 추가하기 편했습니다.
+Lighthouse 측정 시 SEO 점수가 66점으로 나타나는 것은 기술적 결함이 아닌 **의도된 설계**입니다. 이력서에 포함된 민감한 개인정보가 무분별하게 검색 엔진에 노출되는 것을 막기 위해 `noindex` 처리를 하였으며, 이는 **보안과 프라이버시를 우선순위에 둔 결정**입니다.

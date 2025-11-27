@@ -21,14 +21,17 @@
   .image-description {
     margin: 2rem 0;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   .image-description img {
     max-width: 100%;
     max-height: 60vh;
     height: auto;
-    border-radius: 16px;
-    width: 100%;
+    border-radius: 8px;
     object-fit: contain;
   }
 

@@ -1,31 +1,19 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
-  import { browser } from '$app/environment';
   import { goto } from '$app/navigation';
   import { page } from '$app/state';
-  import { getLanguage, type Language } from '$lib/utils/language';
+  import type { Language } from '$lib/utils/language';
   import { getLabels } from '$lib/data/labels';
   import { resolve } from '$app/paths';
 
   const errorStatus = page.status || 500;
 
-  let currentLang = $state<Language>('en');
-  let labels = $state(getLabels('en'));
-
-  onMount(() => {
-    if (browser) {
-      const pathname = window.location.pathname;
-      const langMatch = pathname.match(/^\/(ko|en)/);
-      const lang = langMatch ? (langMatch[1] as Language) : getLanguage();
-      currentLang = lang;
-      labels = getLabels(lang);
-    }
-  });
+  const locale = $derived((page.data.locale as Language | undefined) ?? 'en');
+  const labels = $derived(getLabels(locale));
 
   const errorMessage = $derived(page.error?.message || labels.errorOccurred);
 
   const goHome = () => {
-    void goto(resolve(`/${currentLang}`));
+    void goto(resolve('/'));
   };
 </script>
 

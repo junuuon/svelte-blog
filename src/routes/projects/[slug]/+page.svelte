@@ -1,11 +1,11 @@
 <script lang="ts">
-  import type { PageData } from './$types';
   import Title from '$lib/components/Title.svelte';
   import { getLabels } from '$lib/data/labels';
+  import type { PageData } from './$types';
 
   let { data }: { data: PageData } = $props();
-  const { component: Component, metadata, slug, lang } = data;
-  const labels = $derived(getLabels(lang));
+  const { component: Component, metadata, slug, locale } = data;
+  const labels = $derived(getLabels(locale));
 </script>
 
 <svelte:head>
@@ -27,7 +27,7 @@
 <Title
   githubLink={metadata.originalLink || ''}
   productLink={metadata.productLink || ''}
-  {lang}
+  lang={locale}
   name={metadata.title || slug}
   role={metadata.role || ''}
   tagline={metadata.description || ''}

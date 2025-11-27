@@ -1,42 +1,26 @@
 export type Language = 'ko' | 'en';
 
-const LANGUAGE_KEY = 'preferred-language';
-
-export const detectBrowserLanguage = (): Language => {
-  if (typeof window === 'undefined') {
+export const detectLanguageFromHeader = (acceptLanguage: string | null): Language => {
+  if (!acceptLanguage) {
     return 'en';
   }
 
-  const browserLang: string =
-    navigator.language ||
-    ('userLanguage' in navigator
-      ? (navigator as { userLanguage?: string }).userLanguage
-      : undefined) ||
-    'en';
-  const langCode = browserLang.toLowerCase().split('-')[0];
+  const languages = acceptLanguage
+    .split(',')
+    .map((lang) => {
+      const [code, q = 'q=1'] = lang.trim().split(';');
+      const quality = parseFloat(q.replace('q=', ''));
+      return { code: code.toLowerCase().split('-')[0], quality };
+    })
+    .sort((a, b) => b.quality - a.quality);
 
-  return langCode === 'ko' ? 'ko' : 'en';
-};
-
-export const getLanguage = (): Language => {
-  if (typeof window === 'undefined') {
-    return 'en';
+  for (const lang of languages) {
+    if (lang.code === 'ko') {
+      return 'ko';
+    }
   }
 
-  const saved = localStorage.getItem(LANGUAGE_KEY) as Language | null;
-  if (saved === 'ko' || saved === 'en') {
-    return saved;
-  }
-
-  const detected = detectBrowserLanguage();
-  setLanguage(detected);
-  return detected;
+  return 'en';
 };
 
-export const setLanguage = (lang: Language): void => {
-  if (typeof window === 'undefined') {
-    return;
-  }
-  localStorage.setItem(LANGUAGE_KEY, lang);
-  window.dispatchEvent(new CustomEvent('languagechange', { detail: { lang } }));
-};
+

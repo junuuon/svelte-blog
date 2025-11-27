@@ -1,10 +1,9 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
   import { browser } from '$app/environment';
   import Github from '$lib/components/Icon/Github.svelte';
   import Linkedin from '$lib/components/Icon/Linkedin.svelte';
   import Globe from '$lib/components/Icon/Globe.svelte';
-  import { getLanguage, setLanguage, type Language } from '$lib/utils/language';
+  import type { Language } from '$lib/utils/language';
 
   interface Props {
     githubLink?: string;
@@ -25,23 +24,25 @@
     }
   });
 
-  onMount(() => {
-    if (browser && !lang) {
-      const detectedLang = getLanguage();
-      currentLang = detectedLang;
-    }
-  });
-
-  const toggleLanguage = () => {
+  const toggleLanguage = async () => {
     if (browser) {
       const newLang: Language = currentLang === 'ko' ? 'en' : 'ko';
-      setLanguage(newLang);
 
-      const currentPath = window.location.pathname;
-      const pathWithoutLang = currentPath.replace(/^\/(ko|en)(\/|$)/, '/') || '/';
-      const newPath = pathWithoutLang === '/' ? `/${newLang}` : `/${newLang}${pathWithoutLang}`;
+      try {
+        const response = await fetch('/api/locale', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ locale: newLang }),
+        });
 
-      window.location.href = newPath;
+        if (response.ok) {
+          window.location.reload();
+        }
+      } catch (error) {
+        console.error('Failed to update locale:', error);
+      }
     }
   };
 

@@ -2,7 +2,7 @@
   font-family: 'Wanted Sans';
   font-weight: 400 1000;
   font-style: normal;
-  font-display: optional;
+  font-display: swap;
   src: url('/fonts/WantedSansVariable.woff2') format('woff2-variations');
 }
 
@@ -10,7 +10,7 @@
   font-family: 'Geist Mono';
   font-weight: 100 900;
   font-style: normal;
-  font-display: optional;
+  font-display: swap;
   src: url('/fonts/GeistMono[wght].woff2') format('woff2-variations');
 }
 

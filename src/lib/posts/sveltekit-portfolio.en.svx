@@ -1,0 +1,97 @@
+---
+title: SvelteKit Portfolio
+description: Edge-enhanced static website built with Svelte 5 and Cloudflare Pages
+date: '2025-11-27'
+image: '/images/sveltekit-portfolio/1.webp'
+techStack: ['Svelte 5', 'SvelteKit', 'TypeScript', 'Mdsvex', 'Cloudflare Pages']
+productLink: 'https://junwon.pages.dev'
+originalLink: 'https://github.com/junuuon/junuuon.github.io'
+---
+
+<script>
+  import ImageDescription from '$lib/components/ImageDescription.svelte';
+</script>
+
+## 💡 Project Overview
+
+**"Adding Dynamic Routing to Static Sites: Performance and Flexibility"**
+
+Because GitHub Pages uses a **pure static hosting model with no server-side logic**, any multilingual handling had to rely entirely on client-side scripts.
+
+This project migrated to **Cloudflare Pages**, keeping the speed of **SSG (Static Site Generation)** while adopting a **hybrid approach** that detects language at request time through **Edge Functions (middleware)**.
+
+### 🛠 Tech Stack
+
+- **Framework:** Svelte 5, SvelteKit (Adapter Cloudflare)
+- **Infrastructure:** Cloudflare Pages (Functions)
+- **Styling:** Pure CSS (CSS Variables)
+- **Content:** Mdsvex
+
+---
+
+## 💻 Key Features
+
+### 1. Hybrid UX (Resume + Portfolio)
+
+<ImageDescription src="/images/sveltekit-portfolio/1.webp" alt="Main page" />
+
+Combines the information density of a resume with the visual appeal of a portfolio.
+
+The home screen delivers key information in a **'Resume'** format for quick scanning, while clicking 'View project details' transitions the user to a rich **'Project Showcase'** page.
+
+### 2. Server-Side Language Detection
+
+```typescript
+export const handle: Handle = async ({ event, resolve }) => {
+  let locale = event.cookies.get(LANGUAGE_COOKIE) as 'ko' | 'en' | undefined;
+
+  if (!locale) {
+    const acceptLanguage = event.request.headers.get('accept-language');
+    locale = detectLanguageFromHeader(acceptLanguage);
+  }
+
+  event.locals.locale = locale;
+
+  const response = await resolve(event, {
+    transformPageChunk: ({ html }) => html.replace('%lang%', locale),
+  });
+
+  return response;
+};
+```
+
+I resolved the "screen flicker" issue common with client-side (`navigator.language`) detection.
+
+Leveraging **Cloudflare Functions**, the `Accept-Language` header is parsed server-side before the response is sent. This ensures the HTML is rendered in the user's preferred language (Korean/English) before it even reaches the browser.
+
+### 3. Web Standards & Performance
+
+<ImageDescription src="/images/sveltekit-portfolio/3.webp" alt="Lighthouse performance score" />
+
+Achieved **Performance 97**, and **Accessibility/Best Practices 100**.
+
+For privacy reasons regarding personal information, search engine indexing (SEO) was intentionally blocked (`robots.txt`). However, in all other areas, I strictly adhered to web standards through semantic markup and image optimization.
+
+### 4. Pure CSS Responsive Design
+
+<ImageDescription src="/images/sveltekit-portfolio/2.webp" alt="Responsive design demo"/>
+
+Designed a responsive layout using **Pure CSS** without relying on heavy frameworks.
+
+Going beyond simple resizing, I implemented optimized UI/UX for both **Mobile and PC** environments, ensuring information is conveyed clearly regardless of the device.
+
+---
+
+## 💬 Technical Decisions
+
+### 1. Why Switch from GitHub Pages to Cloudflare Pages?
+
+The primary driver was the **initial loading experience**. On static hosting like GitHub Pages, displaying the correct language requires loading a blank page, checking the browser language via JS, and then redirecting. This causes a perceptible flicker and delay that harms UX. By intercepting requests server-side with **Cloudflare Functions**, I was able to deliver a **perfectly rendered first screen** without such delays.
+
+### 2. From Next.js to Svelte
+
+Next.js static exports still include the React runtime, incurring hydration costs. For a content-focused portfolio, this was unnecessary overhead. **Svelte** compiles to optimized Vanilla JS at build time. Its lightweight runtime and fast First Contentful Paint (FCP) made it the ideal tool for building a performance-centric static site.
+
+### 3. SEO Score vs. Privacy
+
+The SEO score of 66 on Lighthouse is a deliberate design choice, not a technical flaw. I applied `noindex` to prevent sensitive personal information contained in the resume from being indiscriminately exposed to search engines, prioritizing **security and privacy** over SEO metrics.

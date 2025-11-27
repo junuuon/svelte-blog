@@ -2,7 +2,7 @@
 title: 대선 뉴스 모아보기 페이지
 description: AWS Serverless 기반의 대선 뉴스 모아보기 페이지
 date: '2021-12-30'
-image: '/images/daesun/1.webp'
+image: '/images/election-aggregator/1.webp'
 originalLink: 'https://github.com/junuuon/ITE3068_team8'
 techStack: ['React', 'AWS Amplify', 'Recharts', 'MUI', 'Styled Components']
 ---
@@ -32,36 +32,39 @@ techStack: ['React', 'AWS Amplify', 'Recharts', 'MUI', 'Styled Components']
 
 ### 1. 메인 대시보드
 
-<ImageDescription src="/images/daesun/1.webp" alt="Main page">
-  사용자가 가장 먼저 접하는 대시보드입니다. <strong>MUI</strong>의 그리드 시스템을 활용하여 D-Day 카운터, 오늘의 주요 뉴스, 선거 일정을 반응형 레이아웃으로 구성했습니다.
-</ImageDescription>
+<ImageDescription src="/images/election-aggregator/1.webp" alt="Main page"/>
+
+사용자가 가장 먼저 접하는 대시보드입니다.
+
+**MUI**의 그리드 시스템을 활용하여 D-Day 카운터, 오늘의 주요 뉴스, 선거 일정을 반응형 레이아웃으로 구성했습니다.
 
 ### 2. AWS Amplify 기반 인증 (로그인/회원가입)
 
-<ImageDescription src="/images/daesun/2.webp" alt="Login page">
-  <br/>
-  <img src="/images/daesun/3.webp" alt="Signup page" />
-  <br/>
-  <strong>AWS Amplify Auth</strong>를 연동하여 별도의 백엔드 서버 구축 없이 보안성이 보장된 회원가입 및 로그인 세션 관리 기능을 구현했습니다.
-</ImageDescription>
+<ImageDescription src="/images/election-aggregator/2.webp" alt="Login page"/>
+
+<ImageDescription src="/images/election-aggregator/3.webp" alt="Signup page" />
+
+**AWS Amplify Auth**를 연동하여 별도의 백엔드 서버 구축 없이 보안성이 보장된 회원가입 및 로그인 세션 관리 기능을 구현했습니다.
 
 ### 3. 개인화 기능 (북마크)
 
-<ImageDescription src="/images/daesun/5.webp" alt="Reading list">
-  관심 있는 기사를 스크랩하면 <strong>Amplify API(GraphQL)</strong>를 통해 사용자 개인 저장소에 동기화됩니다.
-</ImageDescription>
+<ImageDescription src="/images/election-aggregator/5.webp" alt="Reading list"/>
+
+관심 있는 기사를 스크랩하면 **Amplify API(GraphQL)**를 통해 사용자 개인 저장소에 동기화됩니다.
 
 ### 4. 뉴스 큐레이션 및 시각화
 
-<ImageDescription src="/images/daesun/11.webp" alt="Election news page">
-  Naver News API로 수집한 데이터를 가공하여 카드 뉴스 형태로 보여줍니다. <strong>Microlink</strong> 등을 활용해 기사의 메타데이터(썸네일, 요약)를 시각화하여 정보 전달력을 높였습니다.
-</ImageDescription>
+<ImageDescription src="/images/election-aggregator/11.webp" alt="Election news page"/>
+
+Naver News API로 수집한 데이터를 가공하여 카드 뉴스 형태로 보여줍니다.
+
+**Microlink** 등을 활용해 기사의 메타데이터(썸네일, 요약)를 시각화하여 정보 전달력을 높였습니다.
 
 ### 5. 여론조사 차트
 
-<ImageDescription src="/images/daesun/13.webp" alt="Election poll page">
-  복잡한 지지율 추이를 <strong>Recharts</strong> 라이브러리를 사용하여 직관적인 라인/바 차트로 시각화했습니다.
-</ImageDescription>
+<ImageDescription src="/images/election-aggregator/13.webp" alt="Election poll page"/>
+
+복잡한 지지율 추이를 **Recharts** 라이브러리를 사용하여 직관적인 라인/바 차트로 시각화했습니다.
 
 ---
 
@@ -80,7 +83,6 @@ techStack: ['React', 'AWS Amplify', 'Recharts', 'MUI', 'Styled Components']
 
 ## 💬 회고: "서버리스 아키텍처의 가능성을 보다"
 
-- **AWS Amplify를 통한 생산성 향상:**
-  <aside>
-    복잡한 백엔드 인프라 구축 대신 <strong>AWS Amplify</strong>를 도입함으로써, 프론트엔드 개발자가 비즈니스 로직과 데이터 시각화에 집중할 수 있는 환경을 만들었습니다. 이를 통해 제한된 프로젝트 기간 내에 인증, DB, API를 모두 갖춘 완성된 서비스를 배포할 수 있었습니다.
-  </aside>
+**AWS Amplify를 통한 생산성 향상:**
+
+복잡한 백엔드 인프라 구축 대신 **AWS Amplify**를 도입함으로써, 프론트엔드 개발자가 비즈니스 로직과 데이터 시각화에 집중할 수 있는 환경을 만들었습니다. 이를 통해 제한된 프로젝트 기간 내에 인증, DB, API를 모두 갖춘 완성된 서비스를 배포할 수 있었습니다.

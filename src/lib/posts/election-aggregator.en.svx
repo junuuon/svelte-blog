@@ -2,7 +2,7 @@
 title: Election News Aggregator
 description: AWS Serverless-based 2022 Election Info Aggregator
 date: '2021-12-30'
-image: '/images/daesun/1.webp'
+image: '/images/election-aggregator/1.webp'
 originalLink: 'https://github.com/junuuon/ITE3068_team8'
 techStack: ['React', 'AWS Amplify', 'Recharts', 'MUI', 'Styled Components']
 ---
@@ -32,36 +32,39 @@ We adopted **AWS Amplify (Serverless)** to minimize backend infrastructure costs
 
 ### 1. Main Dashboard
 
-<ImageDescription src="/images/daesun/1.webp" alt="Main page">
-  The landing dashboard. Utilizing <strong>MUI's Grid System</strong>, we organized key metrics like the D-Day counter, daily headlines, and the election timeline into a responsive layout optimized for various screen sizes.
-</ImageDescription>
+<ImageDescription src="/images/election-aggregator/1.webp" alt="Main page"/>
+
+The landing dashboard.
+
+Utilizing **MUI's Grid System**, we organized key metrics like the D-Day counter, daily headlines, and the election timeline into a responsive layout optimized for various screen sizes.
 
 ### 2. AWS Amplify Authentication
 
-<ImageDescription src="/images/daesun/2.webp" alt="Login page">
-  <br/>
-  <img src="/images/daesun/3.webp" alt="Signup page" />
-  <br/>
-  Integrated <strong>AWS Amplify Auth</strong> (Cognito) to implement secure sign-up and login session management without the overhead of building a separate backend server.
-</ImageDescription>
+<ImageDescription src="/images/election-aggregator/2.webp" alt="Login page"/>
+
+<ImageDescription src="/images/election-aggregator/3.webp" alt="Signup page" />
+
+Integrated **AWS Amplify Auth** (Cognito) to implement secure sign-up and login session management without the overhead of building a separate backend server.
 
 ### 3. Personalization (Bookmarks)
 
-<ImageDescription src="/images/daesun/5.webp" alt="Reading list">
-  Users can bookmark articles of interest. These bookmarks are synchronized to their personal storage in real-time via <strong>Amplify API (GraphQL)</strong>.
-</ImageDescription>
+<ImageDescription src="/images/election-aggregator/5.webp" alt="Reading list"/>
+
+Users can bookmark articles of interest. These bookmarks are synchronized to their personal storage in real-time via **Amplify API (GraphQL)**.
 
 ### 4. News Curation & Visualization
 
-<ImageDescription src="/images/daesun/11.webp" alt="Election news page">
-  Displays election news collected via Naver News API in a card format. We enhanced information delivery by parsing and visualizing metadata (thumbnails, summaries) using <strong>Microlink</strong>.
-</ImageDescription>
+<ImageDescription src="/images/election-aggregator/11.webp" alt="Election news page"/>
+
+Displays election news collected via Naver News API in a card format.
+
+We enhanced information delivery by parsing and visualizing metadata (thumbnails, summaries) using **Microlink**.
 
 ### 5. Poll Charts
 
-<ImageDescription src="/images/daesun/13.webp" alt="Election poll page">
-  Visualized complex approval rating trends into intuitive line and bar charts using the <strong>Recharts</strong> library, enabling users to track candidate performance easily.
-</ImageDescription>
+<ImageDescription src="/images/election-aggregator/13.webp" alt="Election poll page"/>
+
+Visualized complex approval rating trends into intuitive line and bar charts using the **Recharts** library, enabling users to track candidate performance easily.
 
 ---
 
@@ -80,7 +83,6 @@ We adopted **AWS Amplify (Serverless)** to minimize backend infrastructure costs
 
 ## 💬 Retrospective: "Productivity of Serverless Architecture"
 
-- **Efficiency with AWS Amplify:**
-  <aside>
-    By adopting <strong>AWS Amplify</strong> instead of building complex backend infrastructure from scratch, we created an environment where frontend developers could focus on business logic and data visualization. This allowed us to deploy a complete service with Auth, DB, and API capabilities within a limited project timeframe.
-  </aside>
+**Efficiency with AWS Amplify:**
+
+By adopting **AWS Amplify** instead of building complex backend infrastructure from scratch, we created an environment where frontend developers could focus on business logic and data visualization. This allowed us to deploy a complete service with Auth, DB, and API capabilities within a limited project timeframe.

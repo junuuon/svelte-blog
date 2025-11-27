@@ -2,7 +2,7 @@
 title: OnelineBank
 description: 2021 Woori Bank On-tact Hackathon Finalist - Conversational Remittance Fintech App
 date: '2021-06-05'
-image: '/images/bank/1.webp'
+image: '/images/oneline-bank/1.webp'
 originalLink: 'https://github.com/junuuon/OnelineBank'
 techStack: ['React Native', 'Expo', 'Firebase', 'Woori Bank API']
 ---
@@ -32,21 +32,21 @@ When a user expresses their intention to send money in everyday language, the ap
 
 #### 1. Splash & Intro
 
-<ImageDescription src='/images/bank/1.webp' alt="Splash page">
+<ImageDescription src='/images/oneline-bank/1.webp' alt="Splash page">
   An intuitive logo and intro screen showing the app's identity.
 </ImageDescription>
 
 #### 2. Simple Login
 
-<ImageDescription src="/images/bank/2.webp" alt="Login page">
+<ImageDescription src="/images/oneline-bank/2.webp" alt="Login page">
   Implemented secure and fast login using Firebase Auth.
 </ImageDescription>
 
 #### 3. Conversational Transfer
 
-<ImageDescription src="/images/bank/3.webp" alt="Chatting page">
-  <strong>Key Feature.</strong> It analyzes natural language text entered by the user (e.g., "Send 50,000 won to Mom") to automatically extract recipient, bank, and amount information.
-</ImageDescription>
+<ImageDescription src="/images/oneline-bank/3.webp" alt="Chatting page"/>
+
+**Key Feature.** It analyzes natural language text entered by the user (e.g., "Send 50,000 won to Mom") to automatically extract recipient, bank, and amount information.
 
 1. **Text Parsing:** Using Regex to recognize account information and amounts from unstructured text.
 2. **User Confirmation:** Implemented a Bot interaction to confirm if the recognized information is correct.
@@ -55,15 +55,15 @@ When a user expresses their intention to send money in everyday language, the ap
 
 #### 4. Shortcut Transfer (Address Book)
 
-<ImageDescription src="/images/bank/4.webp" alt="Contact page">
-  Designed the database to register frequently used accounts with aliases (e.g., Mom, Friend) so they match immediately just by typing the name in the chat window.
-</ImageDescription>
+<ImageDescription src="/images/oneline-bank/4.webp" alt="Contact page"/>
+
+Designed the database to register frequently used accounts with aliases (e.g., Mom, Friend) so they match immediately just by typing the name in the chat window.
 
 #### 5. Account & User Management
 
-<ImageDescription src="/images/bank/5.webp" alt="Account add page">
+<ImageDescription src="/images/oneline-bank/5.webp" alt="Account add page">
   <br/>
-  <img src="/images/bank/6.webp" alt="Account page" />
+  <img src="/images/oneline-bank/6.webp" alt="Account page" />
   <br/>
   Real-time management of user account information and transfer history through Firestore integration.
 </ImageDescription>
@@ -75,7 +75,7 @@ When a user expresses their intention to send money in everyday language, the ap
 **Planning, Design, and Development 100% Solo Execution (5-day Sprint)**
 
 - **Frontend:** Built a cross-platform app using React Native & Expo.
-- **Logic:** Implemented text parsing algorithms for NLP and logic for managing transfer process states.
+- **Logic:** Implemented text-parsing algorithms for natural language processing and state-management logic for the remittance flow.
 - **API Integration:** Integrated Woori Bank Remittance API and handled asynchronous transactions.
 - **Security:** Implemented secondary authentication utilizing mobile native biometrics features.
 

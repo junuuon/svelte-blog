@@ -1,8 +1,8 @@
 ---
-title: OnelineBank
+title: 한줄뱅크
 description: 2021 우리은행 온(On)택트 해커톤 본선 진출작 - 대화형 송금 핀테크 앱
 date: '2021-06-05'
-image: '/images/bank/1.webp'
+image: '/images/oneline-bank/1.webp'
 originalLink: 'https://github.com/junuuon/OnelineBank'
 techStack: ['React Native', 'Expo', 'Firebase', 'Woori Bank API']
 ---
@@ -13,9 +13,9 @@ techStack: ['React Native', 'Expo', 'Firebase', 'Woori Bank API']
 
 ## 💡 프로젝트 소개
 
-**"복잡한 송금 절차를 한 줄의 채팅으로(One-line) 해결할 수 없을까?"**
+**"복잡한 송금 절차를 한 줄의 채팅으로 해결할 수 없을까?"**
 
-기존 모바일 뱅킹 앱은 송금을 위해 수많은 뎁스(Depth)와 입력 과정을 거쳐야 했습니다. OnelineBank는 이러한 불편함을 해소하기 위해 **대화형 인터페이스(Conversational UI)**를 도입한 핀테크 솔루션입니다.
+기존 모바일 뱅킹 앱은 송금을 위해 수많은 뎁스(Depth)와 입력 과정을 거쳐야 했습니다. 한줄뱅크는 이러한 불편함을 해소하기 위해 **대화형 인터페이스**를 도입한 핀테크 솔루션입니다.
 
 사용자가 일상 언어로 송금 의사를 밝히면, 앱이 이를 분석하여 자동으로 송금 프로세스를 실행합니다. **'채팅'이라는 가장 익숙한 경험을 금융 서비스에 접목**하여 사용성을 극대화했습니다.
 
@@ -32,21 +32,21 @@ techStack: ['React Native', 'Expo', 'Firebase', 'Woori Bank API']
 
 #### 1. 스플래쉬 & 인트로
 
-<ImageDescription src='/images/bank/1.webp' alt="Splash page">
+<ImageDescription src='/images/oneline-bank/1.webp' alt="Splash page">
   앱의 정체성을 보여주는 직관적인 로고와 인트로 화면입니다.
 </ImageDescription>
 
 #### 2. 간편 로그인
 
-<ImageDescription src="/images/bank/2.webp" alt="Login page">
+<ImageDescription src="/images/oneline-bank/2.webp" alt="Login page">
   Firebase Auth를 연동하여 안전하고 빠른 로그인을 구현했습니다.
 </ImageDescription>
 
 #### 3. 대화형 송금
 
-<ImageDescription src="/images/bank/3.webp" alt="Chatting page">
-  <strong>핵심 기능입니다.</strong> 사용자가 입력한 자연어 텍스트("엄마한테 5만원 보내줘")를 분석하여 수취인, 은행, 금액 정보를 자동으로 추출합니다.
-</ImageDescription>
+<ImageDescription src="/images/oneline-bank/3.webp" alt="Chatting page"/>
+
+**핵심 기능입니다.** 사용자가 입력한 자연어 텍스트("엄마한테 5만원 보내줘")를 분석하여 수취인, 은행, 금액 정보를 자동으로 추출합니다.
 
 1. **텍스트 파싱:** 정규표현식 등을 활용해 비정형 텍스트에서 계좌 정보와 금액을 인식
 2. **사용자 확인:** 인식된 정보가 맞는지 되물어보는 봇(Bot) 인터랙션 구현
@@ -55,15 +55,15 @@ techStack: ['React Native', 'Expo', 'Firebase', 'Woori Bank API']
 
 #### 4. 단축 송금 (주소록)
 
-<ImageDescription src="/images/bank/4.webp" alt="Contact page">
-  자주 보내는 계좌를 별칭(예: 엄마, 친구)으로 등록하여, 채팅창에서 이름만 입력해도 즉시 매칭되도록 데이터베이스를 설계했습니다.
-</ImageDescription>
+<ImageDescription src="/images/oneline-bank/4.webp" alt="Contact page"/>
+
+자주 보내는 계좌를 별칭(예: 엄마, 친구)으로 등록하여, 채팅창에서 이름만 입력해도 즉시 매칭되도록 데이터베이스를 설계했습니다.
 
 #### 5. 계좌 및 사용자 관리
 
-<ImageDescription src="/images/bank/5.webp" alt="Account add page">
+<ImageDescription src="/images/oneline-bank/5.webp" alt="Account add page">
   <br/>
-  <img src="/images/bank/6.webp" alt="Account page" />
+  <img src="/images/oneline-bank/6.webp" alt="Account page" />
   <br/>
   Firestore와 연동하여 사용자의 계좌 정보와 송금 내역을 실시간으로 관리합니다.
 </ImageDescription>

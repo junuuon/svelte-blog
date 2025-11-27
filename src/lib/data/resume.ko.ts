@@ -76,7 +76,7 @@ export const workExperiences: WorkExperienceProps[] = [
           '**[서비스 고도화]** Next-PWA를 도입하여 웹앱의 설치 유도(A2HS) 기능을 구현하고, Paddle 결제 솔루션을 연동하여 정기 구독 결제 프로세스 구축',
         ],
         productLink: 'https://studio.camerafi.com',
-        detailLink: '/projects/camerafi',
+        detailLink: '/projects/camerafi-studio',
         skills: ['Next.js', 'TypeScript', 'Mui', 'PWA', 'Webpack', 'Firebase', 'Paddle'],
       },
       {
@@ -149,7 +149,7 @@ export const otherExperiences: OtherExperienceProps[] = [
           '핀테크 앱 개발: 송금, 생체 인증, Firebase 스토어 등 전 기능 단독 구현',
           'GitHub 링크를 통해 코드 및 릴리즈 확인 가능',
         ],
-        detailLink: '/projects/onelinebank',
+        detailLink: '/projects/oneline-bank',
         githubLink: 'https://github.com/junuuon/OnelineBank',
         skills: ['React Native', 'JavaScript', 'Firebase', 'Expo'],
       },
@@ -158,17 +158,17 @@ export const otherExperiences: OtherExperienceProps[] = [
   {
     project: [
       {
-        title: '개인 포트폴리오 사이트',
+        title: 'SvelteKit 포트폴리오 웹사이트',
         dateFrom: '2021-02',
         description:
-          'React의 가상 돔 오버헤드 없는 빠른 렌더링을 위해 Svelte로 구현한 정적 웹사이트입니다.',
+          'Cloudflare Pages와 Svelte 5를 활용하여 성능과 사용자 경험을 극대화한 엣지 기반(Edge-enhanced) 웹사이트입니다.',
         detail: [
-          '**[웹 표준 준수]** Lighthouse 4개 전 영역(Performance, Accessibility, Best Practices, SEO) 100점 달성',
-          '**[기능 구현]** 다크 모드, 반응형 디자인, Markdown(MDX) 파싱 파이프라인 구축',
+          '**[인프라 마이그레이션]** GitHub Pages에서 Cloudflare Pages로 이관하여 캐시 정책(TTL) 최적화 및 서버 사이드 언어 감지 구현',
+          '**[성능 최적화]** Svelte 5 Runes 및 Pure CSS 설계를 통해 Lighthouse 성능/접근성 100점 달성 (SEO는 개인정보 보호를 위해 의도적 차단)',
         ],
-        detailLink: '/projects/portfolio',
+        detailLink: '/projects/sveltekit-portfolio',
         githubLink: 'https://github.com/junuuon/junuuon.github.io',
-        skills: ['Svelte', 'SvelteKit', 'TypeScript', 'MDX'],
+        skills: ['Svelte', 'SvelteKit', 'TypeScript', 'Mdsvex', 'Cloudflare Pages'],
       },
     ],
   },
@@ -255,7 +255,7 @@ export const archives: ArchiveProps[] = [
           '**[데이터 관리]** GraphQL을 도입하여 클라이언트에서 필요한 데이터만 효율적으로 쿼리하는 구조 설계',
           '**[컴포넌트 설계]** React 및 styled-components를 활용하여 재사용 가능한 컴포넌트 계층 구조 디자인',
         ],
-        detailLink: '/projects/daesun',
+        detailLink: '/projects/election-aggregator',
         githubLink: 'https://github.com/junuuon/ITE3068_team8',
         skills: ['React', 'Javascript', 'AWS Amplify', 'GraphQL', 'styled-components'],
       },

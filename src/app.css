@@ -6,6 +6,14 @@
   src: url('/fonts/WantedSansVariable.woff2') format('woff2-variations');
 }
 
+@font-face {
+  font-family: 'Geist Mono';
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  src: url('/fonts/GeistMono[wght].woff2') format('woff2-variations');
+}
+
 :root {
   --space-xs: 0.5rem;
   --space-sm: 1rem;
@@ -21,8 +29,7 @@
   --font-h6: 1rem;
   --font-body: 1rem;
 
-  --font-family-code: 'D2Coding';
-  --font-family-code-ligature: 'D2Coding ligature';
+  --font-family-code: 'Geist Mono', monospace;
   --font-family-text: 'Wanted Sans';
 
   --color-bold: #000000;
@@ -82,7 +89,10 @@ html.dark {
 
 * {
   box-sizing: border-box;
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
 }
 
 img,
@@ -98,7 +108,9 @@ iframe {
 }
 
 html {
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 html,
@@ -201,6 +213,11 @@ ul li {
   line-height: 1.6;
 }
 
+ol li {
+  padding: 0.2rem 0 0.2rem 0.5rem;
+  line-height: 1.6;
+}
+
 ul li:before {
   color: var(--color-sub);
   content: '•';
@@ -234,13 +251,29 @@ button:focus-visible {
 }
 
 code {
-  font-family: var(--font-family-code-ligature), monospace;
+  font-family: var(--font-family-code), monospace;
+  font-feature-settings: 'liga' 1, 'calt' 1;
   background-color: var(--color-inline-bg);
-  padding: 0.2em 0.4em;
-  border-radius: 3px;
+  padding: 0.15em 0.2em;
+  border-radius: 4px;
   font-size: 0.9em;
   color: var(--color-inline-code);
 }
+
+pre {
+  font-family: var(--font-family-code), monospace;
+  font-feature-settings: 'liga' 1, 'calt' 1;
+  background-color: var(--color-code-bg);
+  border: 1px solid var(--color-bg-divider);
+  border-radius: 6px;
+  padding: var(--space-md);
+  margin: var(--space-md) 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  line-height: 1.6;
+  font-size: 0.9em;
+}
+
 
 article img {
   max-width: 100%;

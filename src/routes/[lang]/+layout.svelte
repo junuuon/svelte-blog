@@ -88,6 +88,13 @@
     type="font/woff2"
     crossorigin="anonymous"
   />
+  <link
+    rel="preload"
+    href="/fonts/GeistMono[wght].woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin="anonymous"
+  />
 
   <!-- prettier-ignore -->
   <script type="application/ld+json">

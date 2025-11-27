@@ -233,7 +233,7 @@ button:focus-visible {
 }
 
 code {
-  font-family: var(--font-family-code), monospace;
+  font-family: var(--font-family-code), monospace !important;
   font-feature-settings:
     'liga' 1,
     'calt' 1;
@@ -245,19 +245,28 @@ code {
 }
 
 pre {
-  font-family: var(--font-family-code), monospace;
+  font-family: var(--font-family-code), monospace !important;
   font-feature-settings:
     'liga' 1,
     'calt' 1;
   background-color: var(--color-code-bg);
   border: 1px solid var(--color-bg-divider);
   border-radius: 6px;
-  padding: var(--space-md);
+  padding: var(--space-sm);
   margin: var(--space-md) 0;
   overflow-x: auto;
   overflow-y: hidden;
   line-height: 1.6;
   font-size: 0.9em;
+}
+
+pre code {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-size: 1em;
+  color: var(--color-inline-code);
 }
 
 article img {

@@ -1,6 +1,8 @@
 <script lang="ts">
   import 'normalize.css';
   import '../app.css';
+  import '$lib/styles/prism-gruvbox-light.css';
+  import '$lib/styles/prism-gruvbox-dark.css';
   import favicon from '$lib/assets/favicon.svg';
   import { onMount } from 'svelte';
   import { browser } from '$app/environment';

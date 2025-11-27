@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Wanted Sans';
-  font-weight: 400 1000;
+  font-weight: 400 800;
   font-style: normal;
   font-display: optional;
   src: url('/fonts/WantedSansVariable.woff2') format('woff2-variations');
@@ -89,28 +89,10 @@ html.dark {
 
 * {
   box-sizing: border-box;
-  transition:
-    background-color 0.3s ease,
-    color 0.3s ease,
-    border-color 0.3s ease;
-}
-
-img,
-svg,
-video,
-canvas,
-iframe {
-  transition: none;
 }
 
 ::selection {
   background: var(--color-selection);
-}
-
-html {
-  transition:
-    background-color 0.3s ease,
-    color 0.3s ease;
 }
 
 html,

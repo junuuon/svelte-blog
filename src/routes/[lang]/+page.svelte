@@ -146,11 +146,9 @@
 
     <h2>Education</h2>
     {#if education}
-      <ul>
-        {#each education as education, educationIndex (educationIndex)}
-          <Row {...education} companyName={education.school} role={education.major ?? ''} />
-        {/each}
-      </ul>
+      {#each education as education, educationIndex (educationIndex)}
+        <Row {...education} companyName={education.school} role={education.major ?? ''} />
+      {/each}
     {/if}
 
     <h2>Archives</h2>

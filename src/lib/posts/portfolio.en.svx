@@ -55,13 +55,12 @@ Instead of using utility frameworks like Tailwind CSS, I designed Dark Mode and 
 
 ### 4. System Theme & Language Detection
 
-<ImageDescription src="/images/blog/3.webp" alt="Dark mode transition">
+<ImageDescription src="/images/blog/4.gif" alt="Dark mode transition">
   An environment detection system designed with UX as the top priority.
-  <br/>
-  1. <strong>Theme Detection:</strong> Reacts immediately to system settings (Dark/Light) using <code>prefers-color-scheme</code>, completely eliminating the "Flicker" effect.
-  <br/>
-  2. <strong>Language Detection:</strong> Automatically serves Korean or English content based on the browser's language settings.
 </ImageDescription>
+
+1. **Theme Detection:** Reacts immediately to system settings (Dark/Light) using `prefers-color-scheme`, completely eliminating the "Flicker" effect.
+2. **Language Detection:** Automatically serves Korean or English content based on the browser's language settings.
 
 ---
 

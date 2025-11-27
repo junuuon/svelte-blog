@@ -55,13 +55,12 @@ Tailwind CSS 같은 유틸리티 프레임워크 없이 **Pure CSS와 CSS Variab
 
 ### 4. 시스템 테마 및 언어 감지
 
-<ImageDescription src="/images/blog/3.webp" alt="Dark mode transition">
+<ImageDescription src="/images/blog/4.gif" alt="Dark mode transition">
   사용자 경험(UX)을 최우선으로 고려한 환경 감지 시스템입니다.
-  <br/>
-  1. <strong>테마 감지:</strong> <code>prefers-color-scheme</code>을 감지하여 시스템 설정(Dark/Light)에 즉각 반응하며, 깜빡임(Flicker) 현상을 원천 차단했습니다.
-  <br/>
-  2. <strong>언어 감지:</strong> 브라우저 언어 설정에 맞춰 한국어/영어를 자동으로 제공합니다.
 </ImageDescription>
+
+1. **테마 감지:** `prefers-color-scheme`을 감지하여 시스템 설정(Dark/Light)에 즉각 반응하며, 깜빡임(Flicker) 현상을 원천 차단했습니다.
+2. **언어 감지:** 브라우저 언어 설정에 맞춰 한국어/영어를 자동으로 제공합니다.
 
 ---
 

@@ -86,14 +86,6 @@
     crossorigin="anonymous"
     fetchpriority="high"
   />
-  <link
-    rel="preload"
-    href="/fonts/GeistMono[wght].woff2"
-    as="font"
-    type="font/woff2"
-    crossorigin="anonymous"
-    fetchpriority="high"
-  />
 
   <!-- prettier-ignore -->
   <script type="application/ld+json">

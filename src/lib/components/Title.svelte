@@ -1,5 +1,6 @@
 <script lang="ts">
   import { browser } from '$app/environment';
+  import { invalidateAll } from '$app/navigation';
   import Github from '$lib/components/Icon/Github.svelte';
   import Linkedin from '$lib/components/Icon/Linkedin.svelte';
   import Globe from '$lib/components/Icon/Globe.svelte';
@@ -13,9 +14,19 @@
     name: string;
     role: string;
     tagline: string;
+    isHome?: boolean;
   }
 
-  const { githubLink, linkedinLink, productLink, lang, name, role, tagline }: Props = $props();
+  const {
+    githubLink,
+    linkedinLink,
+    productLink,
+    lang,
+    name,
+    role,
+    tagline,
+    isHome = false,
+  }: Props = $props();
   let currentLang = $state<Language>(lang || 'en');
 
   $effect(() => {
@@ -38,7 +49,7 @@
         });
 
         if (response.ok) {
-          window.location.reload();
+          await invalidateAll();
         }
       } catch (error) {
         console.error('Failed to update locale:', error);
@@ -54,9 +65,11 @@
     <div class="title-container">
       <h1 class="title">{name}</h1>
       <div class="icons">
-        <button class="lang-toggle" onclick={toggleLanguage} aria-label="Toggle language">
-          {langDisplay}
-        </button>
+        {#if isHome}
+          <button class="lang-toggle" onclick={toggleLanguage} aria-label="Toggle language">
+            {langDisplay}
+          </button>
+        {/if}
         {#if productLink}
           <div class="icon">
             <a

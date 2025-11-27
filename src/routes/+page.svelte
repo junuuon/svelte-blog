@@ -21,6 +21,7 @@
 
 <article>
   <Title
+    isHome
     githubLink={introduction.githubLink}
     linkedinLink={introduction.linkedinLink}
     lang={data.locale}

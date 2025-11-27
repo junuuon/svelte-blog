@@ -46,6 +46,7 @@
 
         if (response.ok) {
           await invalidateAll();
+          window.location.href = page.url.href;
         }
       } catch (error) {
         console.error('Failed to update locale:', error);

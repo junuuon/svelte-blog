@@ -87,6 +87,7 @@
     as="font"
     type="font/woff2"
     crossorigin="anonymous"
+    fetchpriority="high"
   />
   <link
     rel="preload"
@@ -94,6 +95,7 @@
     as="font"
     type="font/woff2"
     crossorigin="anonymous"
+    fetchpriority="high"
   />
 
   <!-- prettier-ignore -->

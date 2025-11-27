@@ -252,7 +252,9 @@ button:focus-visible {
 
 code {
   font-family: var(--font-family-code), monospace;
-  font-feature-settings: 'liga' 1, 'calt' 1;
+  font-feature-settings:
+    'liga' 1,
+    'calt' 1;
   background-color: var(--color-inline-bg);
   padding: 0.15em 0.2em;
   border-radius: 4px;
@@ -262,7 +264,9 @@ code {
 
 pre {
   font-family: var(--font-family-code), monospace;
-  font-feature-settings: 'liga' 1, 'calt' 1;
+  font-feature-settings:
+    'liga' 1,
+    'calt' 1;
   background-color: var(--color-code-bg);
   border: 1px solid var(--color-bg-divider);
   border-radius: 6px;
@@ -273,7 +277,6 @@ pre {
   line-height: 1.6;
   font-size: 0.9em;
 }
-
 
 article img {
   max-width: 100%;

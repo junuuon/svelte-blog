@@ -46,7 +46,7 @@ const posts: Record<string, PostModule> = import.meta.glob<PostModule>('/src/lib
 
 export const load: PageServerLoad = async ({ params, parent }) => {
   const { slug } = params;
-  
+
   const parentData = await parent();
   const locale = parentData.locale as Language;
 
@@ -65,4 +65,3 @@ export const load: PageServerLoad = async ({ params, parent }) => {
     locale,
   };
 };
-

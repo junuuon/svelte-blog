@@ -22,4 +22,3 @@ export const POST: RequestHandler = async ({ request, cookies, url }) => {
 
   return json({ success: true, locale });
 };
-

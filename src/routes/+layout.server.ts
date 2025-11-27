@@ -5,4 +5,3 @@ export const load: LayoutServerLoad = ({ locals }) => {
     locale: locals.locale,
   };
 };
-

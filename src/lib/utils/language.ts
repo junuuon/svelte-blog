@@ -22,5 +22,3 @@ export const detectLanguageFromHeader = (acceptLanguage: string | null): Languag
 
   return 'en';
 };
-
-

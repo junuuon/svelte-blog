@@ -1,7 +1,73 @@
 ---
 title: CameraFi Studio
-description: 웹 오버레이 스코어보드
-date: '2025-11-25'
-image: ''
+description: Building and Optimizing a Web-Based Broadcast Overlay Platform
+date: '2023-06-30'
+image: '/images/camerafi-studio/optimization_chart.webp'
 productLink: 'https://studio.camerafi.com'
+techStack: ['Next.js', 'TypeScript', 'MUI', 'Firebase', 'Webpack']
 ---
+
+<script>
+  import ImageDescription from '$lib/components/ImageDescription.svelte';
+</script>
+
+## 💡 Project Overview
+
+**"From a Solo Project to a Core Business Model"**
+
+CameraFi Studio is a web platform that allows users to overlay scoreboards, subtitles, and graphics onto sports matches or broadcast feeds.
+I **architected the frontend from scratch as a solo developer** during the initial planning phase, and successfully grew it into the company's second main revenue stream.
+
+To support a global user base, I implemented **i18n** and a **unified payment system (Paddle)**, and optimized web application performance through **custom Webpack tuning**.
+
+### 🛠 Tech Stack
+
+- **Framework:** Next.js, TypeScript
+- **Styling:** MUI (Material UI) + Styled-components (Custom Global Theme)
+- **Infrastructure:** Firebase (Auth, Firestore, Realtime Database, Storage, Hosting)
+- **Payment:** Paddle
+- **Optimization:** Webpack, Bundle Analyzer
+
+---
+
+## 💻 Key Technical Achievements
+
+### 1. 15% Reduction in Bundle Size (324KB → 277KB)
+
+<ImageDescription src="/images/camerafi-studio/optimization_chart.webp" alt="Bundle size reduction chart">
+  Spearheaded <strong>Webpack configuration optimization</strong> to improve initial load speeds.
+</ImageDescription>
+
+1. **Tree Shaking:** Removed unused modules from heavy libraries like `lodash`.
+2. **Dynamic Import:** Asynchronously loaded non-critical components (charts, heavy modals) to reduce the initial payload.
+
+Through these measures, I **reduced the main bundle size by approx. 15% (47KB)**, significantly improving Time to Interactive (TTI).
+
+(※ The chart above is a visualization of the achievement)
+
+### 2. Enhanced Unified Authentication System
+
+Instead of relying solely on libraries, I designed a secure login process combining **Firebase Custom Tokens** and **Cookies**.
+By synchronizing authentication state between client and server via cookies, I enhanced security and built a **unified login interface**, laying the foundation for Single Sign-On (SSO) across multiple services.
+
+### 3. Global Service Architecture
+
+Implemented an **i18n** system from day one to cater to a global audience.
+Additionally, I established a **Custom Global Theme** by combining **MUI** and **Styled-components**, creating a flexible UI structure capable of adapting to branding changes and Dark Mode requirements.
+
+### 4. Self-Implemented Compliance (Cookie Consent)
+
+To comply with global web standards like GDPR, I **developed the Cookie Consent banner and control logic internally** without relying on third-party tools. This minimized external script dependencies and prevented page load degradation.
+
+---
+
+## 💬 Technical Decisions (Retrospective)
+
+### 1. Why Architecture Matters in Solo Development
+
+I knew that starting a project alone meant that if the initial structure was weak, technical debt would become unmanageable when collaborating with a team later.
+Therefore, I focused on building a **'scalable codebase'** by strictly adhering to **Next.js** directory principles and enforcing strong **TypeScript** typing.
+
+### 2. Experience with Monetization (Paddle)
+
+This project provided experience beyond simple feature development; I learned how to build a **'profitable service'**. Integrating the **Paddle** payment module gave me a deep understanding of the entire payment flow, including managing subscription lifecycles and handling webhooks.

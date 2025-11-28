@@ -1,7 +1,105 @@
 ---
 title: 아이라
-description: 글로벌 AI 캐릭터 채팅 플랫폼
-date: '2025-11-25'
-image: ''
+description: 2.3만 MAU를 달성한 글로벌 AI 캐릭터 채팅 서비스
+date: '2024-01-01'
+image: '/images/aira/aira_main.webp'
 productLink: 'https://aira.gg'
+techStack: ['React Native', 'Expo', 'Flashlist', 'Reanimated', 'Firebase']
 ---
+
+<script>
+  import ImageDescription from '$lib/components/ImageDescription.svelte';
+</script>
+
+## 💡 프로젝트 소개
+
+**"2.3만 명이 사용한 AI 캐릭터 채팅 서비스"**
+
+아이라는 사용자가 다양한 AI 캐릭터와 자유롭게 대화할 수 있는 채팅 앱입니다.
+공동 창업자 겸 프론트엔드 리드로서 **기획부터 제품 출시, 그리고 2.3만 MAU를 달성하기까지의 전 과정**을 주도했습니다.
+
+데이터 유실을 막기 위해 **로컬과 서버를 결합한 아키텍처**를 설계했고, **렌더링 성능을 꼼꼼하게 최적화**하여 저사양 기기에서도 끊김 없는 채팅 경험을 제공하는 데 집중했습니다.
+
+### 🛠 Tech Stack
+
+- **Core:** React Native, Expo, TypeScript
+- **Data & State:** React Query (w/ MMKV Persister), Firebase (Firestore)
+- **Performance:** Flashlist, React Compiler, MMKV
+- **Legacy & R&D:** Realm (Local DB), llama.rn (On-device AI)
+
+---
+
+## 💻 핵심 기술적 도전
+
+### 1. 단일 코드로 앱과 웹 동시 지원 (크로스 플랫폼)
+
+<ImageDescription src="/images/aira/aira_desktop_main.webp" alt="aira Desktop Main Screen"/>
+
+<ImageDescription src="/images/aira/aira_desktop_chat.webp" alt="aira Desktop Chat Screen"/>
+
+효율적인 리소스 관리를 위해 **Expo Router**를 기반으로 하나의 소스 코드에서 **Android, iOS 앱과 Web 페이지를 모두 지원**하는 구조를 구축했습니다.
+
+- **Universal Link:** 웹에서 링크를 클릭하면 앱이 자연스럽게 실행되도록 연결하여, 플랫폼 간 경계 없는 사용자 경험을 제공했습니다.
+- **Platform Specific Code:** 비즈니스 로직은 공유하되, UI 디테일이 달라야 하는 부분만 플랫폼별 파일(`*.ios.ts`, `*.web.ts`)로 분리하여 유지보수 효율을 높였습니다.
+
+### 2. 프라이버시 정책 변화에 따른 아키텍처 마이그레이션
+
+초기에는 사용자 프라이버시를 위해 서버에 대화 내용을 저장하지 않는 **로컬 모델(On-device)** 방식을 채택하고 Realm DB를 사용했습니다.
+하지만 로컬 모델의 성능 한계로 인해 더 똑똑한 답변을 제공하는 **서버 모델** 도입이 필요해졌고, 이에 따라 데이터를 서버에 저장하는 방식으로 정책을 변경했습니다.
+앱 업데이트 시 기존 Realm에 저장된 로컬 데이터를 자동으로 취합하여 **Firestore로 이관하는 마이그레이션 로직**을 구현, 사용자가 데이터를 잃지 않고 자연스럽게 클라우드 환경으로 넘어오도록 처리했습니다.
+
+### 3. 초기 로딩 경험 개선
+
+앱을 켤 때마다 매번 로딩 스피너나 빈 화면이 뜨는 것은 좋지 않은 사용자 경험이라 판단했습니다.
+**React Query Persister**와 **MMKV**를 연동하여, 앱 실행 시 네트워크 요청을 기다리지 않고 **이전에 캐싱된 데이터를 즉시 보여주도록** 만들었습니다. 이를 통해 사용자는 앱 진입과 동시에 이전 대화 내용을 끊김 없이 확인할 수 있었습니다.
+
+### 4. React Compiler 도입과 코드 간소화
+
+복잡한 채팅 UI 성능을 위해 `useMemo`, `useCallback` 등을 제거하고 코드를 간결하게 유지하기 위해 **React Compiler**를 도입했습니다.
+대부분의 최적화는 컴파일러에게 맡겨 **가독성 높은 코드**를 유지하되, 컴파일러가 놓칠 수 있는 미세한 부분이나 수동 제어가 꼭 필요한 로직은 별도로 최적화를 진행하여 성능과 생산성의 균형을 맞췄습니다.
+
+### 5. 대량 데이터 렌더링 성능 최적화
+
+<ImageDescription src="/images/aira/aira_mobile_flashlist.gif" alt="aira Mobile Flashlist Demo"/>
+
+이미지와 텍스트가 섞인 수만 건의 채팅 로그를 저사양 기기에서도 부드럽게 보여주는 것이 과제였습니다.
+
+- **Flashlist (View Recycling):** 기존 `FlatList`는 스크롤 시 컴포넌트를 계속 생성/파괴하여 프레임 드랍이 발생했습니다. 뷰를 재사용하는 `Flashlist`를 도입하여 **JS 스레드 연산 부하를 획기적으로 줄이고** 60fps의 부드러운 스크롤을 구현했습니다.
+- **Cursor-based Pagination:** 데이터가 늘어나도 조회 속도가 느려지지 않도록 `useInfiniteQuery`와 커서 기반 페이지네이션을 적용하여, 대용량 채팅 내역을 효율적으로 로드하고 관리했습니다.
+
+### 6. 사용자 경험을 해치지 않는 광고
+
+<ImageDescription src="/images/aira/aira_mobile_native_ads.webp" alt="aira Mobile Native Ads Demo"/>
+
+수익화를 위해 광고를 도입해야 했지만, 채팅 경험을 방해하고 싶지는 않았습니다.
+채팅 화면 맨 위에 **'AD' 표시와 제목만 얇게 한 줄로 노출**되는 **네이티브 광고(Native Ads)** 형식을 직접 디자인하여 적용했습니다. 이를 통해 화면 공간을 최소한으로 차지하면서도 콘텐츠와 이질감 없이 어우러지도록 구현했습니다.
+
+---
+
+## 🧪 V2 R&D: 차세대 인터페이스 실험
+
+서비스 고도화를 위해 개발했던 **V2 버전**에서는 기존 채팅 앱의 정형화된 틀을 깨고, **사용자의 몰입감을 극대화할 수 있는 새로운 인터페이스**를 구현했습니다.
+(※ 비즈니스 사정으로 정식 출시는 되지 않았으나, 개발 단계에서 기능 검증을 마친 결과물입니다.)
+
+### 숏폼(Shorts) 스타일의 탐색 경험과 iOS 26 Liquid Glass
+
+<ImageDescription src="/images/aira/aira_v2_main.gif" alt="aira V2 Shorts UI and Liquid Glass demo"/>
+
+사용자가 캐릭터를 콘텐츠처럼 즐길 수 있도록 **풀스크린 스와이프 UI**를 도입했습니다.
+
+- **몰입형 UX 설계:** 캐릭터를 위아래로 넘겨보다가, 마음에 들면 별도의 화면 이동 없이 **즉시 대화를 시작할 수 있는 Seamless(끊김 없는) 구조**를 설계했습니다.
+- **iOS 26 Liquid Glass 도입:** iOS 26에서 새롭게 선보인 **Liquid Glass**을 `UIGlassView`를 통해 직접 적용했습니다. JS 기반의 무거운 그래픽 연산 없이 시스템 네이티브 API를 호출하여, **최신 iOS 시스템 디자인을 따르면서도 배터리 효율을 극대화했습니다.**
+
+---
+
+## 💬 회고: "스타트업에서 배운 엔지니어링의 본질"
+
+### 1. 오버 엔지니어링의 경계
+
+과거에는 모든 코드를 완벽하게 짜는 것이 최선이라 생각했습니다. 하지만 스타트업을 운영하며 **"검증되지 않은 기능에 대한 과도한 기술 투자는 비즈니스 리스크"**가 될 수 있음을 배웠습니다.
+코드 퀄리티를 포기하는 것이 아니라, **서비스의 성장 단계(MVP vs Scale-up)에 맞춰 기술 부채의 허용 범위를 전략적으로 결정**하고, 핵심 가치 검증에 집중하는 **유연한 엔지니어링 사고방식**을 갖게 되었습니다.
+
+### 2. 비즈니스 모델과 비용 구조의 이해
+
+AI 서비스는 GPU/API 등 원가 비중이 매우 높은 사업입니다. 반면, 광고 기반의 B2C 모델은 사용자당 매출(ARPU)을 높이는 데 한계가 있었습니다.
+기술적으로 뛰어난 서비스라도 **높은 운영 비용을 감당할 수 있는 확실한 수익 모델(Business Model)**이 뒷받침되지 않으면 지속 가능하기 어렵다는 것을 체감했습니다. 이를 통해 개발자도 **기술적 구현을 넘어, 서비스의 비용 효율성과 수익 구조를 함께 고민해야 함**을 깊이 이해했습니다.

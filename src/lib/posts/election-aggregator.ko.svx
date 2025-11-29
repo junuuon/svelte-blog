@@ -1,9 +1,9 @@
 ---
-title: 대선 뉴스 모아보기 페이지
-description: AWS Serverless 기반의 대선 뉴스 모아보기 페이지
+title: 대선 뉴스 모아보기
+description: AWS Serverless 기반의 대선 정보 애그리게이터
 date: '2021-12-30'
 image: '/images/election-aggregator/1.webp'
-originalLink: 'https://github.com/junuuon/ITE3068_team8'
+githubLink: 'https://github.com/junuuon/ITE3068_team8'
 techStack: ['React', 'AWS Amplify', 'Recharts', 'MUI', 'Styled Components']
 ---
 
@@ -19,7 +19,7 @@ techStack: ['React', 'AWS Amplify', 'Recharts', 'MUI', 'Styled Components']
 
 **AWS Amplify(Serverless)**를 도입하여 인증(Auth)과 백엔드 API를 효율적으로 구축했으며, **MUI(Material UI)**와 **Recharts**를 활용하여 직관적인 대시보드 UI를 구현했습니다.
 
-### 🛠 기술 스택
+### 🛠 Tech Stack
 
 - **Frontend:** React, Styled Components, MUI (Material UI)
 - **Visualization:** Recharts
@@ -28,9 +28,9 @@ techStack: ['React', 'AWS Amplify', 'Recharts', 'MUI', 'Styled Components']
 
 ---
 
-## 💻 핵심 기능 및 스크린샷
+## 💻 핵심 기술 및 기능
 
-### 1. 메인 대시보드
+### 1. 메인 대시보드 UI
 
 <ImageDescription src="/images/election-aggregator/1.webp" alt="Main page"/>
 
@@ -38,13 +38,15 @@ techStack: ['React', 'AWS Amplify', 'Recharts', 'MUI', 'Styled Components']
 
 **MUI**의 그리드 시스템을 활용하여 D-Day 카운터, 오늘의 주요 뉴스, 선거 일정을 반응형 레이아웃으로 구성했습니다.
 
-### 2. AWS Amplify 기반 인증 (로그인/회원가입)
+### 2. AWS Amplify 기반 인증
 
 <ImageDescription src="/images/election-aggregator/2.webp" alt="Login page"/>
 
-<ImageDescription src="/images/election-aggregator/3.webp" alt="Signup page" />
-
 **AWS Amplify Auth**를 연동하여 별도의 백엔드 서버 구축 없이 보안성이 보장된 회원가입 및 로그인 세션 관리 기능을 구현했습니다.
+
+<ImageDescription src="/images/election-aggregator/3.webp" alt="Signup page"/>
+
+로그인 모달과 회원가입 모달을 직접 구현하여 자연스러운 사용자 경험을 유도했습니다.
 
 ### 3. 개인화 기능 (북마크)
 
@@ -83,6 +85,6 @@ Naver News API로 수집한 데이터를 가공하여 카드 뉴스 형태로 �
 
 ## 💬 회고: "서버리스 아키텍처의 가능성을 보다"
 
-**AWS Amplify를 통한 생산성 향상:**
+### AWS Amplify를 통한 생산성 향상
 
 복잡한 백엔드 인프라 구축 대신 **AWS Amplify**를 도입함으로써, 프론트엔드 개발자가 비즈니스 로직과 데이터 시각화에 집중할 수 있는 환경을 만들었습니다. 이를 통해 제한된 프로젝트 기간 내에 인증, DB, API를 모두 갖춘 완성된 서비스를 배포할 수 있었습니다.

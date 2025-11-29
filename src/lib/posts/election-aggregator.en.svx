@@ -1,9 +1,9 @@
 ---
 title: Election News Aggregator
-description: AWS Serverless-based 2022 Election Info Aggregator
+description: AWS Serverless-based Election Information Aggregator
 date: '2021-12-30'
 image: '/images/election-aggregator/1.webp'
-originalLink: 'https://github.com/junuuon/ITE3068_team8'
+githubLink: 'https://github.com/junuuon/ITE3068_team8'
 techStack: ['React', 'AWS Amplify', 'Recharts', 'MUI', 'Styled Components']
 ---
 
@@ -13,11 +13,11 @@ techStack: ['React', 'AWS Amplify', 'Recharts', 'MUI', 'Styled Components']
 
 ## 💡 Project Overview
 
-**"Aggregating fragmented election information into one dashboard"**
+**"What if scattered election information was gathered in one place?"**
 
-During the presidential election, critical information such as news, polls, and candidate pledges was scattered across various platforms, making it difficult for voters to access. To address this, we developed an **Aggregator Service that collects and visualizes all election-related data in one place**.
+During the election period, information such as news, polls, and candidate pledges was scattered across various platforms, making it difficult for voters to access. To solve this, I developed an **Aggregator Service that collects and visualizes all election-related data**.
 
-We adopted **AWS Amplify (Serverless)** to minimize backend infrastructure costs and efficiently handle authentication and data synchronization. On the frontend, we utilized **MUI (Material UI)** and **Recharts** to build an intuitive, data-rich dashboard.
+I adopted **AWS Amplify (Serverless)** to efficiently build Authentication and Backend APIs, and utilized **MUI (Material UI)** and **Recharts** to implement an intuitive dashboard UI.
 
 ### 🛠 Tech Stack
 
@@ -28,61 +28,63 @@ We adopted **AWS Amplify (Serverless)** to minimize backend infrastructure costs
 
 ---
 
-## 💻 Key Features & Screenshots
+## 💻 Key Features
 
-### 1. Main Dashboard
+### 1. Main Dashboard UI
 
 <ImageDescription src="/images/election-aggregator/1.webp" alt="Main page"/>
 
-The landing dashboard.
+The first dashboard users encounter.
 
-Utilizing **MUI's Grid System**, we organized key metrics like the D-Day counter, daily headlines, and the election timeline into a responsive layout optimized for various screen sizes.
+Utilizing **MUI's Grid System**, I organized the D-Day counter, daily headlines, and election timeline into a responsive layout.
 
-### 2. AWS Amplify Authentication
+### 2. AWS Amplify-based Authentication
 
 <ImageDescription src="/images/election-aggregator/2.webp" alt="Login page"/>
 
-<ImageDescription src="/images/election-aggregator/3.webp" alt="Signup page" />
+Integrated **AWS Amplify Auth** to implement secure sign-up and login session management without the overhead of building a separate backend server.
 
-Integrated **AWS Amplify Auth** (Cognito) to implement secure sign-up and login session management without the overhead of building a separate backend server.
+<ImageDescription src="/images/election-aggregator/3.webp" alt="Signup page"/>
+
+Implemented custom login and sign-up modals to provide a seamless user experience.
 
 ### 3. Personalization (Bookmarks)
 
 <ImageDescription src="/images/election-aggregator/5.webp" alt="Reading list"/>
 
-Users can bookmark articles of interest. These bookmarks are synchronized to their personal storage in real-time via **Amplify API (GraphQL)**.
+Users can bookmark articles of interest, which are synchronized to their personal storage via **Amplify API (GraphQL)**.
 
 ### 4. News Curation & Visualization
 
 <ImageDescription src="/images/election-aggregator/11.webp" alt="Election news page"/>
 
-Displays election news collected via Naver News API in a card format.
+Displays processed data collected via Naver News API in card format.
 
-We enhanced information delivery by parsing and visualizing metadata (thumbnails, summaries) using **Microlink**.
+Enhanced information delivery by visualizing metadata (thumbnails, summaries) using **Microlink**.
 
 ### 5. Poll Charts
 
 <ImageDescription src="/images/election-aggregator/13.webp" alt="Election poll page"/>
 
-Visualized complex approval rating trends into intuitive line and bar charts using the **Recharts** library, enabling users to track candidate performance easily.
+Visualized complex approval rating trends into intuitive line and bar charts using the **Recharts** library.
 
 ---
 
 ## 🧑‍💻 Role (Team Leader & Full Stack)
 
-**Led the initial environment setup, AWS infrastructure integration, and core frontend development.**
+**Led initial environment setup, AWS infrastructure integration, and core frontend development.**
 
-- **Tech Lead:** Established ESLint/Prettier code conventions and introduced Git Flow strategy for efficient team collaboration.
+- **Tech Lead:** Established ESLint/Prettier conventions and introduced Git Flow strategy.
 - **Serverless Architecture:** Built Authentication (Cognito) and Data (AppSync) communication environments using AWS Amplify.
 - **Frontend Development:**
-  - Implemented interactive data visualization components using **Recharts**.
+  - Implemented data visualization components using **Recharts**.
   - Designed a consistent UI system based on **MUI & Styled Components**.
-  - Resolved CORS issues and integrated third-party APIs using Axios and Proxy settings.
+  - Resolved CORS issues and integrated APIs using Axios and Proxy settings.
 
 ---
 
-## 💬 Retrospective: "Productivity of Serverless Architecture"
+## 💬 Retrospective: "Exploring the Potential of Serverless Architecture"
 
-**Efficiency with AWS Amplify:**
+### Productivity with AWS Amplify
 
-By adopting **AWS Amplify** instead of building complex backend infrastructure from scratch, we created an environment where frontend developers could focus on business logic and data visualization. This allowed us to deploy a complete service with Auth, DB, and API capabilities within a limited project timeframe.
+By adopting **AWS Amplify** instead of building complex backend infrastructure, I created an environment where I could focus on business logic and data visualization. This allowed me to deploy a complete service featuring Auth, DB, and API within a limited project timeframe.

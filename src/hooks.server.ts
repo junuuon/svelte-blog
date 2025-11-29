@@ -38,7 +38,7 @@ export const handle: Handle = async ({ event, resolve }) => {
   return response;
 };
 
-const ASSET_CACHE_PATHS = [/^\/fonts\//, /^\/images\//, /^\/projects\//, /^\/certificates\//];
+const ASSET_CACHE_PATHS = [/^\/fonts\//, /^\/images\//, /^\/certificates\//];
 const ASSET_CACHE_HEADER = 'public, max-age=31536000, immutable';
 const PAGE_CACHE_HEADER = 'private, no-cache, no-store, must-revalidate';
 

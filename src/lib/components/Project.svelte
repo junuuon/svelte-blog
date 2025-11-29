@@ -44,6 +44,7 @@
             class="detail-link"
             aria-label={labels.viewProjectDetails}
             title={labels.viewProjectDetails}
+            data-sveltekit-reload
           >
             {labels.viewProjectDetails} →
           </a>

@@ -20,7 +20,7 @@ originalLink: 'https://github.com/junuuon/junuuon.github.io'
 
 이 프로젝트는 **Cloudflare Pages**로 마이그레이션하여, 기본적으로는 **SSG(Static Site Generation)** 방식으로 빠른 성능을 유지하되, **Edge Functions(Middleware)**를 통해 요청 단계에서 언어를 감지하는 **하이브리드 전략**을 채택했습니다.
 
-### 🛠 Tech Stack
+### 🛠 기술 스택
 
 - **Framework:** Svelte 5, SvelteKit (Adapter Cloudflare)
 - **Infrastructure:** Cloudflare Pages (Functions)

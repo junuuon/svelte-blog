@@ -20,7 +20,7 @@ techStack: ['React Native', 'Expo', 'Flashlist', 'Reanimated', 'Firebase']
 
 **데이터 유실 없는 서버 마이그레이션**을 수행했고, **렌더링 성능을 꼼꼼하게 최적화**하여 저사양 기기에서도 끊김 없는 채팅 경험을 제공하는 데 집중했습니다.
 
-### 🛠 Tech Stack
+### 🛠 기술 스택
 
 - **Core:** React Native, Expo, TypeScript
 - **Data & State:** React Query, Firebase

@@ -19,7 +19,7 @@ techStack: ['React', 'AWS Amplify', 'Recharts', 'MUI', 'Styled Components']
 
 **AWS Amplify(Serverless)**를 도입하여 인증(Auth)과 백엔드 API를 효율적으로 구축했으며, **MUI(Material UI)**와 **Recharts**를 활용하여 직관적인 대시보드 UI를 구현했습니다.
 
-### 🛠 Tech Stack
+### 🛠 기술 스택
 
 - **Frontend:** React, Styled Components, MUI (Material UI)
 - **Visualization:** Recharts

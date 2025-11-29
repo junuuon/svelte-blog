@@ -5,7 +5,7 @@ date: '2025-11-27'
 image: '/images/sveltekit-portfolio/1.webp'
 techStack: ['Svelte 5', 'SvelteKit', 'TypeScript', 'Mdsvex', 'Cloudflare Pages']
 productLink: 'https://junwon.pages.dev'
-originalLink: 'https://github.com/junuuon/junuuon.github.io'
+githubLink: 'https://github.com/junuuon/junuuon.github.io'
 ---
 
 <script>
@@ -16,7 +16,7 @@ originalLink: 'https://github.com/junuuon/junuuon.github.io'
 
 **"정적 사이트의 성능에 동적 라우팅의 유연함을 더하다"**
 
-기존 GitHub Pages의 **순수 정적 호스팅** 방식은 서버 사이드 로직을 전혀 사용할 수 없어, 다국어 처리 시 클라이언트 사이드 스크립트에 의존해야 했습니다.
+기존 GitHub Pages의 **순수 정적 호스팅** 방식은 서버 사이드 로직을 사용할 수 없어, 다국어 처리 시 클라이언트 스크립트에 의존해야 하는 한계가 있었습니다.
 
 이 프로젝트는 **Cloudflare Pages**로 마이그레이션하여, 기본적으로는 **SSG(Static Site Generation)** 방식으로 빠른 성능을 유지하되, **Edge Functions(Middleware)**를 통해 요청 단계에서 언어를 감지하는 **하이브리드 전략**을 채택했습니다.
 
@@ -87,12 +87,14 @@ export const handle: Handle = async ({ event, resolve }) => {
 ### 1. 왜 GitHub Pages에서 Cloudflare Pages로 옮겼는가?
 
 가장 큰 이유는 **초기 로딩 경험** 때문이었습니다.
-GitHub Pages 같은 정적 호스팅에서 사용자의 언어에 맞춰 페이지를 보여주려면, 일단 빈 화면을 로드한 뒤 자바스크립트로 브라우저 언어를 확인하고 다시 페이지를 이동시키는 과정이 필요합니다. 이 과정에서 발생하는 **미세한 깜빡임과 지연**이 사용자 경험을 해친다고 판단했습니다.
-**Cloudflare Functions**를 통해 서버 사이드에서 요청을 가로채어 처리함으로써, 이러한 지연 없이 **완벽하게 렌더링된 첫 화면**을 제공할 수 있었습니다.
+GitHub Pages 같은 정적 호스팅에서 사용자의 언어에 맞춰 페이지를 보여주려면, 빈 화면을 로드한 뒤 자바스크립트로 언어를 확인하고 이동시키는 과정이 필요합니다. 이 과정에서 발생하는 **미세한 깜빡임과 지연**이 사용자 경험을 해친다고 판단했습니다.
+
+**Cloudflare Functions**를 통해 서버 사이드에서 요청을 가로채어 처리함으로써, 지연 없이 완벽하게 렌더링된 첫 화면을 제공할 수 있었습니다.
 
 ### 2. Next.js에서 Svelte로의 전환
 
 Next.js의 정적 배포 결과물은 여전히 React 런타임을 포함하여 하이드레이션(Hydration) 비용이 발생합니다. 정적 콘텐츠 위주의 포트폴리오 사이트에는 이것이 불필요한 오버헤드라고 판단했습니다.
+
 **Svelte**는 컴파일 단계에서 최적화된 바닐라 JS로 변환되므로 런타임이 가볍고, 초기 로딩 속도(FCP)가 빨라 **성능 중심의 정적 사이트**를 구축하기에 가장 적합한 도구였습니다.
 
 ### 3. SEO 점수와 프라이버시

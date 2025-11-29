@@ -1,11 +1,11 @@
 ---
 title: SvelteKit Portfolio
-description: Edge-enhanced static website built with Svelte 5 and Cloudflare Pages
+description: Edge-enhanced website built with Cloudflare Pages and Svelte 5
 date: '2025-11-27'
 image: '/images/sveltekit-portfolio/1.webp'
 techStack: ['Svelte 5', 'SvelteKit', 'TypeScript', 'Mdsvex', 'Cloudflare Pages']
 productLink: 'https://junwon.pages.dev'
-originalLink: 'https://github.com/junuuon/junuuon.github.io'
+githubLink: 'https://github.com/junuuon/junuuon.github.io'
 ---
 
 <script>
@@ -14,11 +14,11 @@ originalLink: 'https://github.com/junuuon/junuuon.github.io'
 
 ## 💡 Project Overview
 
-**"Adding Dynamic Routing to Static Sites: Performance and Flexibility"**
+**"Adding the flexibility of dynamic routing to the performance of a static site"**
 
-Because GitHub Pages uses a **pure static hosting model with no server-side logic**, any multilingual handling had to rely entirely on client-side scripts.
+Traditional static hosting like GitHub Pages cannot execute server-side logic, forcing developers to rely on client-side scripts for tasks like localization.
 
-This project migrated to **Cloudflare Pages**, keeping the speed of **SSG (Static Site Generation)** while adopting a **hybrid approach** that detects language at request time through **Edge Functions (middleware)**.
+I migrated this project to **Cloudflare Pages** to adopt a **Hybrid Strategy**: maintaining the fast performance of **SSG (Static Site Generation)** while utilizing **Edge Functions (Middleware)** to detect user language at the request level.
 
 ### 🛠 Tech Stack
 
@@ -35,11 +35,10 @@ This project migrated to **Cloudflare Pages**, keeping the speed of **SSG (Stati
 
 <ImageDescription src="/images/sveltekit-portfolio/1.webp" alt="Main page" />
 
-Combines the information density of a resume with the visual appeal of a portfolio.
+Combined the information density of a Resume with the visual experience of a Portfolio.
+The home screen is designed as a **'Resume'** to deliver core information quickly, while clicking 'View Details' transitions to a **'Project Retrospective'** page.
 
-The home screen delivers key information in a **'Resume'** format for quick scanning, while clicking 'View project details' transitions the user to a rich **'Project Showcase'** page.
-
-### 2. Server-Side Language Detection
+### 2. Server-side Language Detection
 
 ```typescript
 export const handle: Handle = async ({ event, resolve }) => {
@@ -60,38 +59,42 @@ export const handle: Handle = async ({ event, resolve }) => {
 };
 ```
 
-I resolved the "screen flicker" issue common with client-side (`navigator.language`) detection.
+Solved the 'screen flickering' issue common with client-side (`navigator.language`) detection.
 
-Leveraging **Cloudflare Functions**, the `Accept-Language` header is parsed server-side before the response is sent. This ensures the HTML is rendered in the user's preferred language (Korean/English) before it even reaches the browser.
+By utilizing **Cloudflare Functions**, the app parses the `Accept-Language` header on the server side. This ensures the HTML is rendered in the user's preferred language (English/Korean) before it even reaches the browser.
 
-### 3. Web Standards & Performance
+### 3. Web Standards & Performance Optimization
 
 <ImageDescription src="/images/sveltekit-portfolio/3.webp" alt="Lighthouse performance score" />
 
-Achieved **Performance 97**, and **Accessibility/Best Practices 100**.
+Achieved **Performance 97, Accessibility/Best Practices 100**.
 
-For privacy reasons regarding personal information, search engine indexing (SEO) was intentionally blocked (`robots.txt`). However, in all other areas, I strictly adhered to web standards through semantic markup and image optimization.
+Search engine indexing (SEO) was intentionally blocked (`robots.txt`) for privacy reasons, but all other aspects strictly adhere to web standards through semantic markup and image optimization.
 
 ### 4. Pure CSS Responsive Design
 
 <ImageDescription src="/images/sveltekit-portfolio/2.webp" alt="Responsive design demo"/>
 
-Designed a responsive layout using **Pure CSS** without relying on heavy frameworks.
+Designed a responsive layout using Pure CSS without heavy CSS frameworks.
 
-Going beyond simple resizing, I implemented optimized UI/UX for both **Mobile and PC** environments, ensuring information is conveyed clearly regardless of the device.
+Beyond simple resizing, I implemented optimized UI/UX for both **Mobile and PC** environments to ensure clear information delivery across all devices.
 
 ---
 
 ## 💬 Technical Decisions
 
-### 1. Why Switch from GitHub Pages to Cloudflare Pages?
+### 1. Why migrate from GitHub Pages to Cloudflare Pages?
 
-The primary driver was the **initial loading experience**. On static hosting like GitHub Pages, displaying the correct language requires loading a blank page, checking the browser language via JS, and then redirecting. This causes a perceptible flicker and delay that harms UX. By intercepting requests server-side with **Cloudflare Functions**, I was able to deliver a **perfectly rendered first screen** without such delays.
+The biggest reason was the **Initial Load Experience**. To serve localized pages on static hosting like GitHub Pages, the browser must load a blank page, check the language via JavaScript, and then redirect. I considered this micro-flickering and delay detrimental to the user experience.
 
-### 2. From Next.js to Svelte
+By intercepting requests via **Cloudflare Functions**, I could provide a **perfectly rendered first screen** without any delay.
 
-Next.js static exports still include the React runtime, incurring hydration costs. For a content-focused portfolio, this was unnecessary overhead. **Svelte** compiles to optimized Vanilla JS at build time. Its lightweight runtime and fast First Contentful Paint (FCP) made it the ideal tool for building a performance-centric static site.
+### 2. Transition from Next.js to Svelte
 
-### 3. SEO Score vs. Privacy
+Static exports in Next.js still incur Hydration overhead due to the React runtime. I judged this to be unnecessary for a content-focused portfolio site.
 
-The SEO score of 66 on Lighthouse is a deliberate design choice, not a technical flaw. I applied `noindex` to prevent sensitive personal information contained in the resume from being indiscriminately exposed to search engines, prioritizing **security and privacy** over SEO metrics.
+**Svelte** compiles components into optimized vanilla JS, resulting in a lighter runtime and faster First Contentful Paint (FCP), making it the most suitable tool for building a performance-centric static site.
+
+### 3. SEO Score and Privacy
+
+The SEO score of 66 on Lighthouse is an intentional design choice, not a technical flaw. To prevent sensitive personal information included in the resume from being indiscriminately exposed to search engines, I applied `noindex`. This decision prioritizes security and privacy.

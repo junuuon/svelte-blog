@@ -2,7 +2,7 @@
   font-family: 'Wanted Sans';
   font-weight: 400 800;
   font-style: normal;
-  font-display: optional;
+  font-display: swap;
   src: url('/fonts/WantedSansVariable.woff2') format('woff2-variations');
 }
 

@@ -11,13 +11,13 @@ import type {
 export const introduction: IntroductionProps = {
   name: 'Junwon Park',
   role: 'Frontend Engineer',
-  tagline: 'Frontend Engineer: From Inception to Scale',
+  tagline: 'Frontend Engineer experienced in the entire product lifecycle from inception to growth',
   githubLink: 'https://github.com/junuuon',
   linkedinLink: 'https://www.linkedin.com/in/junuuon/',
   briefing: [
-    'Experienced in scaling a service from ideation to 23k MAU. Skilled in the entire product lifecycle—planning, development, deployment, and operations—focusing on creating stable services with tangible business impact.',
-    'Prefers deep technical exploration over reliance on external libraries. Experienced in designing proprietary UI systems (Zero-dependency) and optimizing rendering performance to the limit.',
-    'Pursues rational engineering based on business needs and user value ("Is this truly necessary?"), rather than blindly chasing the latest trends or flashy technologies.',
+    'Experienced in growing a service from the idea stage to 23k MAU. I have learned how to build stable services by directly experiencing the entire process of planning, development, deployment, and operation.',
+    'I prefer deep technical exploration—implementing necessary features directly rather than relying solely on libraries—and understanding principles by diving deep into official documentation. I have experience designing proprietary UI systems and optimizing rendering performance to the limit.',
+    'I aim for rational engineering, selecting and applying technologies based on the current business context and "what users truly need," rather than blindly chasing the latest or flashy technologies.',
   ],
 };
 
@@ -30,17 +30,17 @@ export const workExperiences: WorkExperienceProps[] = [
         title: 'aira',
         dateFrom: '2024-01',
         description:
-          'Global AI character chat platform. As Co-Founder & Frontend Lead, led the entire lifecycle from architecture design to optimization for 23k users.',
+          'A global AI character chat platform. As a Co-Founder and Frontend Lead, I led the entire process of planning, development, and operation.',
         detail: [
-          "**[Key Achievements]** Achieved 23k MAU, $3k MRR, and 46-minute average retention time (Ranked 57th in Google Play Entertainment / as of Feb '25).",
-          '**[Architecture Advancement]** Overcame local model limits by migrating to a server-based multi-model and established a cloud environment by migrating Realm data to Firestore without data loss. Implemented **React Query Persister** to cache server data and prevent redundant refetches.',
-          '**[Cross-Platform Design]** Adopted **Expo Router** for file-based routing and implemented **Universal Links** to integrate seamless user experience (UX) across Web, iOS, and Android.',
-          '**[Rendering Optimization]** Pre-emptively adopted **React Compiler** to prevent unnecessary re-renders and implemented **Flashlist** and **MMKV** to ensure smooth list scrolling and fast data loading even on low-end devices.',
-          '**[UI System Construction]** Designed a proprietary UI system (Zero-dependency) without external libraries to minimize bundle size and flexibly handle custom design requirements.',
-          '**[High-Performance Interaction]** Implemented native-level keyboard interactions and gesture animations maintaining 60fps using **Reanimated (v4)** and react-native-keyboard-controller.',
-          '**[Service Stability]** Built a precise error tracking environment with Sentry & dSym. Defended against user churn by prioritizing service normalization via a rapid **Rollback** policy when detecting third-party library conflicts on specific Android devices. Ensured type safety with **Zod**.',
-          '**[Operational Efficiency]** Established CI/CD pipelines (Android Internal Track, iOS TestFlight) using **EAS** & **GitHub Actions** and standardized device compatibility testing using **Samsung Test Lab**.',
-          '**[Global Expansion & R&D]** Supported 3 languages (KO/EN/JP) via **i18n** to drive global user acquisition and conducted an **On-device sLLM PoC** using `llama.rn` to verify edge computing possibilities.',
+          "**[Key Achievements]** Achieved 23k MAU and $3,000 monthly revenue, building a highly immersive service with an average session time of 46 minutes (Ranked 57th in Google Play Entertainment / as of Feb '25)",
+          '**[Architecture Enhancement]** Transitioned to a server-based multi-model to overcome local model limitations and implemented logic to migrate existing Realm data to Firestore without loss. Introduced **React Query Persister** to improve initial loading speed and establish a server data caching strategy.',
+          '**[Cross-Platform Design]** Supported Android, iOS, and Web simultaneously with a single codebase based on **Expo Router**, and integrated **Universal Link** to provide a seamless user experience across platforms.',
+          '**[Rendering Optimization]** Prevented frame drops on low-end devices by introducing **Flashlist** for high view reusability, and proactively adopted **React Compiler** to reduce code complexity and optimize rendering efficiency.',
+          '**[High-Performance Interaction & R&D]** Experimented with next-gen interfaces (V2) by implementing **iOS 26 Liquid Glass** and **Shorts-style Swipe UI**, and achieved native-level 60fps gesture animations using **Reanimated (v4)**.',
+          '**[UX-Centric Monetization]** Directly designed **Native Ads** UI that does not disrupt the chat experience, ensuring seamless ad exposure and layout stability (preventing CLS).',
+          '**[Service Stability]** Built a precise error tracking environment by integrating Sentry and dSYM, and prevented user churn with a **rapid rollback policy** when specific Android device issues occurred. Ensured runtime data type safety by introducing **Zod**.',
+          '**[Operational Efficiency]** Built CI/CD pipelines based on **EAS** and **GitHub Actions** (Android closed track auto-deployment, iOS TestFlight) and established a device compatibility testing process using **Samsung Test Lab**.',
+          '**[Global Expansion]** Supported 3 languages (KR/EN/JP) via **i18n**, driving global user influx, and verified edge computing feasibility by conducting an **On-device sLLM PoC** using `llama.rn`.',
         ],
         detailLink: '/projects/aira',
         productLink: 'https://aira.gg',
@@ -69,11 +69,12 @@ export const workExperiences: WorkExperienceProps[] = [
         dateFrom: '2022-02',
         dateTo: '2023-06',
         description:
-          'Web overlay scoreboard service. Started as a solo developer, established the frontend architecture, and grew it into a core company project.',
+          'A web overlay scoreboard service. Started as a solo developer, I built the frontend architecture and grew it into a core company project.',
         detail: [
-          '**[Bundle Optimization]** Reduced main page bundle size by 15% (324KB → 277KB) and improved initial load speed by establishing Webpack Tree Shaking, Code Splitting, and Dynamic Import strategies.',
-          '**[Security & Auth]** Implemented Cookie Consent and token-based authentication logic directly without external libraries, removing dependencies and enhancing security.',
-          '**[Service Enhancement]** Improved user accessibility via **Next-PWA** (A2HS) and established a recurring subscription payment process by integrating the **Paddle** solution.',
+          '**[Bundle Size Optimization]** Reduced main bundle size by 15% (324KB → 277KB) and improved TTI by establishing Webpack Tree Shaking & Code Splitting strategies and applying Dynamic Import.',
+          '**[Security & Auth]** Removed external dependencies and enhanced security by directly implementing Cookie Consent and token-based authentication logic instead of relying on libraries.',
+          '**[Global Architecture]** Designed a flexible structure for design changes by building an i18n system and a **Global Theme System** combining MUI and Styled-components.',
+          '**[Service Enhancement]** Implemented app-like installation (A2HS) by introducing Next-PWA and established a subscription lifecycle management process by integrating Paddle payment solution.',
         ],
         productLink: 'https://studio.camerafi.com',
         detailLink: '/projects/camerafi-studio',
@@ -83,11 +84,11 @@ export const workExperiences: WorkExperienceProps[] = [
         title: 'Internal Admin Dashboard',
         dateFrom: '2022-03',
         dateTo: '2023-06',
-        description: 'Internal service management and statistics dashboard.',
+        description: 'An internal service management and statistics dashboard.',
         detail: [
-          '**[Large-List Optimization]** Benchmarked YouTube UI and implemented Infinite Scroll based on **Intersection Observer** to efficiently browse hundreds of thousands of video logs, achieving initial load times under 0.5s.',
-          '**[Component Abstraction]** Designed reusable components abstracting CRUD (Create, Read, Update, Delete) logic and Chart.js visualization modules, boosting admin page development productivity.',
-          '**[Infrastructure]** Established SPA deployment pipelines using **Firebase Hosting**.',
+          '**[Large List Optimization]** Implemented Intersection Observer-based Infinite Scroll to enable seamless navigation of hundreds of thousands of video lists, benchmarking YouTube UI.',
+          '**[Productivity Improvement]** Abstracted CRUD logic and Chart.js visualization modules into reusable components, accelerating the development speed of repetitive admin pages.',
+          '**[Infrastructure]** Built and managed SPA deployment pipelines using Firebase Hosting.',
         ],
         skills: ['React', 'TypeScript', 'Mui', 'Chart.js', 'React Query', 'Firebase Hosting'],
       },
@@ -104,21 +105,21 @@ export const workExperiences: WorkExperienceProps[] = [
         dateFrom: '2020-08',
         dateTo: '2020-10',
         description:
-          'Document viewer development project within a closed network environment where external libraries were restricted.',
+          'A document viewer development project in a closed network environment with restricted external library access.',
         detail: [
-          '**[Large-Scale Data Rendering]** Implemented seamless scrolling for thousands of Excel rows by adopting **React Table** and **Virtualization** techniques to resolve rendering bottlenecks.',
-          '**[Architecture Design]** Adopted Redux-Saga for asynchronous data processing and applied Atomic Design Pattern to build a maintainable component system.',
+          '**[Large Data Rendering]** Implemented seamless scrolling by introducing **React Table** and **Virtualization** techniques to prevent rendering delays when processing thousands of rows of Excel data.',
+          '**[Architecture Design]** Introduced Redux-Saga for asynchronous data processing and applied Atomic Design Pattern to build a component system for maintenance efficiency.',
         ],
         skills: ['React', 'TypeScript', 'React Table', 'Redux-Saga', 'Atomic Design'],
       },
       {
-        title: 'Defense Dashboard Page',
+        title: 'MND Dashboard Page',
         dateFrom: '2019-06',
         dateTo: '2019-09',
         description:
-          'Maintenance and advancement project for the dashboard web page within the Ministry of National Defense network.',
+          'Maintenance and enhancement project for the dashboard webpage within the Ministry of National Defense intranet.',
         detail: [
-          '**[Maintenance]** Customized Ant Design libraries to develop UI components and refactored legacy code to ensure system stability.',
+          '**[Maintenance]** Developed UI components by customizing the Ant Design library and secured system stability through legacy code refactoring.',
         ],
         skills: ['React', 'JavaScript', 'Ant Design', 'styled-components', 'Redux'],
       },
@@ -131,10 +132,10 @@ export const otherExperiences: OtherExperienceProps[] = [
   {
     project: [
       {
-        title: 'Selected as Seoul Campus Town Resident Startup (Orca AI)',
+        title: 'Seoul Campus Town Selection (Orca AI)',
         dateFrom: '2024',
         description:
-          'Selected for office space and business funding support from Seoul Metropolitan Government and the university, recognized for business potential and technical capability.',
+          'Selected for office space and commercialization funding support from the Seoul Metropolitan Government and universities in recognition of business potential and technical capability.',
         detail: [],
       },
     ],
@@ -145,10 +146,10 @@ export const otherExperiences: OtherExperienceProps[] = [
         title: '2021 Woori Bank Hackathon Finalist',
         dateFrom: '2021-04',
         description:
-          'Developed a Fintech app solo within 5 days by fast-tracking React Native learning, recognized for technical execution.',
+          'Advanced to the finals by independently planning and developing a fintech app with remittance and biometric authentication features, learning React Native with a rapid learning curve in 5 days.',
         detail: [
-          'Fintech App Dev: Implemented full logic for remittance, biometric authentication, and Firebase store.',
-          'Code and release verified via GitHub link.',
+          '**[Conversational Interface]** Implemented natural language remittance processing logic via text parsing.',
+          '**[Security & API]** Processed actual financial transactions through Biometrics and Woori Bank Open API integration.',
         ],
         detailLink: '/projects/oneline-bank',
         githubLink: 'https://github.com/junuuon/OnelineBank',
@@ -159,17 +160,18 @@ export const otherExperiences: OtherExperienceProps[] = [
   {
     project: [
       {
-        title: 'Personal Portfolio Site',
+        title: 'SvelteKit Portfolio Website',
         dateFrom: '2021-02',
         description:
-          'High-performance static website built with Svelte to achieve fast rendering without React Virtual DOM overhead.',
+          'An edge-enhanced website maximizing performance and user experience using Cloudflare Pages and Svelte 5.',
         detail: [
-          '**[Web Standards]** Achieved perfect 100 scores across all 4 Lighthouse categories (Performance, Accessibility, Best Practices, SEO).',
-          '**[Features]** Implemented Dark Mode, Responsive Design, and MDX parsing pipeline.',
+          '**[Server-side Logic]** Migrated from GitHub Pages to Cloudflare Pages to implement Zero-flash language detection via `Accept-Language` header parsing.',
+          '**[Performance Optimization]** Achieved 100 points in Lighthouse Performance/Accessibility through Svelte 5 Runes and Pure CSS design (SEO intentionally blocked for privacy).',
+          '**[Responsive Design]** Directly designed UI/UX optimized for both Mobile and PC environments using CSS Variables.',
         ],
         detailLink: '/projects/sveltekit-portfolio',
         githubLink: 'https://github.com/junuuon/junuuon.github.io',
-        skills: ['Svelte', 'SvelteKit', 'TypeScript', 'MDX'],
+        skills: ['Svelte', 'SvelteKit', 'TypeScript', 'Mdsvex', 'Cloudflare Pages'],
       },
     ],
   },
@@ -177,7 +179,7 @@ export const otherExperiences: OtherExperienceProps[] = [
 
 export const certificates: CertificateProps[] = [
   {
-    label: 'AWS Training and Certification',
+    label: 'AWS training and certification',
     link: '/certificates/aws-training.pdf',
   },
   {
@@ -220,7 +222,6 @@ export const skills: SkillProps[] = [
       'Flashlist',
       'React Compiler',
       'MMKV',
-      'Unistyles',
       'PWA',
       'React Query',
       'Zod',
@@ -233,8 +234,7 @@ export const skills: SkillProps[] = [
       'GitHub Actions',
       'Firebase',
       'Sentry',
-      'RevenueCat',
-      'Google AdMob',
+      'Cloudflare Pages',
       'Git / GitHub',
       'Figma',
       'Vim',
@@ -250,10 +250,10 @@ export const archives: ArchiveProps[] = [
         dateFrom: '2021-11',
         dateTo: '2021-12',
         description:
-          'University team project (4 members). As the team leader, led the entire process from planning to development, experimenting with Serverless architecture.',
+          'A project for Hanyang University Software Studio 2. As a team leader, I led the entire process of planning, design, and development, experiencing Serverless architecture.',
         detail: [
-          '**[Serverless Architecture]** Implemented authentication and backend infrastructure using AWS Amplify without managing physical servers.',
-          '**[Data Management]** Adopts GraphQL to efficiently query only the necessary data from the client side.',
+          '**[Serverless Adoption]** Built authentication (Login/Signup) and data management environments using AWS Amplify without a separate backend.',
+          '**[Data Visualization]** Rendered card news by parsing metadata (OG Tags) from Naver News API and visualized poll data using **Recharts**.',
           '**[Component Design]** Designed a reusable component hierarchy using React and styled-components.',
         ],
         detailLink: '/projects/election-aggregator',

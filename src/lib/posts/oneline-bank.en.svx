@@ -1,9 +1,9 @@
 ---
 title: OnelineBank
-description: 2021 Woori Bank On-tact Hackathon Finalist - Conversational Remittance Fintech App
+description: 2021 Woori Bank Hackathon Finalist - Conversational Fintech App
 date: '2021-06-05'
 image: '/images/oneline-bank/1.webp'
-originalLink: 'https://github.com/junuuon/OnelineBank'
+githubLink: 'https://github.com/junuuon/OnelineBank'
 techStack: ['React Native', 'Expo', 'Firebase', 'Woori Bank API']
 ---
 
@@ -13,11 +13,11 @@ techStack: ['React Native', 'Expo', 'Firebase', 'Woori Bank API']
 
 ## 💡 Project Overview
 
-**"Can't we solve complex transfer procedures with a single line of chat?"**
+**"Simplifying money transfers into a single line of chat"**
 
-Existing mobile banking apps require users to go through numerous steps and input processes to send money. OnelineBank is a fintech solution that introduces a **Conversational UI** to solve this inconvenience.
+Existing mobile banking apps often require users to navigate through numerous steps just to make a transfer. OnelineBank is a fintech solution that introduces a **Conversational UI** to eliminate these inconveniences.
 
-When a user expresses their intention to send money in everyday language, the app analyzes it and automatically executes the transfer process. We maximized usability by **incorporating the familiar experience of 'chatting' into financial services.**
+When a user expresses their intent to transfer money in everyday language, the app analyzes it and automatically executes the transfer process. By **integrating the familiar experience of 'chatting' into financial services**, I maximized usability.
 
 ### 🛠 Tech Stack
 
@@ -28,65 +28,68 @@ When a user expresses their intention to send money in everyday language, the ap
 
 ---
 
-## 📱 Key Features & Screenshots
+## 💻 Key Features
 
-#### 1. Splash & Intro
+### 1. Splash & Intro
 
-<ImageDescription src='/images/oneline-bank/1.webp' alt="Splash page">
-  An intuitive logo and intro screen showing the app's identity.
-</ImageDescription>
+<ImageDescription src='/images/oneline-bank/1.webp' alt="Splash page"/>
 
-#### 2. Simple Login
+Intuitive logo and intro screen showcasing the app's identity.
 
-<ImageDescription src="/images/oneline-bank/2.webp" alt="Login page">
-  Implemented secure and fast login using Firebase Auth.
-</ImageDescription>
+### 2. Easy Login
 
-#### 3. Conversational Transfer
+<ImageDescription src="/images/oneline-bank/2.webp" alt="Login page"/>
+
+Implemented secure and fast login integration using Firebase Auth.
+
+### 3. Conversational Transfer (Core Feature)
 
 <ImageDescription src="/images/oneline-bank/3.webp" alt="Chatting page"/>
 
-**Key Feature.** It analyzes natural language text entered by the user (e.g., "Send 50,000 won to Mom") to automatically extract recipient, bank, and amount information.
+Analyzes natural language input (e.g., "Send 50,000 won to Mom") to automatically extract recipient, bank, and amount information.
 
-1. **Text Parsing:** Using Regex to recognize account information and amounts from unstructured text.
-2. **User Confirmation:** Implemented a Bot interaction to confirm if the recognized information is correct.
-3. **Security Auth:** Enforced biometric authentication (Face ID/Touch ID) before the final transfer.
-4. **API Call:** Requesting actual transfer transactions via the Woori Bank Open API.
+1. **Text Parsing:** Utilizes Regular Expressions to recognize account info and amounts from unstructured text.
+2. **User Confirmation:** Implemented bot interaction to verify if the recognized information is correct.
+3. **Security Auth:** Enforces biometric authentication (Face ID/Touch ID) before the final transfer.
+4. **API Call:** Requests actual transfer transaction via Woori Bank Open API.
 
-#### 4. Shortcut Transfer (Address Book)
+### 4. Shortcut Transfer (Address Book)
 
 <ImageDescription src="/images/oneline-bank/4.webp" alt="Contact page"/>
 
-Designed the database to register frequently used accounts with aliases (e.g., Mom, Friend) so they match immediately just by typing the name in the chat window.
+Designed the database to register aliases (e.g., Mom, Friend) for frequently used accounts, allowing instant matching by simply typing the name in the chat window.
 
-#### 5. Account & User Management
+### 5. Account & User Management
 
-<ImageDescription src="/images/oneline-bank/5.webp" alt="Account add page">
-  <br/>
-  <img src="/images/oneline-bank/6.webp" alt="Account page" />
-  <br/>
-  Real-time management of user account information and transfer history through Firestore integration.
-</ImageDescription>
+<ImageDescription src="/images/oneline-bank/5.webp" alt="Account add page"/>
 
----
+<ImageDescription src="/images/oneline-bank/6.webp" alt="Account page"/>
 
-## 💻 Role (Solo Development)
-
-**Planning, Design, and Development 100% Solo Execution (5-day Sprint)**
-
-- **Frontend:** Built a cross-platform app using React Native & Expo.
-- **Logic:** Implemented text-parsing algorithms for natural language processing and state-management logic for the remittance flow.
-- **API Integration:** Integrated Woori Bank Remittance API and handled asynchronous transactions.
-- **Security:** Implemented secondary authentication utilizing mobile native biometrics features.
+Manages user account information and transfer history in real-time by integrating with Firestore.
 
 ---
 
-## 💬 Retrospective: "Execution Power Overcoming the Technical Learning Curve"
+## 🧑‍💻 Role (Solo Development)
 
-**Mastering React Native in 5 Days**
+**100% Solo Execution from Planning to Design and Development (5-Day Sprint)**
 
-Based on my Web (React) experience, I quickly learned the principles of React Native and how to use Native Modules (such as biometrics) within the intense schedule of a hackathon. I accelerated my learning speed by focusing on **"problem-solving for feature implementation"** rather than just studying syntax.
+- **Frontend:** Built a cross-platform app utilizing React Native & Expo.
+- **Logic:** Implemented text parsing algorithms for natural language processing and state management logic for the transfer process.
+- **API Integration:** Integrated Woori Bank Transfer API and handled asynchronous transactions.
+- **Security:** Implemented secondary authentication utilizing mobile device biometric features.
 
-**Fintech Domain Experience**
+---
 
-Beyond simple UI implementation, I experienced the flow of financial transactions and the importance of security (authentication) by integrating real bank APIs. In particular, I learned the importance of exception handling in the process of converting unstructured text data into financial data.
+## 💬 Retrospective: "Rapid Learning and Execution"
+
+### 1. Rapid Prototyping with React Native
+
+Leveraging my Web (React) experience, I quickly learned the principles of React Native and usage of Native Modules (Biometrics, etc.) within the short timeframe of the hackathon.
+
+Instead of getting bogged down in syntax, I focused on **"problem-solving for feature implementation,"** demonstrating the ability to turn ideas into working products quickly.
+
+### 2. Understanding the Fintech Domain
+
+Beyond simple UI implementation, I experienced the importance of transaction flow handling and **security (2FA)** in financial services by integrating actual banking APIs.
+
+In particular, I learned the critical importance of data integrity and exception handling when converting unstructured text data into financial data.

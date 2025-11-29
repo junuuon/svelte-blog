@@ -30,7 +30,7 @@ export interface PostMetadata {
   tagline?: string;
   date?: string;
   image?: string;
-  originalLink?: string;
+  githubLink?: string;
   productLink?: string;
   [key: string]: unknown;
 }

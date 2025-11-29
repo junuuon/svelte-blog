@@ -25,7 +25,7 @@
 </svelte:head>
 
 <Title
-  githubLink={metadata.originalLink || ''}
+  githubLink={metadata.githubLink || ''}
   productLink={metadata.productLink || ''}
   name={metadata.title || slug}
   role={metadata.role || ''}

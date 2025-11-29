@@ -3,7 +3,7 @@ import type { PageServerLoad } from './$types';
 import type { Component } from 'svelte';
 import type { Language } from '$lib/utils/language';
 
-export const prerender = true;
+export const prerender = false;
 
 export const entries = () => {
   const posts = import.meta.glob<PostModule>('/src/lib/posts/*.svx', {

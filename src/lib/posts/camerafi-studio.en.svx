@@ -1,6 +1,6 @@
 ---
 title: CameraFi Studio
-description: Building and Optimizing a Web-Based Broadcast Overlay Platform
+description: Building a Web-based Broadcast Overlay Platform & Performance Optimization
 date: '2023-06-30'
 image: '/images/camerafi-studio/optimization_chart.webp'
 productLink: 'https://studio.camerafi.com'
@@ -13,61 +13,66 @@ techStack: ['Next.js', 'TypeScript', 'MUI', 'Firebase', 'Webpack']
 
 ## 💡 Project Overview
 
-**"From a Solo Project to a Core Business Model"**
+**"From Solo Project to Core Business Model"**
 
-CameraFi Studio is a web platform that allows users to overlay scoreboards, subtitles, and graphics onto sports matches or broadcast feeds.
-I **architected the frontend from scratch as a solo developer** during the initial planning phase, and successfully grew it into the company's second main revenue stream.
+CameraFi Studio is a web platform that allows users to apply overlays, such as scoreboards and subtitles, to sports matches or broadcast feeds.
+Starting as a **solo developer, I designed the frontend architecture from scratch** and grew the project into the company's second main revenue stream.
 
-To support a global user base, I implemented **i18n** and a **unified payment system (Paddle)**, and optimized web application performance through **custom Webpack tuning**.
+Targeting a global market, I implemented **Internationalization (i18n)** and an **Integrated Payment System (Paddle)**, and improved web application performance through **Webpack configuration optimization**.
 
 ### 🛠 Tech Stack
 
 - **Framework:** Next.js, TypeScript
-- **Styling:** MUI (Material UI) + Styled-components (Custom Global Theme)
-- **Infrastructure:** Firebase (Auth, Firestore, Realtime Database, Storage, Hosting)
+- **Styling:** MUI (Material UI) + Styled-components
+- **Infrastructure:** Firebase (Auth, Firestore, Hosting)
 - **Payment:** Paddle
 - **Optimization:** Webpack, Bundle Analyzer
 
 ---
 
-## 💻 Key Technical Achievements
+## 💻 Key Technical Challenges
 
-### 1. 15% Reduction in Bundle Size (324KB → 277KB)
+### 1. 15% Bundle Size Reduction (324KB → 277KB)
 
 <ImageDescription src="/images/camerafi-studio/optimization_chart.webp" alt="Bundle size reduction chart">
-  Spearheaded <strong>Webpack configuration optimization</strong> to improve initial load speeds.
+  Led the <strong>optimization of Webpack configurations</strong> to improve initial loading speed.
 </ImageDescription>
 
-1. **Tree Shaking:** Removed unused modules from heavy libraries like `lodash`.
-2. **Dynamic Import:** Asynchronously loaded non-critical components (charts, heavy modals) to reduce the initial payload.
+1. **Tree Shaking:** Reduced build size by removing unused modules from heavy libraries like `lodash`.
+2. **Dynamic Import:** Changed heavy components not needed for initial entry (e.g., charts, modals) to load asynchronously.
 
-Through these measures, I **reduced the main bundle size by approx. 15% (47KB)**, significantly improving Time to Interactive (TTI).
+Through this, I **reduced the main bundle size by approximately 15% (47KB)**, significantly shortening the TTI (Time to Interactive).
 
-(※ The chart above is a visualization of the achievement)
+### 2. Secure Integrated Authentication System
 
-### 2. Enhanced Unified Authentication System
+Rather than relying solely on libraries, I designed a secure login process combining **Firebase Custom Tokens** and **Cookies**.
 
-Instead of relying solely on libraries, I designed a secure login process combining **Firebase Custom Tokens** and **Cookies**.
-By synchronizing authentication state between client and server via cookies, I enhanced security and built a **unified login interface**, laying the foundation for Single Sign-On (SSO) across multiple services.
+I enhanced security by synchronizing the authentication state between client and server via cookies and built a separate **Integrated Login Page** to establish a foundation for Single Sign-On (SSO) across future services.
 
-### 3. Global Service Architecture
+### 3. Scalable Global Architecture
 
-Implemented an **i18n** system from day one to cater to a global audience.
-Additionally, I established a **Custom Global Theme** by combining **MUI** and **Styled-components**, creating a flexible UI structure capable of adapting to branding changes and Dark Mode requirements.
+I adopted an **i18n** system from the early stages to support global users.
 
-### 4. Self-Implemented Compliance (Cookie Consent)
+Additionally, I combined **MUI** and **Styled-components** to build a **Global Theme System**. This created a flexible UI structure capable of adapting to design requirement changes, such as brand color updates or Dark Mode implementation.
 
-To comply with global web standards like GDPR, I **developed the Cookie Consent banner and control logic internally** without relying on third-party tools. This minimized external script dependencies and prevented page load degradation.
+### 4. Custom Compliance Implementation (Cookie Consent)
+
+To comply with global web standards like GDPR without relying on third-party tools, I **developed the Cookie Consent banner and control logic from scratch**.
+
+By implementing this directly, I prevented page speed degradation caused by loading unnecessary external scripts.
 
 ---
 
-## 💬 Technical Decisions (Retrospective)
+## 💬 Retrospective: "From Solo Developer to Architect"
 
-### 1. Why Architecture Matters in Solo Development
+### 1. Initial Design Considering Scalability
 
-I knew that starting a project alone meant that if the initial structure was weak, technical debt would become unmanageable when collaborating with a team later.
-Therefore, I focused on building a **'scalable codebase'** by strictly adhering to **Next.js** directory principles and enforcing strong **TypeScript** typing.
+I was wary that a poor initial structure in a solo project could lead to unmanageable technical debt later.
+
+Instead of rushing feature implementation, I strictly adhered to **Next.js** folder structure principles and applied strong **TypeScript** typing. I focused on building a **solid codebase** that would remain robust even as the team expanded.
 
 ### 2. Experience with Monetization (Paddle)
 
-This project provided experience beyond simple feature development; I learned how to build a **'profitable service'**. Integrating the **Paddle** payment module gave me a deep understanding of the entire payment flow, including managing subscription lifecycles and handling webhooks.
+I gained experience in building a **'revenue-generating service'** beyond simple feature development.
+
+By integrating the **Paddle** payment module, I developed a deep understanding of the entire payment lifecycle, including subscription state management and renewal processing via Webhooks.
